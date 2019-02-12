@@ -73,6 +73,7 @@ function source_check() {
 
 	$source_check = exec("sh source_check.sh ".$source);
 
+	$data['command'] = 'sh source_check.sh '.$source;
 	$data['source'] = $source;
 	$data['status'] = $source_check;
 
