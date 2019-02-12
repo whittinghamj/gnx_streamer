@@ -128,6 +128,12 @@ if($_SESSION['logged_in'] != true) {
 											<span>Dashboard</span>
 										</a>
 									</li>
+									<li>
+										<a href="dashboard.php?c=sources">
+											<i class="fa fa-tv" aria-hidden="true"></i>
+											<span>Sources</span>
+										</a>
+									</li>
 									<!--
 									<li>
 										<a href="mailbox-folder.html">
