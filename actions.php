@@ -117,11 +117,15 @@ function source_stop() {
 function ajax_source_list() {
 	// header("Content-Type:application/json; charset=utf-8");
 
-	$raw['name'] 			= str_replace("/dev/", "", $value);
-	$raw['raw_json']		= file_get_contents("http://localhost/actions.php?a=source_check&source=".$raw['name']);
-	$raw['source_status']	= json_decode($raw['raw_json'], true);
+	$video_cards 			= glob("/dev/video*");
 
-	$sources 				= $raw['source_status'];
+	foreach($video_cards as $video_card) 
+		$raw['name'] 			= str_replace("/dev/", "", $video_card);
+		$raw['raw_json']		= file_get_contents("http://localhost/actions.php?a=source_check&source=".$raw['name']);
+		$raw['source_status']	= json_decode($raw['raw_json'], true);
+
+		$sources[] 				= $raw['source_status'];
+	}
 
 	echo "<pre>";
 	print_r($sources);
