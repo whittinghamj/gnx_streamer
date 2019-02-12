@@ -511,7 +511,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">CPU</span>
 											<span id="cpu_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div id="cpu_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+												<div id="cpu_usage_bar" class="progress-bar progress-bar-success progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
 												</div>
 											</div>
 										</li>
@@ -527,7 +527,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">HDD</span>
 											<span id="disk_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div id="disk_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+												<div id="disk_usage_bar" class="progress-bar progress-bar-success progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 												</div>
 											</div>
 										</li>
@@ -673,6 +673,11 @@ if($_SESSION['logged_in'] != true) {
 
 						// cpu_usage
 						$('#cpu_usage_display').html(data.cpu_usage + '%');
+						if(data.cpu_usage > 5) {
+							$('#cpu_usage_bar').removeClass("progress-bar-success");
+							$('#cpu_usage_bar').addClass("progress-bar-danger");
+						}
+						
 						$('#cpu_usage_bar').attr('aria-valuenow', data.cpu_usage).css('width', data.cpu_usage);
 
 						// ram_usage
