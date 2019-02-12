@@ -1,6 +1,8 @@
 <?php
+// start php session
 session_start();
 
+// includes
 include('inc/global_vars.php');
 include('inc/functions.php');
 
@@ -8,7 +10,7 @@ include('inc/functions.php');
 $config_raw 		= @file_get_contents('config.json');
 $config 			= json_decode($config_raw, true);
 
-if($_SESSION['logged_in'] != true){
+if($_SESSION['logged_in'] != true) {
 	go("not_logged_in.php");
 }
 
@@ -510,7 +512,7 @@ if($_SESSION['logged_in'] != true){
 											<span class="stats-complete">85%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-													<span class="sr-only">85% Complete</span>
+													<span id="cpu_usage_display" class="sr-only"></span>
 												</div>
 											</div>
 										</li>
@@ -519,7 +521,7 @@ if($_SESSION['logged_in'] != true){
 											<span class="stats-complete">70%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-													<span class="sr-only">70% Complete</span>
+													<span id="ram_usage_display" class="sr-only"></span>
 												</div>
 											</div>
 										</li>
@@ -528,7 +530,7 @@ if($_SESSION['logged_in'] != true){
 											<span class="stats-complete">2%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-													<span class="sr-only">2% Complete</span>
+													<span id="network_usage_display" class="sr-only">2%</span>
 												</div>
 											</div>
 										</li>
@@ -536,16 +538,14 @@ if($_SESSION['logged_in'] != true){
 								</div>
 							</div>
 						</div>
-				
 					</div>
-				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
 						<h2>Boxed Layout</h2>
-					
+
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
 								<li>
@@ -562,13 +562,9 @@ if($_SESSION['logged_in'] != true){
 					</header>
 
 					<!-- start: page -->
-					
-					<?php 
-						$stats = exec('sh system_stats.sh');
-						echo $stats;
-					?>
 
 					<!-- end: page -->
+
 				</section>
 			</div>
 
@@ -662,5 +658,50 @@ if($_SESSION['logged_in'] != true){
 			<script src="assets/javascripts/theme.init.js"></script>
 
 		</section>
+
+		<script>
+			window.setInterval(function() {
+				update_system_stats();
+			}, 5000);
+
+			function update_system_stats() {
+				$.ajax({
+			        url:'actions.php?a=get_system_stats',
+			        type: 'json',
+			        success: function(content,code) {
+
+			            $.each(content, function (index, value) {
+			            	console.log('IP Address: ' + ip_address);
+
+			            	// check for usg / router
+			            	if(content[index].type == 'ugw'){
+
+			            		// check online status
+				            	if(content[index].stats == '0'){
+				            		var device_status = 'Offline';
+				            	}else{
+				            		var device_status = 'Online';
+				            	}
+
+				            	console.log('Device Sttus: ' + device_status);
+
+				            	var device_name = content[index].name;
+				            	console.log('Device Name: ' + device_name);
+
+				            	var device_wan_ip = content[index].port_table[0].ip;
+				            	console.log('Device WAN IP: ' + device_wan_ip);
+				            	var device_lan_ip = content[index].port_table[1].ip;
+				            	console.log('Device LAN IP: ' + device_lan_ip);
+
+				            	var device_uptime = sformat( content[index].uptime );
+				            	console.log('Device Uptime: ' + device_uptime);
+				            }else{
+				            	console.log('No USG found.');
+				            }
+						});
+			        }
+			    });
+			}
+		</script>
 	</body>
 </html>

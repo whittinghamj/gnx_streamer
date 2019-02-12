@@ -3,9 +3,6 @@
 # check and install curl
 command -v curl >/dev/null 2>&1 || { sudo apt install curl -y; }
 
-# uuid
-UUID="$(cat /sys/class/dmi/id/product_uuid)"
-
 # hostname
 HOSTNAME=$(hostname);
 
@@ -16,7 +13,6 @@ UPTIME="$(awk '{print $1}' /proc/uptime)";
 SSHPORT="$(sshd -T | head -n 1 | awk '{print $2}')";
 
 # cpu
-CPU=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g');
 CPU_USAGE="$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage "%"}')";
 
 # memory
@@ -44,4 +40,4 @@ RKBPS=`expr $RBPS / 1024`
 TMBPS=`expr $TKBPS / 1024`
 RMBPS=`expr $RKBPS / 1024`
 
-echo '{ "uuid": "'$UUID'","hostname": "'$HOSTNAME'","uptime": "'$UPTIME'", "cpu": "n_a", "cpu_usage": "'$CPU_USAGE'", "ram_usage": "'$RAM_USAGE'", "disk_usage": "'$DISK_USAGE'", "ip_address": "'$IPADDRESS'", "bandwidth_down": "'$RKBPS'", "bandwidth_up": "'$TKBPS'" }'
+echo '{"hostname": "'$HOSTNAME'","uptime": "'$UPTIME'", "cpu_usage": "'$CPU_USAGE'", "ram_usage": "'$RAM_USAGE'", "disk_usage": "'$DISK_USAGE'", "ip_address": "'$IPADDRESS'", "bandwidth_down": "'$RKBPS'", "bandwidth_up": "'$TKBPS'" }'
