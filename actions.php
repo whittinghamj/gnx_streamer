@@ -47,5 +47,11 @@ function test(){
 
 function get_system_stats() {
 	$data = exec('sh system_stats.sh');
-	echo $data;
+
+	$data = json_decode($data, true);
+
+	$data['cpu_usage'] = str_replace("%", "", $data['cpu_usage']);
+	$data['cpu_usage'] = number_format($data['cpu_usage'], 2);
+	$data['cpu_usage'] = $data['cpu_usage'].'%';
+	echo json_encode($data);
 }
