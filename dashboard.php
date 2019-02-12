@@ -288,7 +288,11 @@ if($_SESSION['logged_in'] != true) {
 											<i class="fa fa-home"></i>
 										</a>
 									</li>
-									<li><span>Sources</span></li>
+									<li>
+										<a href="dashboard.php?c=source">
+											<span>Sources</span>
+										</a>
+									</li>
 									<li><span><?php echo $source['name']; ?></span></li>
 								</ol>
 						
