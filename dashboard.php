@@ -294,7 +294,7 @@ if($_SESSION['logged_in'] != true) {
 										</a>
 									</li>
 									<li>
-										<a href="dashboard.php?c=sources">
+										<a href="dashboard.php?c=source&source=<?php echo $source['name']; ?>">
 											<span><?php echo $source['name']; ?></span>
 										</a>
 									</li>
