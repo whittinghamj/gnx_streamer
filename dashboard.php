@@ -72,9 +72,9 @@ if($_SESSION['logged_in'] != true){
 							<figure class="profile-picture">
 								<img src="assets/images/!logged-user.jpg" alt="<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
-							<div class="profile-info" data-lock-name="<?php echo $_SESSION['username']; ?>" data-lock-email="<?php echo $_SESSION['username']; ?>">
-								<span class="name">admin</span>
-								<span class="role">Administrator</span>
+							<div class="profile-info" data-lock-name="<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>" data-lock-email="<?php echo $account_details['email']; ?>">
+								<span class="name"><?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?></span>
+								<span class="role">administrator</span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
