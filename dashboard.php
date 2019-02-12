@@ -424,7 +424,7 @@ if($_SESSION['logged_in'] != true) {
 						for (i in sources)
 						{
 							// colum 1
-							if(sources[i].sources.status == 'busy') {
+							if(sources[i].source.status == 'busy') {
 								document.getElementById(sources[i].source.status + '_col_1').innerHTML = '<span class="label label-info">Streaming</span>';
 							} else {
 								document.getElementById(sources[i].source.status + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
