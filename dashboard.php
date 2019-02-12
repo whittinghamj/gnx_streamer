@@ -414,33 +414,31 @@ if($_SESSION['logged_in'] != true) {
 
 			<?php if($_GET['c'] == 'sources') { ?>
 				window.setInterval(function() {
-					function show_source_list() {
-						$.ajax({
-							cache: false,
-							type: "GET",
-					        url:'actions.php?a=ajax_source_list',
-							success: function(sources) {
-								// var x = sources[0].source.name;
-								// console.log('Source Name: ' + x);
+					$.ajax({
+						cache: false,
+						type: "GET",
+				        url:'actions.php?a=ajax_source_list',
+						success: function(sources) {
+							// var x = sources[0].source.name;
+							// console.log('Source Name: ' + x);
 
-								for (i in sources)
-								{
-									// colum 1
-									if(sources[i].source.status == 'busy') {
-										document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
-									} else {
-										document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
-									}
+							for (i in sources)
+							{
+								// colum 1
+								if(sources[i].source.status == 'busy') {
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
+								} else {
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
+								}
 
-									// colum 2
-									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
+								// colum 2
+								document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
-									// colum 3
-									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.command;
-								}						
-							}
-						});
-					}
+								// colum 3
+								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.command;
+							}						
+						}
+					});
 				}, 5000);
 			<?php } ?>
 		</script>
