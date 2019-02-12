@@ -107,8 +107,6 @@ function source_stop() {
 
 	exec('sudo kill -9 ' . $pid);
 
-	sleep(2);
-
 	status_message('success', 'Card has stopped streaming.');
 	
 	go($_SERVER['HTTP_REFERER']);

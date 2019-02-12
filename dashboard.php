@@ -373,7 +373,7 @@ if($_SESSION['logged_in'] != true) {
 			window.setInterval(function() {
 				// update_system_stats();
 				show_source_list();
-			}, 5000);
+			}, 1000);
 
 			function update_system_stats() {
 				console.log('updating system stats.');
