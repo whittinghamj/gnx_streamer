@@ -105,9 +105,9 @@ function show_installed_devices() {
 		echo '
 			<tr>
 				<td>'.$count.'</td>
-				<td>'.$status.'</td>
-				<td>'.$source['source']['name'].'</td>
-				<td>'.$source['source']['command'].'</td>
+				<td id="'.$source['source']['name'].'_status">'.$status.'</td>
+				<td id="'.$source['source']['name'].'_name">'.$source['source']['name'].'</td>
+				<td id="'.$source['source']['name'].'_command">'.$source['source']['command'].'</td>
 				<td class="pull-right">
 					<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&source='.$source['name'].'"><i class="fa fa-times"></i></a> 
 					<a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source='.$source['name'].'"><i class="fa fa-globe"></i></a>
