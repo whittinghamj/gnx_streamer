@@ -74,7 +74,7 @@ if($_SESSION['logged_in'] != true) {
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
+								<img src="assets/images/!logged-user.jpg" alt="<?php echo $_SESSION['username']; ?>" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="<?php echo $_SESSION['username']; ?>" data-lock-email="<?php echo $_SESSION['username']; ?>">
 								<span class="name"><?php echo $_SESSION['username']; ?></span>
@@ -421,7 +421,7 @@ if($_SESSION['logged_in'] != true) {
 						for (i in sources)
 						{
 							console.log("Source Name: " + sources[i].name);
-							
+
 							// colum 0
 							document.getElementById(sources[i].name + '_col_2').innerHTML = sources[i].name;
 						}						
