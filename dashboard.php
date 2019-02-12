@@ -16,7 +16,7 @@ if($_SESSION['logged_in'] != true) {
 
 ?>
 <!doctype html>
-<html class="boxed">
+<html class="fixed">
 	<head>
 
 		<!-- Basic -->
@@ -790,7 +790,7 @@ if($_SESSION['logged_in'] != true) {
 							</div>
 						</div>
 					</section>
-					
+
 					<!-- end: page -->
 
 				</section>
