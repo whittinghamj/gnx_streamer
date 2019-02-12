@@ -509,10 +509,9 @@ if($_SESSION['logged_in'] != true) {
 									<ul>
 										<li>
 											<span class="stats-title">CPU</span>
-											<span class="stats-complete">85%</span>
+											<span id="cpu_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-													<span id="cpu_usage_display" class="sr-only"></span>
 												</div>
 											</div>
 										</li>
