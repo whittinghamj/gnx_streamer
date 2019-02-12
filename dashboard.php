@@ -418,15 +418,13 @@ if($_SESSION['logged_in'] != true) {
 					type: "GET",
 			        url:'actions.php?a=ajax_source_list',
 					success: function(sources) {
-						var x = sources[0].source.name;
-						console.log('Source Name: ' + x);
+						// var x = sources[0].source.name;
+						// console.log('Source Name: ' + x);
 
 						for (i in sources)
 						{
-							// console.log("Source Name: " + sources[i].name);
-
 							// colum 0
-							document.getElementById(sources[i].name + '_col_2').innerHTML = sources[i].name;
+							document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].name;
 						}						
 					}
 				});
