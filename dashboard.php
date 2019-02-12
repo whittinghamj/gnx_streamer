@@ -412,13 +412,20 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 											</div>
 
-
-
-
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="rtmp_server" name="rtmp_server" value="<?php echo $source['config']['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="screenshot">Screenshot</label>
+												<div class="col-md-6">
+													<select id="screenshot" name="screenshot" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['screenshot']=='enable'){echo"selected";} ?> value="enable">Enable</option>
+														<option <?php if($source['config']['screenshot']=='disable'){echo"selected";} ?> value="disable">Disable</option>
+													</select>
 												</div>
 											</div>
 										</div>
