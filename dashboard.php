@@ -673,7 +673,7 @@ if($_SESSION['logged_in'] != true) {
 			            
 						// console.log(data.ip_address);
 
-						$('#cpu_usage_display').html(data.cpu);
+						$('#cpu_usage_display').html(data.cpu_usage);
 			        }
 			    });
 			}
