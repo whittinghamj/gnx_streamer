@@ -88,7 +88,7 @@ function source_check() {
 	$data['source']['name'] 		= $source;
 	$data['source']['status'] 		= $source_check;
 	$data['source']['command'] 		= exec('ps -eo args | grep "video0" | grep -v "grep" | grep -v "0:00" |head -n -1');
-	$data['source']['command']		= str_replace("sh -c ", "", $data['command']);
+	$data['source']['command']		= str_replace("sh -c ", "", $data['source']['command']);
 	$data['source']['pid']			= exec("ps aux | grep video0 | grep -v grep | grep -v '0:00' | awk '{print $2}'");
 
 	echo json_encode($data);
