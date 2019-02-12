@@ -13,8 +13,9 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 try {
-     $pdo = new PDO($dsn, $user, $pass, $options);
-     echo "MySQL Connected.";
+	$pdo = new PDO($dsn, $user, $pass, $options);
+    echo "MySQL Connected.";
 } catch (\PDOException $e) {
-     throw new \PDOException($e->getMessage(), (int)$e->getCode());
+	echo "MySQL Error. check log files.";
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
