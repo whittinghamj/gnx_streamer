@@ -1,9 +1,14 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-echo 'test';
+echo 'loading page <br>';
 
 include('inc/global_vars.php');
 include('inc/db.php');
+
+echo 'finished loading includes <br>';
 
 // check if this is a new install
 $query = "SELECT `id` FROM `users`";
