@@ -357,6 +357,13 @@ if($_SESSION['logged_in'] != true) {
 													</select>
 												</div>
 											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="rtmp_server" value="<?php echo $source['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
+												</div>
+											</div>
 						
 										</form>
 									</div>
