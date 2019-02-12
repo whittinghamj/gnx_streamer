@@ -425,12 +425,16 @@ if($_SESSION['logged_in'] != true) {
 						{
 							// colum 1
 							if(sources[i].source.status == 'busy') {
-								document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-info">Streaming</span>';
+								document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
 							} else {
 								document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
 							}
+
 							// colum 2
 							document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
+
+							// colum 3
+							document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.command;
 						}						
 					}
 				});
