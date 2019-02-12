@@ -418,9 +418,12 @@ if($_SESSION['logged_in'] != true) {
 					type: "GET",
 			        url:'actions.php?a=ajax_source_list',
 					success: function(sources) {
+						var x = sources[0].name;
+						console.log('Source Name: ' + x);
+
 						for (i in sources)
 						{
-							console.log("Source Name: " + sources[i].name);
+							// console.log("Source Name: " + sources[i].name);
 
 							// colum 0
 							document.getElementById(sources[i].name + '_col_2').innerHTML = sources[i].name;
