@@ -436,7 +436,9 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 
 												<div class="form-group col-md-4">
-													<img src="screenshots/video0.png" alt="" height="240" width="320">
+													<span class="border border-primary rounded">
+														<img src="screenshots/video0.png" alt="" height="240" width="320">
+													</span>
 												</div>
 											<?php } ?>
 										</div>
