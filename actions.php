@@ -101,7 +101,11 @@ function source_check() {
 function source_stop() {
 	$pid = get('pid');
 
-	exec('sudo -9 kill '.$pid);
+	exec('sudo kill -9 ' . $pid);
+
+	echo "Killing " . $pid;
+
+	die();
 
 	status_message('success', 'Card has stopped streaming.');
 	
