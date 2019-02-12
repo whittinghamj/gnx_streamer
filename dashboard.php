@@ -298,7 +298,7 @@ if($_SESSION['logged_in'] != true) {
 						}else{
 							$file_exists = 'file_found';
 							$source['config'] 		= @file_get_contents('config/'.$source['name'].'.json');
-							$source['config'] 		= json_decode($source['config']);
+							$source['config'] 		= json_decode($source['config'], true);
 						}
 					?>
 
