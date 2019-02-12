@@ -11,6 +11,8 @@ $config 			= json_decode($config_raw);
 $login['username'] 			= post('username');
 $login['password'] 			= post('password');
 
+print_r($config);
+
 // login check
 if($login['username'] == $config['login']['username'] && $login['password'] == $config['login']['password']){
 	go('dashboard');
