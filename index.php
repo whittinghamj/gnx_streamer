@@ -64,7 +64,7 @@ if(isset($config['install_status']) && $config['install_status'] == 'installed')
 				<?php if($action == 'login') { ?> 
 					<div class="panel panel-sign">
 						<div class="panel-title-sign mt-xl text-right">
-							<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+							<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Login</h2>
 						</div>
 						<div class="panel-body">
 							<form action="login.php" method="post">
