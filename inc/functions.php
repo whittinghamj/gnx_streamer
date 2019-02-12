@@ -109,7 +109,7 @@ function show_installed_devices() {
 				<td id="'.$source['source']['name'].'_name">'.str_replace("video", "card", $source['source']['name']).'</td>
 				<td id="'.$source['source']['name'].'_command">'.$source['source']['command'].'</td>
 				<td class="pull-right">
-					<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&pid='.$source['source']['pid'].'"><i class="fa fa-times"></i></a> 
+					'.($source['source']['status'] == 'busy' ? '<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&pid='.$source['source']['pid'].'"><i class="fa fa-times"></i></a>' : '<a title="Start Source" class="btn btn-success btn-flat" href="actions.php?a=source_start&source='.$source['source']['name'].'"><i class="fa fa-tick"></i></a>').'
 					<a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source='.$source['source']['name'].'"><i class="fa fa-globe"></i></a>
 				</td>
 			</tr>
