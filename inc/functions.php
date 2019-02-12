@@ -1,5 +1,17 @@
 <?php
 
+function console_output($data) {
+	$timestamp = date("Y-m-d H:i:s", time());
+	echo "[" . $timestamp . "] - " . $data . "\n";
+}
+
+function json_output($data) {
+	// $data['timestamp']		= time();
+	$data 					= json_encode($data);
+	echo $data;
+	die();
+}
+
 function filesize_formatted($path) {
     $size = filesize($path);
     $units = array( 'B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
