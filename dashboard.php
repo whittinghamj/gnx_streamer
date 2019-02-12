@@ -360,6 +360,53 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
+												<label class="col-md-3 control-label" for="stream">Encoded Size</label>
+												<div class="col-md-6">
+													<select id="screen_resolution" name="screen_resolution" class="form-control input-sm mb-md">
+														<option <?php if($source['screen_resolution']=='1920x1080'){echo"selected";} ?> value="1920x1080">1920x1080</option>
+					                                    <option <?php if($source['screen_resolution']=='1680x1056'){echo"selected";} ?> value="1680x1056">1680x1056</option>
+					                                    <option <?php if($source['screen_resolution']=='1280x720'){echo"selected";} ?> value="1280x720">1280x720</option>
+					                                    <option <?php if($source['screen_resolution']=='1024x576'){echo"selected";} ?> value="1024x576">1024x576</option>
+					                                    <option <?php if($source['screen_resolution']=='850x480'){echo"selected";} ?> value="850x480">850x480</option>
+					                                    <option <?php if($source['screen_resolution']=='720x576'){echo"selected";} ?> value="720x576">720x576</option>
+					                                    <option <?php if($source['screen_resolution']=='720x540'){echo"selected";} ?> value="720x540">720x540</option>
+					                                    <option <?php if($source['screen_resolution']=='720x480'){echo"selected";} ?> value="720x480">720x480</option>
+					                                    <option <?php if($source['screen_resolution']=='720x404'){echo"selected";} ?> value="720x404">720x404</option>
+					                                    <option <?php if($source['screen_resolution']=='704x576'){echo"selected";} ?> value="704x576">704x576</option>
+					                                    <option <?php if($source['screen_resolution']=='640x480'){echo"selected";} ?> value="640x480">640x480</option>
+					                                    <option <?php if($source['screen_resolution']=='640x360'){echo"selected";} ?> value="640x360">640x360</option>
+					                                    <option <?php if($source['screen_resolution']=='320x240'){echo"selected";} ?> value="320x240">320x240</option>
+					                                    <option <?php if($source['screen_resolution']=='1600x1200'){echo"selected";} ?> value="1600x1200">1600x1200</option>
+					                                    <option <?php if($source['screen_resolution']=='1280x960'){echo"selected";} ?> value="1280x960">1280x960</option>
+					                                    <option <?php if($source['screen_resolution']=='1152x864'){echo"selected";} ?> value="1152x864">1152x864</option>
+					                                    <option <?php if($source['screen_resolution']=='1024x768'){echo"selected";} ?> value="1024x768">1024x768</option>
+					                                    <option <?php if($source['screen_resolution']=='800x600'){echo"selected";} ?> value="800x600">800x600</option>
+					                                    <option <?php if($source['screen_resolution']=='768x576'){echo"selected";} ?> value="768x576">768x576</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="stream">H.264/5</label>
+												<div class="col-md-6">
+													<select id="codec" name="codec" class="form-control input-sm mb-md">
+														<option value="libx264">H.264</option>
+														<option value="libx265">H.265</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="bitrate">Bitrate (K)</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="bitrate" name="bitrate" value="<?php echo $source['bitrate']; ?>" placeholder="3500">
+												</div>
+											</div>
+
+
+
+
+											<div class="form-group">
 												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="rtmp_server" name="rtmp_server" value="<?php echo $source['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
