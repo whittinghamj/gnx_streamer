@@ -123,7 +123,7 @@ function ajax_source_list() {
 
 	print_r($video_cards);
 
-	foreach($video_cards as $video_card) {}
+	foreach($video_cards as $video_card) {
 		$raw['name'] 			= str_replace("/dev/", "", $video_card);
 		$raw['raw_json']		= file_get_contents("http://localhost/actions.php?a=source_check&source=".$raw['name']);
 		$raw['source_status']	= json_decode($raw['raw_json'], true);
