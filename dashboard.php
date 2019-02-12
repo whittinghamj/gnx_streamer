@@ -429,12 +429,14 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 											</div>
 
-											<div class="col-md-4">
-											</div>
+											<?php if($source['config']['screenshot'] == 'enable') { ?>
+												<div class="col-md-4">
+												</div>
 
-											<div class="form-group col-md-4">
-												<img src="screenshots/video0.png" alt="" height="240" width="320">
-											</div>
+												<div class="form-group col-md-4">
+													<img src="screenshots/video0.png" alt="" height="240" width="320">
+												</div>
+											<?php } ?>
 										</div>
 
 										<footer class="panel-footer">
