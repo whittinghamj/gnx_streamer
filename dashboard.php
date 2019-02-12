@@ -429,8 +429,10 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 											</div>
 
-											<div class="form-group col-md-3">
-												<img src="screenshots/video0.png" alt="" height="320" width="240">
+											<div class="row justify-content-center">
+												<div class="form-group col-md-4">
+													<img src="screenshots/video0.png" alt="" height="240" width="320">
+												</div>
 											</div>
 										</div>
 
