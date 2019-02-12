@@ -105,7 +105,7 @@ function show_installed_devices() {
 		echo '
 			<tr id="'.$source['source']['name'].'_col">
 				<td id="'.$source['source']['name'].'_col_0">'.$count.'</td>
-				<td id="'.$source['source']['name'].'_col_1"></td>
+				<td id="'.$source['source']['name'].'_col_1"><img src="assets/images/loading.gif" alt="" height="100%"></td>
 				<td id="'.$source['source']['name'].'_col_2"></td>
 				<td id="'.$source['source']['name'].'_col_3"></td>
 				<td class="pull-right">
