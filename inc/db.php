@@ -4,7 +4,7 @@
 $db 			= "";
 $hostname 		= 'localhost';
 $username 		= 'root';
-$password 		= 'Mimi!#&@';
+$password 		= 'Mimi\!\#\&\@';
 $database 		= 'streamer';
 
 try
