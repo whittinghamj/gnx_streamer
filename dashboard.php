@@ -669,9 +669,9 @@ if($_SESSION['logged_in'] != true) {
 			        url:'actions.php?a=get_system_stats',
 			        type: 'json',
 			        success: function(content,code) {
-
+			        	var data = jQuery.parseJSON(content);
 			            
-						console.log(content.ip_address);
+						console.log(data.ip_address);
 
 			        }
 			    });
