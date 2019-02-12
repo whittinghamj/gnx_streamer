@@ -6,7 +6,7 @@ include('inc/functions.php');
 
 // read the config file
 $config_raw 		= @file_get_contents('config.json');
-$config 			= json_decode($config_raw);
+$config 			= json_decode($config_raw, true);
 
 $login['username'] 			= post('username');
 $login['password'] 			= post('password');
@@ -22,5 +22,7 @@ if($login['username'] == $config['login']['username'] && $login['password'] == $
 	echo 'login failed <br>';
 	go('index');
 }
+
+echo "end of file <br>";
 
 ?>
