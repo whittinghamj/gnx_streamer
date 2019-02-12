@@ -417,7 +417,7 @@ if($_SESSION['logged_in'] != true) {
 					cache: false,
 					type: "GET",
 			        url:'actions.php?a=ajax_source_list',
-					success: function(miners) {
+					success: function(sources) {
 						for (i in sources)
 						{
 							// colum 0
