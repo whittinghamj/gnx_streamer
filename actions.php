@@ -19,6 +19,10 @@ switch ($a)
 	case "source_check":
 		source_check();
 		break;
+
+	case "source_stop":
+		source_stop();
+		break;
 			
 // default
 				
@@ -92,4 +96,14 @@ function source_check() {
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
 
 	echo json_encode($data);
+}
+
+function source_stop() {
+	$pid = get('pid');
+
+	exec('sudo -9 kill '.$pid);
+
+	status_message('success', 'Card has stopped streaming.');
+	
+	go($_SERVER['HTTP_REFERER']);
 }
