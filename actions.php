@@ -71,9 +71,9 @@ function get_system_stats() {
 function source_check() {
 	$source = get('source');
 
-	$source_check = exec("sudo sh /var/www/html/ source_check.sh ".$source);
+	$source_check = exec("sudo sh /var/www/html/source_check.sh ".$source);
 
-	$data['command'] = 'sudo sh /var/www/html/ source_check.sh '.$source;
+	$data['command'] = 'sudo sh /var/www/html/source_check.sh '.$source;
 	$data['source'] = $source;
 	$data['status'] = $source_check;
 
