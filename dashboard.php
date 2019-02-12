@@ -1,19 +1,16 @@
 <?php
-include('inc/db.php');
-include('inc/sessions.php');
-$sess = new SessionManager();
 session_start();
 
 include('inc/global_vars.php');
 include('inc/functions.php');
 
-// check is account->id is set, if not then assume user is not logged in correctly and redirect to login page
-if(empty($_SESSION['account']['id'])){
-	go($site['url'].'/index?c=session_timeout');
-}
+// read the config file
+$config_raw 		= @file_get_contents('config.json');
+$config 			= json_decode($config_raw, true);
 
-// get account details for logged in user
-$account_details 			= account_details($_SESSION['account']['id']);
+if($_SESSION['logged_in'] != true){
+	go("not_logged_in.php");
+}
 
 ?>
 <!doctype html>
@@ -77,9 +74,9 @@ $account_details 			= account_details($_SESSION['account']['id']);
 							<figure class="profile-picture">
 								<img src="assets/images/!logged-user.jpg" alt="<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
-							<div class="profile-info" data-lock-name="<?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?>" data-lock-email="<?php echo $account_details['email']; ?>">
-								<span class="name"><?php echo $account_details['firstname']; ?> <?php echo $account_details['lastname']; ?></span>
-								<span class="role">administrator</span>
+							<div class="profile-info" data-lock-name="<?php echo $_SESSION['username']; ?>" data-lock-email="<?php echo $_SESSION['username']; ?>">
+								<span class="name">admin</span>
+								<span class="role">Administrator</span>
 							</div>
 			
 							<i class="fa custom-caret"></i>
