@@ -511,7 +511,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">CPU</span>
 											<span id="cpu_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div id="cpu_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+												<div id="cpu_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
 												</div>
 											</div>
 										</li>
@@ -519,7 +519,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">RAM</span>
 											<span id="ram_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div id="ram_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+												<div id="ram_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 												</div>
 											</div>
 										</li>
@@ -527,7 +527,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">Network</span>
 											<span class="stats-complete">2%</span>
 											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 												</div>
 											</div>
 										</li>
@@ -673,11 +673,11 @@ if($_SESSION['logged_in'] != true) {
 
 						// cpu_usage
 						$('#cpu_usage_display').html(data.cpu_usage + '%');
-						$('#cpu_usage_bar').attr('aria-valuenow', cpu_usage).css('width', cpu_usage);
+						$('#cpu_usage_bar').attr('aria-valuenow', data.cpu_usage).css('width', data.cpu_usage);
 
 						// ram_usage
 						$('#ram_usage_display').html(data.ram_usage + '%');
-						$('#ram_usage_bar').attr('aria-valuenow', ram_usage).css('width', ram_usage);
+						$('#ram_usage_bar').attr('aria-valuenow', data.ram_usage).css('width', data.ram_usage);
 
 			        }
 			    });
