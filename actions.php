@@ -139,7 +139,9 @@ function source_update() {
 
 	$json = json_encode($_POST);
 
-	echo $json;
-
 	file_put_contents('config/'.$_POST['source'].'.json', $json);
+
+	status_message('success', 'Configuration saved..');
+	
+	go($_SERVER['HTTP_REFERER']);
 }
