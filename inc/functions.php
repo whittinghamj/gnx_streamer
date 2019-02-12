@@ -106,11 +106,7 @@ function show_installed_devices() {
 				<td>'.$source['name'].'</td>
 				<td>'.$status.'</td>
 				<td>
-					<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-							100%
-						</div>
-					</div>
+					'.$source['status_raw']['command'].'
 				</td>
 			</tr>
 		';
