@@ -75,15 +75,36 @@ function debug($input) {
 	echo $output;
 }
 
-function debug_die($input) {
-	die(debug($input));
-}
-
-function status_message($status, $message){
+function status_message($status, $message) {
 	$_SESSION['alert']['status']			= $status;
 	$_SESSION['alert']['message']		= $message;
 }
 
 function call_remote_content($url) {
 	echo file_get_contents($url);
+}
+
+function show_installed_devices() {
+	$video_cards = glob("/dev/video*");
+
+	$count = 1;
+
+	foreach ($video_cards as $key => $value) {
+		echo '
+			<tr>
+				<td>'.$count.'</td>
+				<td>'.$value.'</td>
+				<td><span class="label label-success">Success</span></td>
+				<td>
+					<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
+						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+							100%
+						</div>
+					</div>
+				</td>
+			</tr>
+		';
+
+		$count++;
+	}
 }
