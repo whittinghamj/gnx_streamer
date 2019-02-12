@@ -92,9 +92,9 @@ function show_installed_devices() {
 	foreach ($video_cards as $key => $value) {
 		$source['name'] 			= str_replace("/dev/", "", $value);
 		$source['status_raw']		= file_get_contents("actions.php?a=source_check&source=".$source['name']);
-		$source['status_raw']		= json_decode($source['status_raw'], true);
+		$source['status']			= json_decode($source['status_raw'], true);
 
-		if($source['status_raw']['status'] == 'busy') {
+		if($source['status']['status'] == 'busy') {
 			$status = '<span class="label label-info">In Use</span>';
 		}else{
 			$status = '<span class="label label-warning">Ready to Use</span>';
@@ -106,7 +106,8 @@ function show_installed_devices() {
 				<td>'.$source['name'].'</td>
 				<td>'.$status.'</td>
 				<td>
-					'.$source['status_raw']['command'].'
+					'.$source['status_raw']['command'].' <br>
+					'.$source['status_raw'].'
 				</td>
 			</tr>
 		';
