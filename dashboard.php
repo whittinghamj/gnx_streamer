@@ -661,9 +661,10 @@ if($_SESSION['logged_in'] != true) {
 		<script>
 			window.setInterval(function() {
 				update_system_stats();
-			}, 5000);
+			}, 2000);
 
 			function update_system_stats() {
+				console.log('updating system stats.');
 				$.ajax({
 			        url:'actions.php?a=get_system_stats',
 			        type: 'json',
