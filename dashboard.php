@@ -275,6 +275,55 @@ if($_SESSION['logged_in'] != true) {
 					</section>
 				<?php } ?>
 
+				<?php function source() { ?>
+					<?php $source['name'] = get('source'); ?>
+					<section role="main" class="content-body">
+						<header class="page-header">
+							<h2>Capture Source > <?php echo $source['name']; ?></h2>
+
+							<div class="right-wrapper pull-right">
+								<ol class="breadcrumbs">
+									<li>
+										<a href="dashboard.php">
+											<i class="fa fa-home"></i>
+										</a>
+									</li>
+									<li><span>Sources</span></li>
+									<li><span><?php echo $source['name']; ?></span></li>
+								</ol>
+						
+								<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+							</div>
+						</header>
+
+						<!-- start: page -->
+
+						<section class="panel">
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped mb-none">
+										<thead>
+											<tr>
+												<th width="10px">#</th>
+												<th width="100px">Status</th>
+												<th width="50px">Device</th>
+												<th>Process</th>
+												<th width="200px">Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php show_installed_devices(); ?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</section>
+
+						<!-- end: page -->
+
+					</section>
+				<?php } ?>
+
 			</div>
 
 			<aside id="sidebar-right" class="sidebar-right">
