@@ -635,8 +635,8 @@ if($_SESSION['logged_in'] != true) {
 									<table class="table table-striped mb-none">
 										<thead>
 											<tr>
-												<th>#</th>
-												<th>Device</th>
+												<th width="10px">#</th>
+												<th width="100px">Device</th>
 												<th>Status</th>
 												<th>Progress</th>
 											</tr>
