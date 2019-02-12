@@ -106,7 +106,7 @@ function show_installed_devices() {
 			<tr>
 				<td>'.$count.'</td>
 				<td id="'.$source['source']['name'].'_status">'.$status.'</td>
-				<td id="'.$source['source']['name'].'_name">'.$source['source']['name'].'</td>
+				<td id="'.$source['source']['name'].'_name">'.str_replace("video", "card", $source['source']['name']).'</td>
 				<td id="'.$source['source']['name'].'_command">'.$source['source']['command'].'</td>
 				<td class="pull-right">
 					<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&source='.$source['name'].'"><i class="fa fa-times"></i></a> 
