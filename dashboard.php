@@ -371,7 +371,7 @@ if($_SESSION['logged_in'] != true) {
 
 		<script>
 			window.setInterval(function() {
-				// update_system_stats();
+				update_system_stats();
 				// show_source_list();
 			}, 5000);
 
