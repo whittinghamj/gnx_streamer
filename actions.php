@@ -27,6 +27,10 @@ switch ($a)
 	case "source_stop":
 		source_stop();
 		break;
+
+	case "source_update":
+		source_update();
+		break;
 			
 // default
 				
@@ -128,4 +132,12 @@ function ajax_source_list() {
 	}
 
 	echo json_encode($sources);
+}
+
+function source_update() {
+	$config = $_POST;
+
+	echo '<pre>';
+
+	print_r($config);
 }
