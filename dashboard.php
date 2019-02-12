@@ -383,7 +383,7 @@ if($_SESSION['logged_in'] != true) {
 			        success: function(content,code) {
 			        	var data = jQuery.parseJSON(content);
 			            
-						// console.log(data.ip_address);
+						console.log(data.ip_address);
 
 						// cpu_usage
 						$('#cpu_usage_display').html(data.cpu_usage + '%');
