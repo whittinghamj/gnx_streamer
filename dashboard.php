@@ -560,21 +560,237 @@ if($_SESSION['logged_in'] != true) {
 
 					<!-- start: page -->
 
-					<div class="col-md-12">
-						<section class="panel panel-primary" id="panel-1" data-portlet-item>
-							<header class="panel-heading portlet-handler">
-								<div class="panel-actions">
-									<a href="#" class="fa fa-caret-down"></a>
-									<a href="#" class="fa fa-times"></a>
-								</div>
-
-								<h2 class="panel-title">Title</h2>
-							</header>
-							<div class="panel-body">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+					<section class="panel">
+						<div class="panel-body tab-content">
+							<div id="access-log" class="tab-pane active">
+								<table class="table table-striped table-no-more table-bordered  mb-none">
+									<thead>
+										<tr>
+											<th style="width: 10%"><span class="text-normal text-sm">Type</span></th>
+											<th style="width: 15%"><span class="text-normal text-sm">Date</span></th>
+											<th><span class="text-normal text-sm">Message</span></th>
+										</tr>
+									</thead>
+									<tbody class="log-viewer">
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-bug fa-fw text-muted text-md va-middle"></i> Debug
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 18:25:59
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												my.host - oh snap! another exception
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:50:17
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET / HTTP/1.1" 200 1225
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-warning fa-fw text-warning text-md va-middle"></i> Warning
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 17:44:21
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												DocumentRoot [/var/www/porto-admin/] does not exist
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:18
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-ban fa-fw text-danger text-md va-middle"></i> Fatal
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 22:13:39
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												not a tree object
+											</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
-						</section>
-					</div>
+							<div id="error-log" class="tab-pane">
+								<table class="table table-striped table-no-more table-bordered mb-none">
+									<thead>
+										<tr>
+											<th style="width: 10%"><span class="text-normal text-sm">Type</span></th>
+											<th style="width: 15%"><span class="text-normal text-sm">Date</span></th>
+											<th><span class="text-normal text-sm">Message</span></th>
+										</tr>
+									</thead>
+									<tbody class="log-viewer">
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:30
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:29
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:28
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:27
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:26
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												13/04/2014 21:55:25
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												File does not exist: /var/www/porto-admin/favicon.ico
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-ban fa-fw text-danger text-md va-middle"></i> Fatal
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 22:13:39
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												not a tree object
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="custom-log" class="tab-pane">
+								<table class="table table-striped table-no-more table-bordered  mb-none">
+									<thead>
+										<tr>
+											<th style="width: 10%"><span class="text-normal text-sm">Type</span></th>
+											<th style="width: 15%"><span class="text-normal text-sm">Date</span></th>
+											<th><span class="text-normal text-sm">Message</span></th>
+										</tr>
+									</thead>
+									<tbody class="log-viewer">
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 21:50:54
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET / HTTP/1.1" 200 1225
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 21:50:53
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET /assets/vendor/bootstrap/css/bootstrap.css HTTP/1.1" 200 110495
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 21:50:52
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET /assets/stylesheets/theme.css HTTP/1.1" 200 1273
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 21:50:51
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET /assets/stylesheets/skin.css HTTP/1.1" 200 230
+											</td>
+										</tr>
+										<tr>
+											<td data-title="Type" class="pt-md pb-md">
+												<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
+											</td>
+											<td data-title="Date" class="pt-md pb-md">
+												12/04/2014 21:50:50
+											</td>
+											<td data-title="Message" class="pt-md pb-md">
+												"GET /assets/vendor/jquery/jquery.js HTTP/1.1" 200 244962
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+					
 					<!-- end: page -->
 
 				</section>
