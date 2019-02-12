@@ -115,13 +115,9 @@ function source_stop() {
 }
 
 function ajax_source_list() {
-	// header("Content-Type:application/json; charset=utf-8");
+	header("Content-Type:application/json; charset=utf-8");
 
 	$video_cards 			= glob("/dev/video*");
-
-	echo "<pre>";
-
-	print_r($video_cards);
 
 	foreach($video_cards as $video_card) {
 		$raw['name'] 			= str_replace("/dev/", "", $video_card);
@@ -131,5 +127,5 @@ function ajax_source_list() {
 		$sources[] 				= $raw['source_status'];
 	}
 
-	print_r($sources);
+	echo json_encode($sources);
 }
