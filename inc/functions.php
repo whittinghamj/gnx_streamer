@@ -106,8 +106,8 @@ function show_installed_devices() {
 			<tr id="'.$source['source']['name'].'_col">
 				<td id="'.$source['source']['name'].'_col_0">'.$count.'</td>
 				<td id="'.$source['source']['name'].'_col_1"></td>
+				<td id="'.$source['source']['name'].'_col_2"></td>
 				<td id="'.$source['source']['name'].'_col_3"></td>
-				<td id="'.$source['source']['name'].'_col_4"></td>
 				<td class="pull-right">
 					'.($source['source']['status'] == 'busy' ? '<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&pid='.$source['source']['pid'].'"><i class="fa fa-times"></i></a>' : '<a title="Start Source" class="btn btn-success btn-flat" href="actions.php?a=source_start&source='.$source['source']['name'].'"><i class="fa fa-check"></i></a>').'
 					<a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source='.$source['source']['name'].'"><i class="fa fa-globe"></i></a>
