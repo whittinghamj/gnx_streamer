@@ -524,10 +524,10 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 										</li>
 										<li>
-											<span class="stats-title">Network</span>
-											<span class="stats-complete">2%</span>
+											<span class="stats-title">HDD</span>
+											<span id="disk_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+												<div id="disk_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 												</div>
 											</div>
 										</li>
@@ -678,6 +678,10 @@ if($_SESSION['logged_in'] != true) {
 						// ram_usage
 						$('#ram_usage_display').html(data.ram_usage + '%');
 						$('#ram_usage_bar').attr('aria-valuenow', data.ram_usage).css('width', data.ram_usage);
+
+						// dis_usage
+						$('#disk_usage_display').html(data.disk_usage + '%');
+						$('#disk_usage_bar').attr('aria-valuenow', data.disk_usage).css('width', data.disk_usage);
 
 			        }
 			    });

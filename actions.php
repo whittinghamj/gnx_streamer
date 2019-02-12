@@ -56,5 +56,8 @@ function get_system_stats() {
 	$data['ram_usage'] = str_replace("%", "", $data['ram_usage']);
 	$data['ram_usage'] = number_format($data['ram_usage'], 2);
 
+	$data['disk_usage'] = str_replace("%", "", $data['disk_usage']);
+	$data['disk_usage'] = number_format($data['disk_usage'], 2);
+
 	echo json_encode($data);
 }
