@@ -141,5 +141,5 @@ function source_update() {
 
 	echo $json;
 
-	file_put_contents('config/'.$_POST['name'].'.json', $json);
+	file_put_contents('config/'.$_POST['source'].'.json', $json);
 }
