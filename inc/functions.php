@@ -106,7 +106,7 @@ function show_installed_devices() {
 				<td>'.$source['name'].'</td>
 				<td>'.$status.'</td>
 				<td>
-					'.$source['status_raw']['command'].' <br>
+					'.$source['status_raw']['command'].'<br>
 					'.$source['raw_json'].'
 				</td>
 			</tr>
