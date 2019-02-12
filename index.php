@@ -1,20 +1,19 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+session_start();
 
 include('inc/global_vars.php');
-include('inc/db.php');
 
-// check if this is a new install
-$query = "SELECT `id` FROM `users`";
-$result = mysql_query($query) or die(mysql_error());
-$records = mysql_num_rows($result);
-if($records == 0){
-	$action = 'install';
-}else{
+// read the config file
+$config_raw 		= @file_get_contents('config.json');
+$config 			= json_decode($config_raw);
+
+// check if new install or existing installation
+if(isset($config['install_status']) && $config['install_status'] == 'installed'){
 	$action = 'login';
+}else{
+	$action = 'install';
 }
+
 ?>
 <!doctype html>
 <html class="fixed">
