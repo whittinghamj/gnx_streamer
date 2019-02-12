@@ -673,21 +673,27 @@ if($_SESSION['logged_in'] != true) {
 
 						// cpu_usage
 						$('#cpu_usage_display').html(data.cpu_usage + '%');
-						if(data.cpu_usage > 5) {
+						$('#cpu_usage_bar').attr('aria-valuenow', data.cpu_usage).css('width', data.cpu_usage);
+						if(data.cpu_usage > 80) {
 							$('#cpu_usage_bar').removeClass("progress-bar-success");
 							$('#cpu_usage_bar').addClass("progress-bar-danger");
 						}
-						
-						$('#cpu_usage_bar').attr('aria-valuenow', data.cpu_usage).css('width', data.cpu_usage);
 
 						// ram_usage
 						$('#ram_usage_display').html(data.ram_usage + '%');
 						$('#ram_usage_bar').attr('aria-valuenow', data.ram_usage).css('width', data.ram_usage);
+						if(data.disk_usage > 80) {
+							$('#ram_usage_bar').removeClass("progress-bar-success");
+							$('#ram_usage_bar').addClass("progress-bar-danger");
+						}
 
 						// dis_usage
 						$('#disk_usage_display').html(data.disk_usage + '%');
 						$('#disk_usage_bar').attr('aria-valuenow', data.disk_usage).css('width', data.disk_usage);
-
+						if(data.disk_usage > 80) {
+							$('#disk_usage_bar').removeClass("progress-bar-success");
+							$('#disk_usage_bar').addClass("progress-bar-danger");
+						}
 			        }
 			    });
 			}
