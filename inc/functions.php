@@ -91,7 +91,7 @@ function show_installed_devices() {
 
 	foreach ($video_cards as $key => $value) {
 		$source['name'] 			= str_replace("/dev/", "", $value);
-		$source['raw_json']			= file_get_contents("actions.php?a=source_check&source=".$source['name']);
+		$source['raw_json']			= file_get_contents("http://localhost/actions.php?a=source_check&source=".$source['name']);
 		$source['source_status']	= json_decode($source['raw_json'], true);
 
 		if($source['source_status']['source']['status'] == 'busy') {
