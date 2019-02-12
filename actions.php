@@ -99,7 +99,7 @@ function source_check() {
 	$data['status'] 				= 'success';
 	$data['source']['name'] 		= $source;
 	$data['source']['status'] 		= $source_check;
-	$data['source']['command'] 		= exec('ps -eo args | grep "/dev/'.$source.'" | grep -v "grep" | grep -v "0:00" |head -n -1');
+	$data['source']['command'] 		= exec('ps -eo args | grep "/dev/'.$source.'" | grep -v "grep" | grep -v "0:00"');
 	$data['source']['command']		= str_replace("sh -c ", "", $data['source']['command']);
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
 
