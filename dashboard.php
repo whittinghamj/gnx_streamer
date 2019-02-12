@@ -289,11 +289,15 @@ if($_SESSION['logged_in'] != true) {
 										</a>
 									</li>
 									<li>
-										<a href="dashboard.php?c=source">
+										<a href="dashboard.php?c=sources">
 											<span>Sources</span>
 										</a>
 									</li>
-									<li><span><?php echo $source['name']; ?></span></li>
+									<li>
+										<a href="dashboard.php?c=sources">
+											<span><?php echo $source['name']; ?></span>
+										</a>
+									</li>
 								</ol>
 						
 								<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
