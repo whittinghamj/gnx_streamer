@@ -22,7 +22,7 @@ Opps, looked like something went wrong, please try again.<br />
 <strong>Error Code:</strong> 00119<br />
 <strong>Error URL:</strong> '.$url.'<br />
 <br />
-If this error persists, please submit a support ticket to <a href="http://support.themailingcompany.com" target="_blank">http://support.themailingcompany.com</a> and quote the above error code and error URL.
+If this error persists, please submit a support ticket and quote the above error code.
 </div>
 ';
 
