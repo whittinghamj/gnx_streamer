@@ -613,9 +613,9 @@ if($_SESSION['logged_in'] != true) {
 
 								// colum 4
 								if(sources[i].source.status == 'busy') {
-									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<a title="Stop Streaming" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&pid=' + sources[i].source.pid + '"><i class="fa fa-times"></i></a> <a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<a title="Stop Streaming" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&pid=' + sources[i].source.pid + '"><i class="fa fa-times"></i></a> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
-									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<a title="Start Streaming" class="btn btn-success btn-flat" href="actions.php?a=source_start&source=' + sources[i].source.name + '"><i class="fa fa-check"></i></a> <a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<a title="Start Streaming" class="btn btn-success btn-flat" href="actions.php?a=source_start&source=' + sources[i].source.name + '"><i class="fa fa-check"></i></a> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
 							}						
 						}
