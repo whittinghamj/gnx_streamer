@@ -135,18 +135,9 @@ function ajax_source_list() {
 }
 
 function source_update() {
-	echo '<table>';
+	header("Content-Type:application/json; charset=utf-8");
 
-    foreach ($_POST as $key => $value) {
-        echo "<tr>";
-        echo "<td>";
-        echo $key;
-        echo "</td>";
-        echo "<td>";
-        echo $value;
-        echo "</td>";
-        echo "</tr>";
-    }
+	$json = json_encode($_POST);
 
-	echo '</table>';
+	echo $json;
 }
