@@ -140,4 +140,6 @@ function source_update() {
 	$json = json_encode($_POST);
 
 	echo $json;
+
+	file_put_contents('config/'.$_POST['name'].'.json', $json);
 }

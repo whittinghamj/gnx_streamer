@@ -353,8 +353,8 @@ if($_SESSION['logged_in'] != true) {
 												<label class="col-md-3 control-label" for="stream">Stream</label>
 												<div class="col-md-6">
 													<select id="stream" name="stream" class="form-control input-sm mb-md">
-														<option value="enable">Enable</option>
-														<option value="disable">Disable</option>
+														<option <?php if($source['stream']=='enable'){echo"selected";} ?> value="enable">Enable</option>
+														<option <?php if($source['stream']=='disable'){echo"selected";} ?> value="disable">Disable</option>
 													</select>
 												</div>
 											</div>
@@ -390,8 +390,8 @@ if($_SESSION['logged_in'] != true) {
 												<label class="col-md-3 control-label" for="stream">H.264/5</label>
 												<div class="col-md-6">
 													<select id="codec" name="codec" class="form-control input-sm mb-md">
-														<option value="libx264">H.264</option>
-														<option value="libx265">H.265</option>
+														<option <?php if($source['codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
+														<option <?php if($source['codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
 													</select>
 												</div>
 											</div>
