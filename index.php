@@ -4,9 +4,12 @@ session_start();
 include('inc/global_vars.php');
 
 // read the config file
-$config_raw 		= @file_get_contents('config.json');
-$config 			= json_decode($config_raw);
-
+if(!file_exists('config.json')){
+	die('Missing config.json file.');
+}else{
+	$config_raw 		= @file_get_contents('config.json');
+	$config 			= json_decode($config_raw);
+}
 ?>
 <!doctype html>
 <html class="fixed">
