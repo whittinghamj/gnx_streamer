@@ -95,9 +95,9 @@ function show_installed_devices() {
 		$source['source_status']	= json_decode($source['raw_json'], true);
 
 		if($source['source_status']['source']['status'] == 'busy') {
-			$status = '<span class="label label-info">In Use</span>';
+			$status = '<span class="label label-success">In Use</span>';
 		}else{
-			$status = '<span class="label label-warning">Ready to Use</span>';
+			$status = '<span class="label label-info">Ready to Use</span>';
 		}
 
 		echo '
@@ -106,8 +106,7 @@ function show_installed_devices() {
 				<td>'.$source['name'].'</td>
 				<td>'.$status.'</td>
 				<td>
-					'.$source['status_raw']['command'].'<br>
-					'.$source['raw_json'].'
+					<a href="">Edit</a>
 				</td>
 			</tr>
 		';
