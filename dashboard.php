@@ -130,7 +130,7 @@ if($_SESSION['logged_in'] != true) {
 									</li>
 									<li>
 										<a href="dashboard.php?c=sources">
-											<i class="fa fa-tv" aria-hidden="true"></i>
+											<i class="fa fa-bars" aria-hidden="true"></i>
 											<span>Sources</span>
 										</a>
 									</li>
