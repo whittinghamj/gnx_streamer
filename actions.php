@@ -52,6 +52,8 @@ function test(){
 }
 
 function get_system_stats() {
+	header("Content-Type:application/json; charset=utf-8");
+
 	$data = exec('sudo sh /var/www/html/system_stats.sh');
 
 	$data = json_decode($data, true);
@@ -69,6 +71,8 @@ function get_system_stats() {
 }
 
 function source_check() {
+	header("Content-Type:application/json; charset=utf-8");
+
 	$source = get('source');
 
 	if(empty($source)) {
