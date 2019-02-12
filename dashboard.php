@@ -446,7 +446,7 @@ if($_SESSION['logged_in'] != true) {
 							}						
 						}
 					});
-				}, 5000);
+				}, 2000);
 			<?php } ?>
 		</script>
 	</body>
