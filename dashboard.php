@@ -294,8 +294,9 @@ if($_SESSION['logged_in'] != true) {
 					<?php 
 						if(!file_exists('config/'.$source['name'].'.json')){
 							// missing config file, load template one
-
+							$file_exists = 'file_not_found';
 						}else{
+							$file_exists = 'file_found';
 							$source['config'] 		= @file_get_contents('config/'.$source['name'].'.json');
 							$source['config'] 		= json_decode($source['config']);
 						}
@@ -339,7 +340,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="panel-actions">
 											</div>
 							
-											<h2 class="panel-title">Settings</h2>
+											<h2 class="panel-title">Settings (<?php echo $file_exists; ?>)</h2>
 										</header>
 										<div class="panel-body">
 											<div class="form-group">
