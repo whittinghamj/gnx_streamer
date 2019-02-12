@@ -90,11 +90,21 @@ function show_installed_devices() {
 	$count = 1;
 
 	foreach ($video_cards as $key => $value) {
+		$source['name'] 			= str_replace("/dev/", "", $value);
+		$source['status_raw']		= file_get_contents("actions.php?a=source_check&source=".$source);
+		$source['status_raw']		= json_decode($source['status_raw'], true);
+
+		if($source['status_raw']['status'] == 'busy') {
+			$status = '<span class="label label-info">In Use</span>';
+		}else{
+			$status = '<span class="label label-warning">Ready to Use</span>';
+		}
+
 		echo '
 			<tr>
 				<td>'.$count.'</td>
-				<td>'.$value.'</td>
-				<td><span class="label label-success">Success</span></td>
+				<td>'.$source.'</td>
+				<td>'.$status.'</td>
 				<td>
 					<div class="progress progress-sm progress-half-rounded m-none mt-xs light">
 						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
