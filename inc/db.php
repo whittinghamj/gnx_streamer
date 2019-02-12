@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "Mimi!#&@";
+$password = "";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=streamer", $username, $password);
