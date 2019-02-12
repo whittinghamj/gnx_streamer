@@ -52,7 +52,7 @@ function test(){
 }
 
 function get_system_stats() {
-	$data = exec('sh system_stats.sh');
+	$data = exec('sudo sh /var/www/html/system_stats.sh');
 
 	$data = json_decode($data, true);
 
@@ -71,9 +71,9 @@ function get_system_stats() {
 function source_check() {
 	$source = get('source');
 
-	$source_check = exec("sh source_check.sh ".$source);
+	$source_check = exec("sudo sh /var/www/html/ source_check.sh ".$source);
 
-	$data['command'] = 'sh source_check.sh '.$source;
+	$data['command'] = 'sudo sh /var/www/html/ source_check.sh '.$source;
 	$data['source'] = $source;
 	$data['status'] = $source_check;
 
