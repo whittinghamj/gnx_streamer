@@ -345,16 +345,16 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="name">Name</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="name" disabled="" value="<?php echo $source['name']; ?>">
+													<input type="text" class="form-control" id="name" disabled value="<?php echo $source['name']; ?>">
 												</div>
 											</div>
 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="stream">Stream</label>
 												<div class="col-md-6">
-													<select id="stream" class="form-control input-sm mb-md">
-														<option>Enable</option>
-														<option>Disable</option>
+													<select id="stream" name="stream" class="form-control input-sm mb-md">
+														<option value="enable">Enable</option>
+														<option value="disable">Disable</option>
 													</select>
 												</div>
 											</div>
@@ -362,7 +362,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="rtmp_server" value="<?php echo $source['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
+													<input type="text" class="form-control" id="rtmp_server" name="rtmp_server" value="<?php echo $source['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
 												</div>
 											</div>
 										</div>
