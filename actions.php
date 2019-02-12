@@ -72,16 +72,18 @@ function source_check() {
 	$source = get('source');
 
 	if(empty($source)) {
-		$data['error'] = 'source was blank.';
+		$data['status'] = 'error';
+		$data['message'] = 'source was blank.';
 		echo json_encode($data);
 		die();
 	}
 
 	$source_check = exec("sudo sh /var/www/html/source_check.sh ".$source);
 
+	$data['status'] = 'success';
 	$data['command'] = 'sudo sh /var/www/html/source_check.sh '.$source;
-	$data['source'] = $source;
-	$data['status'] = $source_check;
+	$data['source']['name'] = $source;
+	$data['source']['status'] = $source_check;
 
 	echo json_encode($data);
 }
