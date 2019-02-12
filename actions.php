@@ -78,12 +78,13 @@ function source_check() {
 		die();
 	}
 
-	$source_check = exec("sudo sh /var/www/html/source_check.sh ".$source);
+	$source_check 					= exec("sudo sh /var/www/html/source_check.sh ".$source);
 
-	$data['status'] = 'success';
-	$data['command'] = 'sudo sh /var/www/html/source_check.sh '.$source;
-	$data['source']['name'] = $source;
-	$data['source']['status'] = $source_check;
+	$data['status'] 				= 'success';
+	$data['command'] 				= exec('ps -eo args | grep "video0" | grep -v "grep" |head -n -1');
+	$data['pid']					= exec("ps aux | grep video0 | grep -v grep | grep -v '0:00' | awk '{print $2}'");
+	$data['source']['name'] 		= $source;
+	$data['source']['status'] 		= $source_check;
 
 	echo json_encode($data);
 }
