@@ -258,7 +258,7 @@ if($_SESSION['logged_in'] != true) {
 											<tr>
 												<th width="10px">#</th>
 												<th width="100px">Status</th>
-												<th>Device</th>
+												<th width="50px">Device</th>
 												<th>Process</th>
 												<th width="200px">Actions</th>
 											</tr>
