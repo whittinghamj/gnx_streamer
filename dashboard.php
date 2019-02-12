@@ -563,6 +563,11 @@ if($_SESSION['logged_in'] != true){
 
 					<!-- start: page -->
 					
+					<?php 
+						$stats = exec('sh system_stats.sh');
+						echo $stats;
+					?>
+
 					<!-- end: page -->
 				</section>
 			</div>
