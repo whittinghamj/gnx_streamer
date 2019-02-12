@@ -560,6 +560,21 @@ if($_SESSION['logged_in'] != true) {
 
 					<!-- start: page -->
 
+					<div class="col-md-4" data-plugin-portlet id="portlet-1">
+						<section class="panel panel-primary" id="panel-1" data-portlet-item>
+							<header class="panel-heading portlet-handler">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+
+								<h2 class="panel-title">Title</h2>
+							</header>
+							<div class="panel-body">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non imperdiet nisi. Quisque cursus leo et lacus tempus porttitor. Sed egestas laoreet justo non feugiat.
+							</div>
+						</section>
+					</div>
 					<!-- end: page -->
 
 				</section>
