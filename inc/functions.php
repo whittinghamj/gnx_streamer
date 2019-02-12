@@ -106,7 +106,8 @@ function show_installed_devices() {
 				<td>'.$source['name'].'</td>
 				<td>'.$status.'</td>
 				<td>
-					<a href="">Edit</a>
+					<a title="Stop Source" class="btn btn-danger btn-flat" href="actions.php?a=source_stop&source='.$source['name'].'"><i class="fa fa-cross"></i></a> 
+					<a title="Edit" class="btn btn-primary btn-flat" href="dashboard.php?c=source&source='.$source['name'].'"><i class="fa fa-globe"></i></a>
 				</td>
 			</tr>
 		';
