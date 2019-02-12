@@ -519,7 +519,7 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-title">RAM</span>
 											<span id="ram_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
-												<div id="ram_usage_bar" class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+												<div id="ram_usage_bar" class="progress-bar progress-bar-success progress-without-number" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 												</div>
 											</div>
 										</li>
