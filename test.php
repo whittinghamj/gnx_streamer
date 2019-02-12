@@ -1,13 +1,7 @@
 <?php
 
-if ( extension_loaded('pdo') ) {
-    echo "PDO installed. \n";
-}else{
-	echo "PDO is NOT installed. \n";
-}
+$source['name']				= 'video0';
+$source['raw_json']			= file_get_contents("actions.php?a=source_check&source=".$source['name']);
 
-if ( extension_loaded('pdo_mysql') ) { // e.g., pdo_mysql
-    echo "PDO MySQL installed. \n";
-}else{
-    echo "PDO MySQL in NOT installed. \n";
-}
+echo '<pre>';
+print_r($source);
