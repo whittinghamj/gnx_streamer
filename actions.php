@@ -119,6 +119,10 @@ function ajax_source_list() {
 
 	$video_cards 			= glob("/dev/video*");
 
+	echo "<pre>";
+
+	print_r($video_cards);
+
 	foreach($video_cards as $video_card) 
 		$raw['name'] 			= str_replace("/dev/", "", $video_card);
 		$raw['raw_json']		= file_get_contents("http://localhost/actions.php?a=source_check&source=".$raw['name']);
@@ -127,6 +131,5 @@ function ajax_source_list() {
 		$sources[] 				= $raw['source_status'];
 	}
 
-	echo "<pre>";
 	print_r($sources);
 }
