@@ -372,7 +372,8 @@ if($_SESSION['logged_in'] != true) {
 		<script>
 			window.setInterval(function() {
 				update_system_stats();
-			}, 2000);
+				show_source_list();
+			}, 5000);
 
 			function update_system_stats() {
 				console.log('updating system stats.');
@@ -409,6 +410,21 @@ if($_SESSION['logged_in'] != true) {
 						}
 			        }
 			    });
+			}
+
+			function show_source_list() {
+				$.ajax({
+					cache: false,
+					type: "GET",
+			        url:'actions.php?a=ajax_source_list',
+					success: function(miners) {
+						for (i in sources)
+						{
+							// colum 0
+							document.getElementById(sources[i].name + '_col_0').innerHTML = '';
+						}						
+					}
+				});
 			}
 		</script>
 	</body>
