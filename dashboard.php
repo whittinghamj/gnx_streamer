@@ -517,10 +517,9 @@ if($_SESSION['logged_in'] != true) {
 										</li>
 										<li>
 											<span class="stats-title">RAM</span>
-											<span class="stats-complete">70%</span>
+											<span id="ram_usage_display" class="stats-complete">0%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-													<span id="ram_usage_display" class="sr-only"></span>
 												</div>
 											</div>
 										</li>
@@ -529,7 +528,6 @@ if($_SESSION['logged_in'] != true) {
 											<span class="stats-complete">2%</span>
 											<div class="progress">
 												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-													<span id="network_usage_display" class="sr-only">2%</span>
 												</div>
 											</div>
 										</li>
@@ -674,6 +672,7 @@ if($_SESSION['logged_in'] != true) {
 						// console.log(data.ip_address);
 
 						$('#cpu_usage_display').html(data.cpu_usage);
+						$('#ram_usage_display').html(data.ram_usage);
 			        }
 			    });
 			}

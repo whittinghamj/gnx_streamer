@@ -53,5 +53,10 @@ function get_system_stats() {
 	$data['cpu_usage'] = str_replace("%", "", $data['cpu_usage']);
 	$data['cpu_usage'] = number_format($data['cpu_usage'], 2);
 	$data['cpu_usage'] = $data['cpu_usage'].'%';
+
+	$data['ram_usage'] = str_replace("%", "", $data['ram_usage']);
+	$data['ram_usage'] = number_format($data['ram_usage'], 2);
+	$data['ram_usage'] = $data['ram_usage'].'%';
+
 	echo json_encode($data);
 }
