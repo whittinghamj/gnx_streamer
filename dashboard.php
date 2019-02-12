@@ -333,14 +333,14 @@ if($_SESSION['logged_in'] != true) {
 						<div class="row">
 							<div class="col-lg-12">
 								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-										</div>
-						
-										<h2 class="panel-title">Settings</h2>
-									</header>
-									<div class="panel-body">
-										<form action="actions.php?a=source_update" class="form-horizontal form-bordered" method="post">
+									<form action="actions.php?a=source_update" class="form-horizontal form-bordered" method="post">
+										<header class="panel-heading">
+											<div class="panel-actions">
+											</div>
+							
+											<h2 class="panel-title">Settings</h2>
+										</header>
+										<div class="panel-body">
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="name">Name</label>
 												<div class="col-md-6">
@@ -364,9 +364,12 @@ if($_SESSION['logged_in'] != true) {
 													<input type="text" class="form-control" id="rtmp_server" value="<?php echo $source['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
 												</div>
 											</div>
-						
-										</form>
-									</div>
+										</div>
+										<footer class="panel-footer">
+											<button type="submit" class="btn btn-primary">Submit </button>
+											<button type="reset" class="btn btn-default">Reset</button>
+										</footer>
+									</form>
 								</section>
 						
 								<section class="panel">
