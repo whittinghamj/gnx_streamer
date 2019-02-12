@@ -442,7 +442,8 @@ if($_SESSION['logged_in'] != true) {
 										</div>
 
 										<footer class="panel-footer">
-											<button type="submit" class="btn btn-success">Submit </button>
+											<a href="dashboard.php?c=sources" class="btn btn-default">Back</a>
+											<button type="submit" class="btn btn-success">Submit</button>
 										</footer>
 									</form>
 								</section>
