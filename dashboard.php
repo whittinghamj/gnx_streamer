@@ -366,8 +366,7 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 										</div>
 										<footer class="panel-footer">
-											<button type="submit" class="btn btn-primary">Submit </button>
-											<button type="reset" class="btn btn-default">Reset</button>
+											<button type="submit" class="btn btn-success">Submit </button>
 										</footer>
 									</form>
 								</section>
