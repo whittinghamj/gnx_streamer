@@ -341,9 +341,12 @@ if($_SESSION['logged_in'] != true) {
 											<h2 class="panel-title">Settings (<?php echo $file_exists; ?>)</h2>
 										</header>
 										<div class="panel-body">
-											<pre>
-												<?php print_r($source['config']); ?>
-											</pre>
+											<?php if($_GET['dev'] == 'yes') { ?>
+												<pre>
+													<?php print_r($source['config']); ?>
+												</pre>
+											<?php } ?>
+											
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="name">Source Name</label>
 												<div class="col-md-6">
