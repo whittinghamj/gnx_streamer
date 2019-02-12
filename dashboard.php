@@ -373,7 +373,7 @@ if($_SESSION['logged_in'] != true) {
 			window.setInterval(function() {
 				// update_system_stats();
 				show_source_list();
-			}, 1000);
+			}, 5000);
 
 			function update_system_stats() {
 				console.log('updating system stats.');
@@ -418,8 +418,8 @@ if($_SESSION['logged_in'] != true) {
 					type: "GET",
 			        url:'actions.php?a=ajax_source_list',
 					success: function(sources) {
-						var x = sources[0].source.name;
-						console.log('Source Name: ' + x);
+						// var x = sources[0].source.name;
+						// console.log('Source Name: ' + x);
 
 						for (i in sources)
 						{
