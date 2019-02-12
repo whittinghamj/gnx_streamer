@@ -85,11 +85,11 @@ function source_check() {
 	$source_check 					= exec("sudo sh /var/www/html/source_check.sh ".$source);
 
 	$data['status'] 				= 'success';
-	$data['command'] 				= exec('ps -eo args | grep "video0" | grep -v "grep" | grep -v "0:00" |head -n -1');
-	$data['command']				= str_replace("sh -c ", "", $data['command']);
-	$data['pid']					= exec("ps aux | grep video0 | grep -v grep | grep -v '0:00' | awk '{print $2}'");
 	$data['source']['name'] 		= $source;
 	$data['source']['status'] 		= $source_check;
+	$data['source']['command'] 		= exec('ps -eo args | grep "video0" | grep -v "grep" | grep -v "0:00" |head -n -1');
+	$data['source']['command']		= str_replace("sh -c ", "", $data['command']);
+	$data['source']['pid']			= exec("ps aux | grep video0 | grep -v grep | grep -v '0:00' | awk '{print $2}'");
 
 	echo json_encode($data);
 }
