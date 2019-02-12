@@ -1,11 +1,33 @@
 <?php
 
-$host = '127.0.0.1';
-$db   = 'streamer';
-$user = 'root';
-$pass = 'Mimi!#&@';
-$charset = 'utf8mb4';
+// MySQL Connection information variables.
+$db 			= "";
+$hostname 		= 'localhost';
+$username 		= 'root';
+$password 		= 'Mimi!#&@';
+$database 		= 'streamer';
 
-// $db = new PDO('mysql:host='.$host.';dbname='.$db.';charset=utf8mb4', $user, 'Mimi!#&@');
+try
+{ // Create connection to MySQL Database.
+	$db = new PDO
+		( // Check connection to db MySQL Database.
+		"mysql:host=$hostname;dbname=$database",
+		$username,
+		$password
+		);
+	$db->setAttribute
+		( // Prepare Attribute for Error Mode Exception Handling.
+		PDO::ATTR_ERRMODE,
+		PDO::ERRMODE_EXCEPTION
+		);
+}
+catch(PDOException $_e)
+{ // If error occurs, Exception causes automatic transaction rollback...
+	$db = null; // Null connection to the database...
+//	mail_errors($_e->getMessage()); // Mail errors accordingly.
+	print_r ($_e->getMessage());
+}
 
-$conn = new PDO('mysql:host=127.0.0.1;dbname=streamer;port=3306','root',`Mimi!#&@`);
+// $db = null; // Null connection variable closes connection.
+
+?>
