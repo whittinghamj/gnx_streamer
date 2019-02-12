@@ -7,8 +7,12 @@ include('inc/global_vars.php');
 include('inc/functions.php');
 
 // read the config file
-$config_raw 		= @file_get_contents('config.json');
-$config 			= json_decode($config_raw, true);
+if(!file_exists('config.json')){
+	die('Missing config.json file.');
+}else{
+	$config_raw 		= @file_get_contents('config.json');
+	$config 			= json_decode($config_raw);
+}
 
 if($_SESSION['logged_in'] != true) {
 	go("not_logged_in.php");
@@ -287,6 +291,16 @@ if($_SESSION['logged_in'] != true) {
 
 				<?php function source() { ?>
 					<?php $source['name'] = get('source'); ?>
+					<?php 
+						if(!file_exists('config/'.$source['name'].'.json')){
+							// missing config file, load template one
+							
+						}else{
+							$source['config'] 		= @file_get_contents('config/'.$source['name'].'.json');
+							$source['config'] 		= json_decode($source['config']);
+						}
+					?>
+
 					<section role="main" class="content-body">
 						<header class="page-header">
 							<h2>Capture Source > <?php echo $source['name']; ?></h2>
@@ -323,7 +337,7 @@ if($_SESSION['logged_in'] != true) {
 										<div class="panel-actions">
 										</div>
 						
-										<h2 class="panel-title">Source</h2>
+										<h2 class="panel-title">Settings</h2>
 									</header>
 									<div class="panel-body">
 										<form class="form-horizontal form-bordered" method="get">
