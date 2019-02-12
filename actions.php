@@ -103,13 +103,7 @@ function source_check() {
 	$data['source']['command']		= str_replace("sh -c ", "", $data['source']['command']);
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
 
-	$source['config'] 				= @file_get_contents('config/'.$source.'.json');
-	$source['config'] 				= json_decode($source['config'], true);
-	$source['config']['pid']		= $data['source']['pid'];
-
-	$json = json_encode($source['config']);
-
-	// file_put_contents('config/'.$source.'.json', $json);
+	
 
 	// output
 	echo json_encode($data);
