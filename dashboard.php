@@ -560,7 +560,7 @@ if($_SESSION['logged_in'] != true) {
 
 					<!-- start: page -->
 
-					<div class="col-md-4" data-plugin-portlet id="portlet-1">
+					<div class="col-md-12">
 						<section class="panel panel-primary" id="panel-1" data-portlet-item>
 							<header class="panel-heading portlet-handler">
 								<div class="panel-actions">
