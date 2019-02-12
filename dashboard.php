@@ -670,6 +670,9 @@ if($_SESSION['logged_in'] != true) {
 			        type: 'json',
 			        success: function(content,code) {
 
+			            
+						console.log(code.ip_address);
+
 			            $.each(content, function (index, value) {
 			            	console.log('IP Address: ' + ip_address);
 
