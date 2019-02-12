@@ -423,6 +423,12 @@ if($_SESSION['logged_in'] != true) {
 
 						for (i in sources)
 						{
+							// colum 1
+							if(sources[i].sources.status == 'busy') {
+								document.getElementById(sources[i].source.status + '_col_1').innerHTML = '<span class="label label-info">Streaming</span>';
+							} else {
+								document.getElementById(sources[i].source.status + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
+							}
 							// colum 2
 							document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 						}						
