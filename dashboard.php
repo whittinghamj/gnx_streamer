@@ -372,50 +372,12 @@ if($_SESSION['logged_in'] != true) {
 		<script>
 			window.setInterval(function() {
 				update_system_stats();
-				update_source_stats();
 			}, 2000);
 
 			function update_system_stats() {
 				console.log('updating system stats.');
 				$.ajax({
 			        url:'actions.php?a=get_system_stats',
-			        type: 'json',
-			        success: function(content,code) {
-			        	var data = jQuery.parseJSON(content);
-			            
-						// console.log(data.ip_address);
-
-						// cpu_usage
-						$('#cpu_usage_display').html(data.cpu_usage + '%');
-						$('#cpu_usage_bar').attr('aria-valuenow', data.cpu_usage).css('width', data.cpu_usage);
-						if(data.cpu_usage > 80) {
-							$('#cpu_usage_bar').removeClass("progress-bar-success");
-							$('#cpu_usage_bar').addClass("progress-bar-danger");
-						}
-
-						// ram_usage
-						$('#ram_usage_display').html(data.ram_usage + '%');
-						$('#ram_usage_bar').attr('aria-valuenow', data.ram_usage).css('width', data.ram_usage);
-						if(data.disk_usage > 80) {
-							$('#ram_usage_bar').removeClass("progress-bar-success");
-							$('#ram_usage_bar').addClass("progress-bar-danger");
-						}
-
-						// dis_usage
-						$('#disk_usage_display').html(data.disk_usage + '%');
-						$('#disk_usage_bar').attr('aria-valuenow', data.disk_usage).css('width', data.disk_usage);
-						if(data.disk_usage > 80) {
-							$('#disk_usage_bar').removeClass("progress-bar-success");
-							$('#disk_usage_bar').addClass("progress-bar-danger");
-						}
-			        }
-			    });
-			}
-
-			function update_source_stats() {
-				console.log('updating source stats.');
-				$.ajax({
-			        url:'actions.php?a=get_source_stats',
 			        type: 'json',
 			        success: function(content,code) {
 			        	var data = jQuery.parseJSON(content);
