@@ -541,7 +541,7 @@ if($_SESSION['logged_in'] != true) {
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Boxed Layout</h2>
+						<h2>Dashboard</h2>
 
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -550,8 +550,10 @@ if($_SESSION['logged_in'] != true) {
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
+								<!--
 								<li><span>Layouts</span></li>
 								<li><span>Boxed</span></li>
+								-->
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -561,73 +563,8 @@ if($_SESSION['logged_in'] != true) {
 					<!-- start: page -->
 
 					<section class="panel">
-						<div class="panel-body tab-content">
-							<table class="table table-striped table-no-more table-bordered  mb-none">
-								<thead>
-									<tr>
-										<th style="width: 10%"><span class="text-normal text-sm">Type</span></th>
-										<th style="width: 15%"><span class="text-normal text-sm">Date</span></th>
-										<th><span class="text-normal text-sm">Message</span></th>
-									</tr>
-								</thead>
-								<tbody class="log-viewer">
-									<tr>
-										<td data-title="Type" class="pt-md pb-md">
-											<i class="fa fa-bug fa-fw text-muted text-md va-middle"></i> Debug
-										</td>
-										<td data-title="Date" class="pt-md pb-md">
-											13/04/2014 18:25:59
-										</td>
-										<td data-title="Message" class="pt-md pb-md">
-											my.host - oh snap! another exception
-										</td>
-									</tr>
-									<tr>
-										<td data-title="Type" class="pt-md pb-md">
-											<i class="fa fa-info fa-fw text-info text-md va-middle"></i> Info
-										</td>
-										<td data-title="Date" class="pt-md pb-md">
-											13/04/2014 21:50:17
-										</td>
-										<td data-title="Message" class="pt-md pb-md">
-											"GET / HTTP/1.1" 200 1225
-										</td>
-									</tr>
-									<tr>
-										<td data-title="Type" class="pt-md pb-md">
-											<i class="fa fa-warning fa-fw text-warning text-md va-middle"></i> Warning
-										</td>
-										<td data-title="Date" class="pt-md pb-md">
-											13/04/2014 17:44:21
-										</td>
-										<td data-title="Message" class="pt-md pb-md">
-											DocumentRoot [/var/www/porto-admin/] does not exist
-										</td>
-									</tr>
-									<tr>
-										<td data-title="Type" class="pt-md pb-md">
-											<i class="fa fa-times-circle fa-fw text-danger text-md va-middle"></i> Error
-										</td>
-										<td data-title="Date" class="pt-md pb-md">
-											13/04/2014 21:55:18
-										</td>
-										<td data-title="Message" class="pt-md pb-md">
-											File does not exist: /var/www/porto-admin/favicon.ico
-										</td>
-									</tr>
-									<tr>
-										<td data-title="Type" class="pt-md pb-md">
-											<i class="fa fa-ban fa-fw text-danger text-md va-middle"></i> Fatal
-										</td>
-										<td data-title="Date" class="pt-md pb-md">
-											13/04/2014 22:13:39
-										</td>
-										<td data-title="Message" class="pt-md pb-md">
-											not a tree object
-										</td>
-									</tr>
-								</tbody>
-							</table>
+						<div class="panel-body">
+							content goes here
 						</div>
 					</section>
 
