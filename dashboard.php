@@ -671,37 +671,8 @@ if($_SESSION['logged_in'] != true) {
 			        success: function(content,code) {
 
 			            
-						console.log(code.ip_address);
+						console.log(content.ip_address);
 
-			            $.each(content, function (index, value) {
-			            	console.log('IP Address: ' + ip_address);
-
-			            	// check for usg / router
-			            	if(content[index].type == 'ugw'){
-
-			            		// check online status
-				            	if(content[index].stats == '0'){
-				            		var device_status = 'Offline';
-				            	}else{
-				            		var device_status = 'Online';
-				            	}
-
-				            	console.log('Device Sttus: ' + device_status);
-
-				            	var device_name = content[index].name;
-				            	console.log('Device Name: ' + device_name);
-
-				            	var device_wan_ip = content[index].port_table[0].ip;
-				            	console.log('Device WAN IP: ' + device_wan_ip);
-				            	var device_lan_ip = content[index].port_table[1].ip;
-				            	console.log('Device LAN IP: ' + device_lan_ip);
-
-				            	var device_uptime = sformat( content[index].uptime );
-				            	console.log('Device Uptime: ' + device_uptime);
-				            }else{
-				            	console.log('No USG found.');
-				            }
-						});
 			        }
 			    });
 			}
