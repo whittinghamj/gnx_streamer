@@ -71,6 +71,12 @@ function get_system_stats() {
 function source_check() {
 	$source = get('source');
 
+	if(empty($source)) {
+		$data['error'] = 'source was blank.';
+		echo json_encode($data);
+		die();
+	}
+
 	$source_check = exec("sudo sh /var/www/html/source_check.sh ".$source);
 
 	$data['command'] = 'sudo sh /var/www/html/source_check.sh '.$source;
