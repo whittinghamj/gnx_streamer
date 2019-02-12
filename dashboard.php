@@ -351,7 +351,7 @@ if($_SESSION['logged_in'] != true) {
 			<script src="assets/vendor/jquery/jquery.js"></script>
 			<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 			<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
-			<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
+			<!-- <script src="assets/vendor/nanoscroller/nanoscroller.js"></script> -->
 			<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 			<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 			<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
@@ -416,7 +416,7 @@ if($_SESSION['logged_in'] != true) {
 				$.ajax({
 					cache: false,
 					type: "GET",
-			        url:'http://localhost/actions.php?a=ajax_source_list',
+			        url:'actions.php?a=ajax_source_list',
 					success: function(sources) {
 						// var x = sources[0].source.name;
 						// console.log('Source Name: ' + x);
