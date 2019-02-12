@@ -6,4 +6,4 @@ include('inc/functions.php');
 
 session_destroy();
 
-go($site['url'].'/index.php');
+go($site['url'].'index.php');
