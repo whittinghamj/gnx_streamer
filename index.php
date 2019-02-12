@@ -1,25 +1,4 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-echo 'loading page <br>';
-
-include('inc/global_vars.php');
-include('inc/db.php');
-
-echo 'finished loading includes <br>';
-
-// check if this is a new install
-$query = "SELECT `id` FROM `users`";
-$result = mysql_query($query) or die(mysql_error());
-$records = mysql_num_rows($result);
-if($records == 0){
-	$action = 'install';
-}else{
-	$action = 'login';
-}
-?>
 <!doctype html>
 <html class="fixed">
 	<head>
