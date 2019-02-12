@@ -15,6 +15,10 @@ switch ($a)
 	case "get_system_stats":
 		get_system_stats();
 		break;
+
+	case "source_check":
+		source_check();
+		break;
 			
 // default
 				
@@ -58,6 +62,17 @@ function get_system_stats() {
 
 	$data['disk_usage'] = str_replace("%", "", $data['disk_usage']);
 	$data['disk_usage'] = number_format($data['disk_usage'], 2);
+
+	echo json_encode($data);
+}
+
+function source_check() {
+	$source = get('source');
+
+	$source_check = exec("sh source_check.sh ".$source);
+
+	$data['source'] = $source;
+	$data['status'] = $source_check;
 
 	echo json_encode($data);
 }
