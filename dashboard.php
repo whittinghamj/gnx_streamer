@@ -347,9 +347,9 @@ if($_SESSION['logged_in'] != true) {
 												<?php print_r($source['config']); ?>
 											</pre>
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="name">Name</label>
+												<label class="col-md-3 control-label" for="name">Source Name</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="name" disabled value="<?php echo $source['name']; ?>">
+													<input type="text" class="form-control" id="name" name="name" disabled value="<?php echo $source['name']; ?>">
 												</div>
 											</div>
 
@@ -364,7 +364,14 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="stream">Encoded Size</label>
+												<label class="col-md-3 control-label" for="framerate">Encoded Framerate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="framerate" name="framerate" value="<?php echo $source['config']['framerate']; ?>" placeholder="29">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="screen_resolution">Encoded Size</label>
 												<div class="col-md-6">
 													<select id="screen_resolution" name="screen_resolution" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['screen_resolution']=='1920x1080'){echo"selected";} ?> value="1920x1080">1920x1080</option>
@@ -391,7 +398,7 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="stream">H.264/5</label>
+												<label class="col-md-3 control-label" for="codec">H.264/5</label>
 												<div class="col-md-6">
 													<select id="codec" name="codec" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
