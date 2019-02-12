@@ -1,5 +1,7 @@
 <?php
 
+echo 'test';
+
 include('inc/global_vars.php');
 include('inc/db.php');
 
