@@ -32,6 +32,8 @@ function home(){
 }
 
 function test(){
+	echo exec('whoami');
+	echo "<hr>";
 	echo '<h3>$_SESSION</h3>';
 	echo '<pre>';
 	print_r($_SESSION);
