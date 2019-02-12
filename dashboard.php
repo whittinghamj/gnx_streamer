@@ -421,7 +421,7 @@ if($_SESSION['logged_in'] != true) {
 						for (i in sources)
 						{
 							// colum 0
-							document.getElementById(sources[i].name + '_col_0').innerHTML = '';
+							document.getElementById(sources[i].name + '_col_2').innerHTML = sources[i].name;
 						}						
 					}
 				});
