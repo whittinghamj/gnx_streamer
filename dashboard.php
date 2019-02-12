@@ -639,7 +639,7 @@ if($_SESSION['logged_in'] != true) {
 												<th>Status</th>
 												<th>Device</th>
 												<th>Process</th>
-												<th width="200px">Actions</th>
+												<th width="200px" class="pull-right">Actions</th>
 											</tr>
 										</thead>
 										<tbody>
