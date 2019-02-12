@@ -15,7 +15,7 @@ if(!file_exists('config.json')){
 }
 
 if($_SESSION['logged_in'] != true) {
-	go("not_logged_in.php");
+	go("/index.php");
 }
 
 ?>
@@ -346,7 +346,7 @@ if($_SESSION['logged_in'] != true) {
 													<?php print_r($source['config']); ?>
 												</pre>
 											<?php } ?>
-											
+
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="name">Source Name</label>
 												<div class="col-md-6">
