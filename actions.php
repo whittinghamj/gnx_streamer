@@ -109,7 +109,7 @@ function source_check() {
 
 	$json = json_encode($source['config']);
 
-	file_put_contents('config/'.$source.'.json', $json);
+	// file_put_contents('config/'.$source.'.json', $json);
 
 	// output
 	echo json_encode($data);
