@@ -135,9 +135,18 @@ function ajax_source_list() {
 }
 
 function source_update() {
-	$config = $_POST;
+	echo '<table>';
 
-	echo '<pre>';
+    foreach ($_POST as $key => $value) {
+        echo "<tr>";
+        echo "<td>";
+        echo $key;
+        echo "</td>";
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+        echo "</tr>";
+    }
 
-	print_r($config);
+	echo '</table>';
 }
