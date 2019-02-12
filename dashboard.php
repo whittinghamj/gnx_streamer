@@ -423,8 +423,8 @@ if($_SESSION['logged_in'] != true) {
 
 						for (i in sources)
 						{
-							// colum 0
-							document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
+							// colum 2
+							document.getElementById(sources[i].source.name + '_col_2').innerHTML = 'test' + sources[i];
 						}						
 					}
 				});
