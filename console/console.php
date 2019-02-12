@@ -19,7 +19,7 @@ if($task == 'test')
 		$cmd = "ffmpeg -y -f alsa -ac 2 -i hw:1,0 -f video4linux2 -re -framerate 29 -i /dev/".$data['source']." -acodec aac -ab 128k -ar 44100 -f matroska -vcodec ".$data['codec']." -r ".$data['framerate']." -pix_fmt yuv420p -s ".$data['screen_resolution']." -preset ultrafast -b:v ".$data['bitrate']." -f flv ".$data['rtmp_server']." -f image2 -vf fps=fps=90 -s 320x240 -updatefirst 1 /var/www/html/screenshots/video0.png";
 
 		echo "====================================================================================================\n";
-		echo $cmd;
+		echo $cmd . "\n";
 		echo "====================================================================================================\n";
 
 		echo "\n";
