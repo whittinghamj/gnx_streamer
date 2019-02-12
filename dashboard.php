@@ -1,19 +1,16 @@
 <?php
-include('inc/db.php');
-include('inc/sessions.php');
-$sess = new SessionManager();
 session_start();
 
 include('inc/global_vars.php');
 include('inc/functions.php');
 
-// check is account->id is set, if not then assume user is not logged in correctly and redirect to login page
-if(empty($_SESSION['account']['id'])){
-	go($site['url'].'/index?c=session_timeout');
-}
+// read the config file
+$config_raw 		= @file_get_contents('config.json');
+$config 			= json_decode($config_raw, true);
 
-// get account details for logged in user
-$account_details 			= account_details($_SESSION['account']['id']);
+if($_SESSION['logged_in'] != true){
+	go("not_logged_in.php");
+}
 
 ?>
 <!doctype html>
@@ -59,9 +56,7 @@ $account_details 			= account_details($_SESSION['account']['id']);
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="../" class="logo">
-						<h3><?php echo $site['name_short']; ?></h3>
-					</a>
+					<h3><?php echo $site['name_short']; ?></h3>
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
 						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
 					</div>

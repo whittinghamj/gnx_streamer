@@ -11,18 +11,16 @@ $config 			= json_decode($config_raw, true);
 $login['username'] 			= post('username');
 $login['password'] 			= post('password');
 
-debug($config);
-debug($login);
+// debug($config);
+// debug($login);
 
 // login check
 if($login['username'] == $config['login']['username'] && $login['password'] == $config['login']['password']){
-	echo 'login passed <br>';
-	go('dashboard');
+	$_SESSION['logged_in'] = true;
+	$_SESSION['username'] = $login['username'];
+	go('dashboard.php');
 }else{
-	echo 'login failed <br>';
-	go('index');
+	go('index.php');
 }
-
-echo "end of file <br>";
 
 ?>
