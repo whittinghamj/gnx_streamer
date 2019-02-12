@@ -254,8 +254,6 @@ if($_SESSION['logged_in'] != true) {
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
 										</div>
 						
 										<h2 class="panel-title">Sources</h2>
@@ -323,11 +321,9 @@ if($_SESSION['logged_in'] != true) {
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
 										</div>
 						
-										<h2 class="panel-title">Form Elements</h2>
+										<h2 class="panel-title">Source</h2>
 									</header>
 									<div class="panel-body">
 										<form class="form-horizontal form-bordered" method="get">
