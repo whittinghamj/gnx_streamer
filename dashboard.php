@@ -603,29 +603,51 @@ if($_SESSION['logged_in'] != true) {
 
 							for (i in sources)
 							{
-								// colum 1
 								if(sources[i].source.status == 'busy') {
+									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
-								} else {
-									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
-								}
 
-								// colum 2
-								document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
+									// colum 2
+									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
-								// colum 3
-								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
+									// colum 3
+									if(sources[i].source.codec == 'libx264') {
+										sources[i].source.codec = 'H.264';
+									} else {
+										sources[i].source.codec = 'H.265';
+									}
+									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
 
-								// colum 4
-								document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
+									// colum 4
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
 
-								// colum 5
-								document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
+									// colum 5
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate + 'k';
 
-								// colum 6
-								if(sources[i].source.status == 'busy') {
+									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
+									// colum 1
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
+
+									// colum 2
+									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
+
+									// colum 3
+									if(sources[i].source.codec == 'libx264') {
+										sources[i].source.codec = 'H.264';
+									} else {
+										sources[i].source.codec = 'H.265';
+									}
+									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
+
+									// colum 4
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
+
+									// colum 5
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate + 'k';
+
+									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
 							}						
