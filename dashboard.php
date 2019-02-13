@@ -616,7 +616,7 @@ if($_SESSION['logged_in'] != true) {
 
 								// colum 4
 								if(sources[i].source.status == 'busy') {
-									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_stop("'+sources[i].source.pid+'")"class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
@@ -631,7 +631,14 @@ if($_SESSION['logged_in'] != true) {
 			}
 
 			function source_stop(pid) {
-				alert('Stopping Source: ' + pid);
+				$.ajax({
+					cache: false,
+					type: "GET",
+			        url:'actions.php?a=source_stop&pid=' + pid,
+					success: function(sources) {
+											
+					}
+				});
 			}
 		</script>
 	</body>
