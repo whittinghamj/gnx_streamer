@@ -266,11 +266,13 @@ if($_SESSION['logged_in'] != true) {
 											<table class="table table-striped mb-none">
 												<thead>
 													<tr>
-														<th width="10px">#</th>
-														<th width="100px">Status</th>
-														<th width="50px">Device</th>
-														<th>Process</th>
-														<th width="200px">Actions</th>
+														<th width="10px">#</th>				<!-- 0 -->
+														<th width="100px">Status</th>		<!-- 1 -->
+														<th width="50px">Device</th>		<!-- 2 -->
+														<th width="50px">V Codec</th>		<!-- 3 -->
+														<th width="50px">Resolution</th>	<!-- 4 -->
+														<th width="50px">Bitrate</th>		<!-- 5 -->
+														<th width="200px">Actions</th>		<!-- 6 -->
 													</tr>
 												</thead>
 												<tbody>
@@ -612,9 +614,15 @@ if($_SESSION['logged_in'] != true) {
 								document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
 								// colum 3
-								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.command;
+								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
 
 								// colum 4
+								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.resolution;
+
+								// colum 5
+								document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.bitrate;
+
+								// colum 6
 								if(sources[i].source.status == 'busy') {
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
