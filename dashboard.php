@@ -644,6 +644,10 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.rtmp_server = '';
 								}
 
+								if(sources[i].source.audio_codex == 'aac') {
+									sources[i].source.audio_codex = 'AAC';
+								}
+
 								if(sources[i].source.audio_codex == 'not_set') {
 									sources[i].source.audio_codex = '';
 								}
