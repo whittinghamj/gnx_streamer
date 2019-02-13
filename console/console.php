@@ -6,7 +6,7 @@ $task = $argv[1];
 
 if($task == 'stop_start')
 {
-	console_output("Stop / Stop Streams.");
+	console_output("Stop / Start Streams.");
 	
 	$config_files = glob("/var/www/html/config/video*.json");
 
