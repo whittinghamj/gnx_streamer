@@ -634,7 +634,7 @@ if($_SESSION['logged_in'] != true) {
 
 								if(sources[i].source.status == 'busy') {
 									// colum 1
-									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success" style="100%">Streaming</span>';
 
 									// colum 2
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
@@ -654,7 +654,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
 									// colum 1
-									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger" style="100%">Not Streaming</span>';
 
 									// colum 2
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
