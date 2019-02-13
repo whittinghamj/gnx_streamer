@@ -110,6 +110,7 @@ function source_check() {
 		$data['source']['codec']		= $source['config']['codec'];
 		$data['source']['bitrate']		= $source['config']['bitrate'];
 		$data['source']['screenshot']	= $source['config']['screenshot'];
+		$data['source']['config_file'] 	= $source['config'];
 	}
 
 	// output
