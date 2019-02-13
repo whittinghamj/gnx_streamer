@@ -4,7 +4,7 @@ include('../inc/functions.php');
 
 $task = $argv[1];
 
-if($task == 'test')
+if($task == 'stop_start')
 {
 	console_output("Stop / Stop Streams.");
 	

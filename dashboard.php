@@ -651,7 +651,7 @@ if($_SESSION['logged_in'] != true) {
 									// colum 6
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
 									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
@@ -683,13 +683,13 @@ if($_SESSION['logged_in'] != true) {
 				alert('Starting Source: ' + source);
 			}
 
-			function source_stop(pid) {
+			function source_stop(source) {
 				var question = confirm("Please confirm you want to stop streaming this source.");
 				if( question == true ) {
 					$.ajax({
 						cache: false,
 						type: "GET",
-				        url:'actions.php?a=source_stop&pid=' + pid,
+				        url:'actions.php?a=source_stop&source=' + source,
 						success: function(sources) {
 												
 						}

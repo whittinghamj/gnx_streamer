@@ -127,9 +127,16 @@ function source_check() {
 }
 
 function source_stop() {
-	$pid = get('pid');
+	$source = get('source');
 
-	exec('sudo kill -9 ' . $pid);
+	$config_file 			= @file_get_contents('config/'.$source.'.json');
+	$config_file	 		= json_decode($config_file, true);
+
+	$config_file['stream']	= 'disable';
+
+	$json = json_encode($config_file);
+
+	file_put_contents('config/'.$source.'.json', $json);
 
 	status_message('success', 'Card has stopped streaming.');
 	
