@@ -6,7 +6,7 @@ $task = $argv[1];
 
 if($task == 'test')
 {
-	console_output("Parsing config files");
+	console_output("Stop / Stop Streams.");
 	
 	$config_files = glob("/var/www/html/config/video*.json");
 
@@ -23,5 +23,14 @@ if($task == 'test')
 		echo "====================================================================================================\n";
 
 		echo "\n";
+
+		if($data['stream'] == 'enable') {
+			echo "Starting stream. \n";
+			exec('nohup ' . $cmd . ' & ');
+		}else{
+			echo "stopping stream. \n";
+			$pid = exec("ps aux | grep '/dev/".$data['source']."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
+			exec('sudo kill -9 ' . $pid);
+		}
 	}
 }
