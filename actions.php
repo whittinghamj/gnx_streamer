@@ -111,11 +111,15 @@ function source_check() {
 		$data['source']['codec']		= $config_file['codec'];
 		$data['source']['bitrate']		= $config_file['bitrate'];
 		$data['source']['screenshot']	= $config_file['screenshot'];
+		$data['source']['framrate_in']	= $config_file['framrate_in'];
+		$data['source']['framrate_out']	= $config_file['framrate_out'];
 	}else{
 		$data['source']['resolution']	= 'not_set';
 		$data['source']['codec']		= 'not_set';
 		$data['source']['bitrate']		= 'not_set';
 		$data['source']['screenshot']	= 'not_set';
+		$data['source']['framrate_in']	= $config_file['framrate_in'];
+		$data['source']['framrate_out']	= $config_file['framrate_out'];
 	}
 
 	// output

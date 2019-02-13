@@ -367,9 +367,9 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="framerate">Encoded Framerate</label>
+												<label class="col-md-3 control-label" for="framerate_in">Input Framerate</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="framerate" name="framerate" value="<?php echo $source['config']['framerate']; ?>" placeholder="29">
+													<input type="text" class="form-control" id="framerate_in" name="framerate_in" value="<?php echo $source['config']['framerate_in']; ?>" placeholder="29">
 												</div>
 											</div>
 
@@ -401,17 +401,24 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="codec">H.264/5</label>
+												<label class="col-md-3 control-label" for="video_codec">Output Codec</label>
 												<div class="col-md-6">
-													<select id="codec" name="codec" class="form-control input-sm mb-md">
-														<option <?php if($source['config']['codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
-														<option <?php if($source['config']['codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
+													<select id="video_codec" name="video_codec" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['video_codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
+														<option <?php if($source['config']['video_codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
 													</select>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="bitrate">Bitrate (K)</label>
+												<label class="col-md-3 control-label" for="framerate_out">Output Framerate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="framerate_out" name="framerate_out" value="<?php echo $source['config']['framerate_out']; ?>" placeholder="29">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="bitrate">Output Bitrate (K)</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="bitrate" name="bitrate" value="<?php echo $source['config']['bitrate']; ?>" placeholder="3500">
 												</div>
