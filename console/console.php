@@ -31,7 +31,7 @@ if($task == 'test')
 			// found a dead stream, lets start it again
 			echo "Starting stream for ".$data['source']." \n";
 			shell_exec('sudo nohup ' . $cmd . ' > '.$data['source'].'.log 2>&1 &');
-		}else{
+		}elseif($data['stream'] == 'enable' && !empty($pid)){
 			// do nothing, we found a stream already running for this source
 			echo "Stream already running for ".$data['source']." with PID: ".$pid." \n";
 		}
