@@ -631,14 +631,18 @@ if($_SESSION['logged_in'] != true) {
 			}
 
 			function source_stop(pid) {
-				$.ajax({
-					cache: false,
-					type: "GET",
-			        url:'actions.php?a=source_stop&pid=' + pid,
-					success: function(sources) {
-											
-					}
-				});
+				var question = confirm("Please confirm you want to stop streaming this source.");
+				if( question == true ) {
+					$.ajax({
+						cache: false,
+						type: "GET",
+				        url:'actions.php?a=source_stop&pid=' + pid,
+						success: function(sources) {
+												
+						}
+					});
+					return true;
+				}
 			}
 		</script>
 	</body>
