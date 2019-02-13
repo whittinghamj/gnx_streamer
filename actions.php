@@ -108,7 +108,7 @@ function source_check() {
 		$config_file 					= json_decode($config_file, true);
 		
 		$data['source']['resolution']	= $config_file['screen_resolution'];
-		$data['source']['codec']		= $config_file['codec'];
+		$data['source']['video_codec']	= $config_file['video_codec'];
 		$data['source']['bitrate']		= $config_file['bitrate'];
 		$data['source']['screenshot']	= $config_file['screenshot'];
 		$data['source']['framrate_in']	= $config_file['framrate_in'];

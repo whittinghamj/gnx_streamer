@@ -640,7 +640,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
 									// colum 3
-									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
+									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.video_codec;
 
 									// colum 4
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
@@ -660,7 +660,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
 									// colum 3
-									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
+									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.video_codec;
 
 									// colum 4
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
