@@ -616,15 +616,23 @@ if($_SESSION['logged_in'] != true) {
 
 								// colum 4
 								if(sources[i].source.status == 'busy') {
-									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_stop('+sources[i]sources.pid+');"class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
-									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_4').innerHTML = '<button onclick="source_start('+sources[i]sources.name+');" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
 							}						
 						}
 					});
 				}, 2000);
 			<?php } ?>
+
+			function source_start(source) {
+				alert('Starting Source: ' + source);
+			}
+
+			function source_stop(pid) {
+				alert('Stopping Source: ' + pid);
+			}
 		</script>
 	</body>
 </html>
