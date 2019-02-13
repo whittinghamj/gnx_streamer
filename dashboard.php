@@ -391,12 +391,35 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="video_codec">Output Codec</label>
+												<label class="col-md-3 control-label" for="video_codec">Output Video Codec</label>
 												<div class="col-md-6">
 													<select id="video_codec" name="video_codec" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['video_codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
 														<option <?php if($source['config']['video_codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
 													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_codec">Output Audio Codec</label>
+												<div class="col-md-6">
+													<select id="audio_codec" name="audio_codec" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['audio_codec']=='aac'){echo"selected";} ?> value="aac">AAC</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_bitrate">Audio Bitrate (k)</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="audio_bitrate" name="audio_bitrate" value="<?php echo $source['config']['audio_bitrate']; ?>" placeholder="128">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_sample_rate">Audio Sample Rate </label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="audio_sample_rate" name="audio_sample_rate" value="<?php echo $source['config']['audio_sample_rate']; ?>" placeholder="44100">
 												</div>
 											</div>
 
@@ -408,7 +431,7 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="bitrate">Output Bitrate (K)</label>
+												<label class="col-md-3 control-label" for="bitrate">Output Bitrate (k)</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="bitrate" name="bitrate" value="<?php echo $source['config']['bitrate']; ?>" placeholder="3500">
 												</div>
