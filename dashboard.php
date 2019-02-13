@@ -268,7 +268,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="50px">A Codec</th>		<!-- 5 -->
 														<th width="50px">Bitrate</th>		<!-- 6 -->
 														<th>RTMP Server</th>				<!-- 7 -->
-														<th width="150px">Actions</th>		<!-- 8 -->
+														<th width="100px">Actions</th>		<!-- 8 -->
 													</tr>
 												</thead>
 												<tbody>
