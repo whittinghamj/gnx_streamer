@@ -616,6 +616,10 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.resolution = '';
 								}
 
+								if(sources[i].source.rtmp_server == 'not_set') {
+									sources[i].source.rtmp_server = '';
+								}
+
 								if(sources[i].source.bitrate == 'not_set') {
 									sources[i].source.bitrate = '';
 								} else {
