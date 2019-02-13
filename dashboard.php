@@ -603,6 +603,27 @@ if($_SESSION['logged_in'] != true) {
 
 							for (i in sources)
 							{
+								// set some static values
+								if(sources[i].source.codec == 'libx264') {
+									sources[i].source.codec = 'H.264';
+								}
+								if(sources[i].source.codec == 'libx265') {
+									sources[i].source.codec = 'H.265';
+								}
+								if(sources[i].source.codec == 'not_set') {
+									sources[i].source.codec = '';
+								}
+
+								if(sources[i].source.resolution == 'not_set') {
+									sources[i].source.codec = '';
+								}
+
+								if(sources[i].source.bitrate == 'not_set') {
+									sources[i].source.codec = '';
+								} else {
+									sources[i].source.codec = sources[i].source.codec + 'k';
+								}
+
 								if(sources[i].source.status == 'busy') {
 									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success">Streaming</span>';
@@ -611,18 +632,13 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
 									// colum 3
-									if(sources[i].source.codec == 'libx264') {
-										sources[i].source.codec = 'H.264';
-									} else {
-										sources[i].source.codec = 'H.265';
-									}
 									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
 
 									// colum 4
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
 
 									// colum 5
-									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate + 'k';
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
@@ -634,18 +650,13 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
 
 									// colum 3
-									if(sources[i].source.codec == 'libx264') {
-										sources[i].source.codec = 'H.264';
-									} else {
-										sources[i].source.codec = 'H.265';
-									}
 									document.getElementById(sources[i].source.name + '_col_3').innerHTML = sources[i].source.codec;
 
 									// colum 4
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
 
 									// colum 5
-									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate + 'k';
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
