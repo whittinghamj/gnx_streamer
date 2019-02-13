@@ -142,7 +142,7 @@ function source_stop() {
 	
 	// find and kill pid
 	$pid 					= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
-	exec('sudo kill -9 ' . $pid)
+	exec('sudo kill -9 ' . $pid);
 
 	// status message
 	// status_message('success', 'Card has stopped streaming.');
