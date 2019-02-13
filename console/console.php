@@ -24,12 +24,21 @@ if($task == 'test')
 
 		echo "\n";
 
-		if($data['stream'] == 'enable') {
-			echo "Starting stream. \n";
+		$pid = exec("ps aux | grep '/dev/".$data['source']."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
+
+		// stream is enabled and no pid
+		if($data['stream'] == 'enable' && empty($pid)) {
+			// found a dead stream, lets start it again
+			echo "Starting stream for ".$data['source']." \n";
 			exec('sudo nohup ' . $cmd . ' & ');
-		}else{
-			echo "stopping stream. \n";
-			$pid = exec("ps aux | grep '/dev/".$data['source']."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
+		}else {
+			// do nothing, we found a stream already running for this source
+			echo "Stream already running for ".$data['source']." with PID: ".$pid." \n";
+		}
+
+		// stream set to disable, lets find and kill it
+		if($data['stream'] == 'disable') {
+			echo "Stopping stream for ".$data['source']." with PID: ".$pid." \n";
 			exec('sudo kill -9 ' . $pid);
 		}
 	}
