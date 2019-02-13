@@ -129,17 +129,21 @@ function source_check() {
 function source_stop() {
 	$source = get('source');
 
+	// read, update, write config file
 	$config_file 			= @file_get_contents('config/'.$source.'.json');
 	$config_file	 		= json_decode($config_file, true);
-
 	$config_file['stream']	= 'disable';
-
 	$json = json_encode($config_file);
-
 	file_put_contents('config/'.$source.'.json', $json);
+	
+	// find and kill pid
+	$pid 					= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
+	exec('sudo kill -9 ' . $pid)
 
+	// status message
 	status_message('success', 'Card has stopped streaming.');
 	
+	// return
 	go($_SERVER['HTTP_REFERER']);
 }
 
