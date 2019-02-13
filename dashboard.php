@@ -272,7 +272,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="100px">V Codec</th>		<!-- 3 -->
 														<th width="50px">Resolution</th>	<!-- 4 -->
 														<th width="50px">Bitrate</th>		<!-- 5 -->
-														<th></th>							<!-- 6 -->
+														<th width="100%"></th>							<!-- 6 -->
 														<th width="100px">Actions</th>		<!-- 7 -->
 													</tr>
 												</thead>
@@ -644,7 +644,7 @@ if($_SESSION['logged_in'] != true) {
 									// colum 6
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
 									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger">Not Streaming</span>';
@@ -664,7 +664,7 @@ if($_SESSION['logged_in'] != true) {
 									// colum 6
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
 							}						
 						}
