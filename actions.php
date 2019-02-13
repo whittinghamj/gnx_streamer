@@ -111,7 +111,11 @@ function source_check() {
 		$data['source']['codec']		= $config_file['codec'];
 		$data['source']['bitrate']		= $config_file['bitrate'];
 		$data['source']['screenshot']	= $config_file['screenshot'];
-		// $data['source']['config_file'] 	= $config_file;
+	}else{
+		$data['source']['resolution']	= 'not_set';
+		$data['source']['codec']		= 'not_set';
+		$data['source']['bitrate']		= 'not_set';
+		$data['source']['screenshot']	= 'not_set';
 	}
 
 	// output
