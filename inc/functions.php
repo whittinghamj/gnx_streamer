@@ -122,8 +122,9 @@ function show_installed_devices() {
 				<td id="'.$source['source']['name'].'_col_3"><img src="assets/images/loading.gif" alt="" height="100%"></td>
 				<td id="'.$source['source']['name'].'_col_4"><img src="assets/images/loading.gif" alt="" height="100%"></td>
 				<td id="'.$source['source']['name'].'_col_5"><img src="assets/images/loading.gif" alt="" height="100%"></td>
-				<td id="'.$source['source']['name'].'_col_6"></td>
+				<td id="'.$source['source']['name'].'_col_6"><img src="assets/images/loading.gif" alt="" height="100%"></td>
 				<td id="'.$source['source']['name'].'_col_7"></td>
+				<td id="'.$source['source']['name'].'_col_8"></td>
 			</tr>
 		';
 
