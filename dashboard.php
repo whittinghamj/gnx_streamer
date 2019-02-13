@@ -265,7 +265,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="50px">Device</th>		<!-- 2 -->
 														<th width="100px">V Codec</th>		<!-- 3 -->
 														<th width="50px">Resolution</th>	<!-- 4 -->
-														<th width="50px">A Codec</th>		<!-- 5 -->
+														<th width="100px">A Codec</th>		<!-- 5 -->
 														<th width="50px">Bitrate</th>		<!-- 6 -->
 														<th>RTMP Server</th>				<!-- 7 -->
 														<th width="100px">Uptime</th>		<!-- 8 -->
