@@ -184,11 +184,24 @@ function ajax_source_list() {
 function source_update() {
 	header("Content-Type:application/json; charset=utf-8");
 
+	if(empty($_POST['audio_sample_rate'])) {
+		$_POST['audio_sample_rate'] = 44100;
+	}
+
+	if(empty($_POST['audio_bitrate'])) {
+		$_POST['audio_bitrate']	= 128;
+	}
+
 	$json = json_encode($_POST);
 
 	file_put_contents('config/'.$_POST['source'].'.json', $json);
 
 	status_message('success', 'Configuration saved..');
+
+	if($_POST['stream'] == 'enable') {
+		file_get_contents('actions.php?a=source_stop&source='.$_POST['source']);
+		file_get_contents('actions.php?a=source_start&source='.$_POST['source']);
+	}
 	
 	go($_SERVER['HTTP_REFERER']);
 }
