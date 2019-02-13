@@ -669,7 +669,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.rtmp_server;
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <button onclick="source_restart(\''+sources[i].source.name+'\')" class="btn btn-primary btn-flat"><i class="fa fa-history"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-gears"></i></a>';
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <button onclick="source_restart(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-history"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-gears"></i></a>';
 								} else {
 									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger" style="100%">Not Streaming</span>';
