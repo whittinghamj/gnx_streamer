@@ -612,14 +612,14 @@ if($_SESSION['logged_in'] != true) {
 							for (i in sources)
 							{
 								// set some static values
-								if(sources[i].source.codec == 'libx264') {
-									sources[i].source.codec = 'H.264';
+								if(sources[i].source.video_codec == 'libx264') {
+									sources[i].source.video_codec = 'H.264';
 								}
-								if(sources[i].source.codec == 'libx265') {
-									sources[i].source.codec = 'H.265';
+								if(sources[i].source.video_codec == 'libx265') {
+									sources[i].source.video_codec = 'H.265';
 								}
-								if(sources[i].source.codec == 'not_set') {
-									sources[i].source.codec = '';
+								if(sources[i].source.video_codec == 'not_set') {
+									sources[i].source.video_codec = '';
 								}
 
 								if(sources[i].source.resolution == 'not_set') {
