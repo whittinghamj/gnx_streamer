@@ -270,7 +270,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="10px">Status</th>		<!-- 1 -->
 														<th width="50px">Device</th>		<!-- 2 -->
 														<th width="50px">V Codec</th>		<!-- 3 -->
-														<th width="50px">Resolution</th>	<!-- 4 -->
+														<th>Resolution</th>	<!-- 4 -->
 														<th width="25px">Bitrate</th>		<!-- 5 -->
 														<th width="25px">Actions</th>		<!-- 6 -->
 													</tr>
