@@ -147,8 +147,6 @@ function source_stop() {
 	// status message
 	// status_message('success', 'Card has stopped streaming.');
 	
-	// return
-	go($_SERVER['HTTP_REFERER']);
 }
 
 function source_start() {
@@ -163,9 +161,6 @@ function source_start() {
 
 	// status message
 	// status_message('success', 'Card will start streaming soon.');
-	
-	// return
-	go($_SERVER['HTTP_REFERER']);
 }
 
 function ajax_source_list() {
