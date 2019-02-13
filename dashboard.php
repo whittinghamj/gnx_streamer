@@ -272,7 +272,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="150px">V Codec</th>		<!-- 3 -->
 														<th width="50px">Resolution</th>	<!-- 4 -->
 														<th width="50px">Bitrate</th>		<!-- 5 -->
-														<th width="100%"></th>							<!-- 6 -->
+														<th></th>							<!-- 6 -->
 														<th width="150px">Actions</th>		<!-- 7 -->
 													</tr>
 												</thead>
