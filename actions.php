@@ -106,7 +106,7 @@ function source_check() {
 	$data['source']['command'] 		= exec('ps -eo args | grep "/dev/'.$source.'" | grep -v "grep" | grep -v "0:00"');
 	$data['source']['command']		= str_replace("sh -c ", "", $data['source']['command']);
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
-	$data['source']['uptime']		= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $10}'");
+	$data['source']['uptime']		s= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $10}'");
 
 	if(file_exists('config/'.$source.'.json')) {
 		$config_file 						= @file_get_contents('config/'.$source.'.json');
@@ -119,6 +119,7 @@ function source_check() {
 		$data['source']['framerate_in']		= $config_file['framerate_in'];
 		$data['source']['framreate_out']	= $config_file['framerate_out'];
 		$data['source']['rtmp_server']		= $config_file['rtmp_server'];
+		$data['source']['audio_codec']		= $config_file['audio_codec'];
 	}else{
 		$data['source']['resolution']		= 'not_set';
 		$data['source']['video_codec']		= 'not_set';
@@ -127,6 +128,7 @@ function source_check() {
 		$data['source']['framerate_in']		= 'not_set';
 		$data['source']['framerate_out']	= 'not_set';
 		$data['source']['rtmp_server']		= 'not_set';
+		$data['source']['audio_codec']		= 'not_set';
 	}
 
 	// output
@@ -149,7 +151,6 @@ function source_stop() {
 
 	// status message
 	// status_message('success', 'Card has stopped streaming.');
-	
 }
 
 function source_start() {
