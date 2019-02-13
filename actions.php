@@ -145,7 +145,7 @@ function source_stop() {
 	exec('sudo kill -9 ' . $pid)
 
 	// status message
-	status_message('success', 'Card has stopped streaming.');
+	// status_message('success', 'Card has stopped streaming.');
 	
 	// return
 	go($_SERVER['HTTP_REFERER']);
@@ -162,7 +162,7 @@ function source_start() {
 	file_put_contents('config/'.$source.'.json', $json);
 
 	// status message
-	status_message('success', 'Card will start streaming soon.');
+	// status_message('success', 'Card will start streaming soon.');
 	
 	// return
 	go($_SERVER['HTTP_REFERER']);
