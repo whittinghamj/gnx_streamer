@@ -680,7 +680,7 @@ if($_SESSION['logged_in'] != true) {
 			<?php } ?>
 
 			function source_start(source) {
-				var question = confirm("Please allow up to 60 seconds for stream to start.");
+				var question = confirm("Please allow up to 60 seconds for the stream to start.");
 				if( question == true ) {
 					$.ajax({
 						cache: false,

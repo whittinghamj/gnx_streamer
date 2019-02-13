@@ -108,22 +108,22 @@ function source_check() {
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
 
 	if(file_exists('config/'.$source.'.json')) {
-		$config_file 					= @file_get_contents('config/'.$source.'.json');
-		$config_file 					= json_decode($config_file, true);
+		$config_file 						= @file_get_contents('config/'.$source.'.json');
+		$config_file 						= json_decode($config_file, true);
 		
-		$data['source']['resolution']	= $config_file['screen_resolution'];
-		$data['source']['video_codec']	= $config_file['video_codec'];
-		$data['source']['bitrate']		= $config_file['bitrate'];
-		$data['source']['screenshot']	= $config_file['screenshot'];
-		$data['source']['framrate_in']	= $config_file['framrate_in'];
-		$data['source']['framrate_out']	= $config_file['framrate_out'];
+		$data['source']['resolution']		= $config_file['screen_resolution'];
+		$data['source']['video_codec']		= $config_file['video_codec'];
+		$data['source']['bitrate']			= $config_file['bitrate'];
+		$data['source']['screenshot']		= $config_file['screenshot'];
+		$data['source']['framerate_in']		= $config_file['framerate_in'];
+		$data['source']['framreate_out']	= $config_file['framerate_out'];
 	}else{
-		$data['source']['resolution']	= 'not_set';
-		$data['source']['video_codec']	= 'not_set';
-		$data['source']['bitrate']		= 'not_set';
-		$data['source']['screenshot']	= 'not_set';
-		$data['source']['framrate_in']	= 'not_set';
-		$data['source']['framrate_out']	= 'not_set';
+		$data['source']['resolution']		= 'not_set';
+		$data['source']['video_codec']		= 'not_set';
+		$data['source']['bitrate']			= 'not_set';
+		$data['source']['screenshot']		= 'not_set';
+		$data['source']['framerate_in']		= 'not_set';
+		$data['source']['framerate_out']	= 'not_set';
 	}
 
 	// output
