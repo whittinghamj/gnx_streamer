@@ -106,7 +106,7 @@ function source_check() {
 	$data['source']['command'] 		= exec('ps -eo args | grep "/dev/'.$source.'" | grep -v "grep" | grep -v "0:00"');
 	$data['source']['command']		= str_replace("sh -c ", "", $data['source']['command']);
 	$data['source']['pid']			= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
-	$data['source']['uptime']		s= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $10}'");
+	$data['source']['uptime']		= exec("ps aux | grep 'dev/".$source."' | grep -v 'grep' | grep -v '0:00' | awk '{print $10}'");
 
 	if(file_exists('config/'.$source.'.json')) {
 		$config_file 						= @file_get_contents('config/'.$source.'.json');
