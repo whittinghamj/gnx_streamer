@@ -41,7 +41,7 @@ if($task == 'stop_start')
 			echo "Stopping stream for ".$data['source']." with PID: ".$pid." \n";
 			exec('sudo kill -9 ' . $pid);
 		}else{
-			echo "No stream running for ".$data['source']." \n";
+			// echo "No stream running for ".$data['source']." \n";
 		}
 	}
 }
