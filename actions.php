@@ -107,11 +107,11 @@ function source_check() {
 		$config_file 					= @file_get_contents('config/'.$source.'.json');
 		$config_file 					= json_decode($config_file, true);
 		
-		$data['source']['resolution']	= $source['config']['screen_resolution'];
-		$data['source']['codec']		= $source['config']['codec'];
-		$data['source']['bitrate']		= $source['config']['bitrate'];
-		$data['source']['screenshot']	= $source['config']['screenshot'];
-		$data['source']['config_file'] 	= $config_file;
+		$data['source']['resolution']	= $config_file['screen_resolution'];
+		$data['source']['codec']		= $config_file['codec'];
+		$data['source']['bitrate']		= $config_file['bitrate'];
+		$data['source']['screenshot']	= $config_file['screenshot'];
+		// $data['source']['config_file'] 	= $config_file;
 	}
 
 	// output
