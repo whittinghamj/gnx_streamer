@@ -269,10 +269,10 @@ if($_SESSION['logged_in'] != true) {
 														<th width="10px">#</th>				<!-- 0 -->
 														<th width="10px">Status</th>		<!-- 1 -->
 														<th width="50px">Device</th>		<!-- 2 -->
-														<th width="50px">V Codec</th>		<!-- 3 -->
+														<th width="100px">V Codec</th>		<!-- 3 -->
 														<th>Resolution</th>	<!-- 4 -->
 														<th width="50px">Bitrate</th>		<!-- 5 -->
-														<th width="50px">Actions</th>		<!-- 6 -->
+														<th width="100px">Actions</th>		<!-- 6 -->
 													</tr>
 												</thead>
 												<tbody>
