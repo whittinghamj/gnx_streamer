@@ -31,15 +31,17 @@ if($task == 'test')
 			// found a dead stream, lets start it again
 			echo "Starting stream for ".$data['source']." \n";
 			shell_exec('sudo nohup ' . $cmd . ' > '.$data['source'].'.log 2>&1 &');
-		}else {
+		}else{
 			// do nothing, we found a stream already running for this source
 			echo "Stream already running for ".$data['source']." with PID: ".$pid." \n";
 		}
 
 		// stream set to disable, lets find and kill it
-		if($data['stream'] == 'disable') {
+		if($data['stream'] == 'disable' && !empty($pid)) {
 			echo "Stopping stream for ".$data['source']." with PID: ".$pid." \n";
 			exec('sudo kill -9 ' . $pid);
+		}else{
+			echo "No stream running for ".$data['source']." \n";
 		}
 	}
 }
