@@ -644,12 +644,12 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.rtmp_server = '';
 								}
 
-								if(sources[i].source.audio_codex == 'aac') {
-									sources[i].source.audio_codex = 'AAC';
+								if(sources[i].source.audio_codec == 'aac') {
+									sources[i].source.audio_codec = 'AAC';
 								}
 
-								if(sources[i].source.audio_codex == 'not_set') {
-									sources[i].source.audio_codex = '';
+								if(sources[i].source.audio_codec == 'not_set') {
+									sources[i].source.audio_codec = '';
 								}
 
 								if(sources[i].source.bitrate == 'not_set') {
@@ -672,7 +672,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
 
 									// colum 5
-									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.audio_codex;
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.audio_codec;
 
 									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.bitrate;
@@ -696,7 +696,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_4').innerHTML = sources[i].source.resolution;
 
 									// colum 5
-									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.audio_codex;
+									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.audio_codec;
 
 									// colum 6
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.bitrate;
