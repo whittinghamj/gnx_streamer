@@ -26,7 +26,7 @@ if($task == 'test')
 
 		if($data['stream'] == 'enable') {
 			echo "Starting stream. \n";
-			exec('nohup ' . $cmd . ' & ');
+			exec($cmd . ' & disown ');
 		}else{
 			echo "stopping stream. \n";
 			$pid = exec("ps aux | grep '/dev/".$data['source']."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
