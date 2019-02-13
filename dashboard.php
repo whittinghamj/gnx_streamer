@@ -241,9 +241,6 @@ if($_SESSION['logged_in'] != true) {
 										</a>
 									</li>
 									<li><span>Sources</span></li>
-									<!--
-									<li><span>Boxed</span></li>
-									-->
 								</ol>
 						
 								<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -251,14 +248,11 @@ if($_SESSION['logged_in'] != true) {
 						</header>
 
 						<!-- start: page -->
-
 						<div class="row">
 							<div class="col-lg-12">
 								<section class="panel">
 									<header class="panel-heading">
-										<div class="panel-actions">
-										</div>
-						
+										<div class="panel-actions"></div>
 										<h2 class="panel-title">Sources</h2>
 									</header>
 									<div class="panel-body">
@@ -272,7 +266,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="100px">V Codec</th>		<!-- 3 -->
 														<th width="50px">Resolution</th>	<!-- 4 -->
 														<th width="50px">Bitrate</th>		<!-- 5 -->
-														<th></th>							<!-- 6 -->
+														<th>RTMP Server</th>				<!-- 6 -->
 														<th width="100px">Actions</th>		<!-- 7 -->
 													</tr>
 												</thead>
@@ -285,9 +279,7 @@ if($_SESSION['logged_in'] != true) {
 								</section>
 							</div>
 						</div>
-
 						<!-- end: page -->
-
 					</section>
 				<?php } ?>
 
@@ -337,9 +329,7 @@ if($_SESSION['logged_in'] != true) {
 									<form action="actions.php?a=source_update" class="form-horizontal form-bordered" method="post">
 										<input type="hidden" name="source" value="<?php echo $source['name']; ?>">
 										<header class="panel-heading">
-											<div class="panel-actions">
-											</div>
-							
+											<div class="panel-actions"></div>
 											<h2 class="panel-title">Settings (<?php echo $file_exists; ?>)</h2>
 										</header>
 										<div class="panel-body">
@@ -649,6 +639,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
+									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.rtmp_server;
 
 									// colum 7
 									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
@@ -669,6 +660,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
+									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.rtmp_server;
 
 									// colum 7
 									document.getElementById(sources[i].source.name + '_col_7').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';

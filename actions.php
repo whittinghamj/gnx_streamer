@@ -117,6 +117,7 @@ function source_check() {
 		$data['source']['screenshot']		= $config_file['screenshot'];
 		$data['source']['framerate_in']		= $config_file['framerate_in'];
 		$data['source']['framreate_out']	= $config_file['framerate_out'];
+		$data['source']['rtmp_server']		= $config_file['rtmp_server'];
 	}else{
 		$data['source']['resolution']		= 'not_set';
 		$data['source']['video_codec']		= 'not_set';
@@ -124,6 +125,7 @@ function source_check() {
 		$data['source']['screenshot']		= 'not_set';
 		$data['source']['framerate_in']		= 'not_set';
 		$data['source']['framerate_out']	= 'not_set';
+		$data['source']['rtmp_server']		= 'not_set';
 	}
 
 	// output
