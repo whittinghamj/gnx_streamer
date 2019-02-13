@@ -270,9 +270,10 @@ if($_SESSION['logged_in'] != true) {
 														<th width="10px">Status</th>		<!-- 1 -->
 														<th width="50px">Device</th>		<!-- 2 -->
 														<th width="100px">V Codec</th>		<!-- 3 -->
-														<th>Resolution</th>	<!-- 4 -->
+														<th width="50px">Resolution</th>	<!-- 4 -->
 														<th width="50px">Bitrate</th>		<!-- 5 -->
-														<th width="100px">Actions</th>		<!-- 6 -->
+														<th></th>							<!-- 6 -->
+														<th width="100px">Actions</th>		<!-- 7 -->
 													</tr>
 												</thead>
 												<tbody>
@@ -615,13 +616,13 @@ if($_SESSION['logged_in'] != true) {
 								}
 
 								if(sources[i].source.resolution == 'not_set') {
-									sources[i].source.codec = '';
+									sources[i].source.resolution = '';
 								}
 
 								if(sources[i].source.bitrate == 'not_set') {
-									sources[i].source.codec = '';
+									sources[i].source.bitrate = '';
 								} else {
-									sources[i].source.codec = sources[i].source.codec + 'k';
+									sources[i].source.bitrate = sources[i].source.bitrate + 'k';
 								}
 
 								if(sources[i].source.status == 'busy') {
@@ -641,6 +642,8 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
+
+									// colum 7
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_stop(\''+sources[i].source.pid+'\')" class="btn btn-danger btn-flat"><i class="fa fa-times"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								} else {
 									// colum 1
@@ -659,6 +662,8 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_5').innerHTML = sources[i].source.bitrate;
 
 									// colum 6
+
+									// colum 7
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = '<button onclick="source_start(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat"><i class="fa fa-check"></i></button> <a title="Edit" class="btn btn-info btn-flat" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-globe"></i></a>';
 								}
 							}						
