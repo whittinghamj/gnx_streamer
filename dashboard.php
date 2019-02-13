@@ -680,7 +680,18 @@ if($_SESSION['logged_in'] != true) {
 			<?php } ?>
 
 			function source_start(source) {
-				alert('Starting Source: ' + source);
+				var question = confirm("Please allow up to 60 seconds for stream to start.");
+				if( question == true ) {
+					$.ajax({
+						cache: false,
+						type: "GET",
+				        url:'actions.php?a=source_start&source=' + source,
+						success: function(sources) {
+												
+						}
+					});
+					return true;
+				}
 			}
 
 			function source_stop(source) {

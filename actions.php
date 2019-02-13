@@ -28,6 +28,10 @@ switch ($a)
 		source_stop();
 		break;
 
+	case "source_start":
+		source_start();
+		break;
+
 	case "source_update":
 		source_update();
 		break;
@@ -142,6 +146,23 @@ function source_stop() {
 
 	// status message
 	status_message('success', 'Card has stopped streaming.');
+	
+	// return
+	go($_SERVER['HTTP_REFERER']);
+}
+
+function source_start() {
+	$source = get('source');
+
+	// read, update, write config file
+	$config_file 			= @file_get_contents('config/'.$source.'.json');
+	$config_file	 		= json_decode($config_file, true);
+	$config_file['stream']	= 'enable';
+	$json = json_encode($config_file);
+	file_put_contents('config/'.$source.'.json', $json);
+
+	// status message
+	status_message('success', 'Card will start streaming soon.');
 	
 	// return
 	go($_SERVER['HTTP_REFERER']);
