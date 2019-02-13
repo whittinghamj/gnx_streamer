@@ -115,7 +115,7 @@ function source_check() {
 		$data['source']['framrate_out']	= $config_file['framrate_out'];
 	}else{
 		$data['source']['resolution']	= 'not_set';
-		$data['source']['codec']		= 'not_set';
+		$data['source']['video_codec']	= 'not_set';
 		$data['source']['bitrate']		= 'not_set';
 		$data['source']['screenshot']	= 'not_set';
 		$data['source']['framrate_in']	= $config_file['framrate_in'];
