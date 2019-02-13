@@ -30,7 +30,7 @@ if($task == 'test')
 		if($data['stream'] == 'enable' && empty($pid)) {
 			// found a dead stream, lets start it again
 			echo "Starting stream for ".$data['source']." \n";
-			exec('sudo ' . $cmd . ' &>/dev/null ');
+			shell_exec('sudo ' . $cmd . ' &>/dev/null ');
 		}else {
 			// do nothing, we found a stream already running for this source
 			echo "Stream already running for ".$data['source']." with PID: ".$pid." \n";
