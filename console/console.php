@@ -1,6 +1,7 @@
 <?php
-include('../inc/global_vars.php');
-include('../inc/functions.php');
+
+include('/var/www/html/inc/global_vars.php');
+include('/var/www/html/inc/functions.php');
 
 $task = $argv[1];
 
