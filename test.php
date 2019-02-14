@@ -13,3 +13,9 @@ $array = explode("\n", $audio_devices);
 print_r($array);
 
 echo "\n\n";
+
+echo "printing filteresarray results \n";
+$result = array_filter($array);
+print_r($result);
+
+echo "\n";       
