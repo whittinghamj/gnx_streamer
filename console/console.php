@@ -17,9 +17,9 @@ if($task == 'stop_start')
 
 		// print_r($data);
 
-		if($data['out_type'] == 'rtmp') {
+		if($data['output_type'] == 'rtmp') {
 			$output_url = $data['rtmp_server'];
-		}elseif($data['out_type'] == 'http'){
+		}elseif($data['output_type'] == 'http'){
 			$output_url = 'rtmp://localhost/show/stream';
 		}
 
