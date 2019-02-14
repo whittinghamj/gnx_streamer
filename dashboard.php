@@ -296,6 +296,10 @@ if($_SESSION['logged_in'] != true) {
 							$source['config'] 		= @file_get_contents('config/'.$source['name'].'.json');
 							$source['config'] 		= json_decode($source['config'], true);
 						}
+
+						$audio_devices 				= shell_exec('arecord -L | grep "hw:CARD=SB" | grep -v "plug"');
+						$audio_devices 				= explode("\n", $audio_devices);
+						$audio_devices 				= array_filter($audio_devices);
 					?>
 
 					<section role="main" class="content-body">
@@ -342,9 +346,20 @@ if($_SESSION['logged_in'] != true) {
 											<?php } ?>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="name">Source Name</label>
+												<label class="col-md-3 control-label" for="name">Video Source Name</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="name" name="name" disabled value="<?php echo $source['name']; ?>">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
+												<div class="col-md-6">
+													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
+														<?php foreach($audio_devices as $audio_device) { ?>
+															<option <?php if($audio_device]=='<?php echo $source['name']; ?>'){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
+														<?php } ?>
+													</select>
 												</div>
 											</div>
 
@@ -639,6 +654,10 @@ if($_SESSION['logged_in'] != true) {
 
 								if(sources[i].source.resolution == 'not_set') {
 									sources[i].source.resolution = '';
+								}
+
+								if(sources[i].source.audio_device == 'not_set') {
+									sources[i].source.audio_device = '';
 								}
 
 								if(sources[i].source.rtmp_server == 'not_set') {

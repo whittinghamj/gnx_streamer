@@ -120,6 +120,7 @@ function source_check() {
 		$data['source']['framreate_out']	= $config_file['framerate_out'];
 		$data['source']['rtmp_server']		= $config_file['rtmp_server'];
 		$data['source']['audio_codec']		= $config_file['audio_codec'];
+		$data['source']['audio_device']		= $config_file['audio_device'];
 	}else{
 		$data['source']['resolution']		= 'not_set';
 		$data['source']['video_codec']		= 'not_set';
@@ -129,6 +130,7 @@ function source_check() {
 		$data['source']['framerate_out']	= 'not_set';
 		$data['source']['rtmp_server']		= 'not_set';
 		$data['source']['audio_codec']		= 'not_set';
+		$data['source']['audio_device']		= 'not_set';
 	}
 
 	// output
