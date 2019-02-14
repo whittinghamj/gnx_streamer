@@ -203,8 +203,9 @@ function source_update() {
 	status_message('success', 'Configuration saved..');
 
 	if($_POST['stream'] == 'enable') {
-		file_get_contents('actions.php?a=source_stop&source='.$_POST['source']);
-		file_get_contents('actions.php?a=source_start&source='.$_POST['source']);
+		file_get_contents('http://localhost/actions.php?a=source_stop&source='.$_POST['source']);
+		sleep(1);
+		file_get_contents('http://localhost/actions.php?a=source_start&source='.$_POST['source']);
 	}
 	
 	go($_SERVER['HTTP_REFERER']);
