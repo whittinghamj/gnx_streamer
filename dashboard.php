@@ -346,30 +346,19 @@ if($_SESSION['logged_in'] != true) {
 											<?php } ?>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="name">Video Source Name</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="name" name="name" disabled value="<?php echo $source['name']; ?>">
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
-												<div class="col-md-6">
-													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
-														<?php foreach($audio_devices as $audio_device) { ?>
-															<option <?php if($audio_device==$source['config']['audio_device']){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
-														<?php } ?>
-													</select>
-												</div>
-											</div>
-
-											<div class="form-group">
 												<label class="col-md-3 control-label" for="stream">Stream</label>
 												<div class="col-md-6">
 													<select id="stream" name="stream" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['stream']=='enable'){echo"selected";} ?> value="enable">Enable</option>
 														<option <?php if($source['config']['stream']=='disable'){echo"selected";} ?> value="disable">Disable</option>
 													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="name">Video Source Name</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="name" name="name" disabled value="<?php echo $source['name']; ?>">
 												</div>
 											</div>
 
@@ -413,6 +402,17 @@ if($_SESSION['logged_in'] != true) {
 													<select id="video_codec" name="video_codec" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['video_codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
 														<option <?php if($source['config']['video_codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
+												<div class="col-md-6">
+													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
+														<?php foreach($audio_devices as $audio_device) { ?>
+															<option <?php if($audio_device==$source['config']['audio_device']){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
+														<?php } ?>
 													</select>
 												</div>
 											</div>
