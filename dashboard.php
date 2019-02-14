@@ -474,17 +474,17 @@ if($_SESSION['logged_in'] != true) {
 											    });
 											</script>
 
-											<div id="rtmp" class="form-group" <?php if($source['config']['output_type']!='rtmp'){echo 'style="display:none"';} ?>>
+											<div id="rtmp" class="form-group">
 												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="rtmp_server" name="rtmp_server" value="<?php echo $source['config']['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
 												</div>
 											</div>
 
-											<div id="http" class="form-group" <?php if($source['config']['output_type']!='http'){echo 'style="display:none"';} ?>>
+											<div id="http" class="form-group">
 												<label class="col-md-3 control-label" for="http_server">HTTP Server</label>
 												<div class="col-md-6">
-													Stream URL: http:// <?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/stream.m3u8
+													<input type="text" class="form-control" id="http_server" name="http_server" value="http:// <?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/stream.m3u8" disabled>
 												</div>
 											</div>
 
