@@ -1,6 +1,6 @@
 <?php
 
-$audio_devices 			= exec('arecord -L | grep "hw:CARD=SB" | grep -v "plug"');
+$audio_devices 			= passthru('arecord -L | grep "hw:CARD=SB" | grep -v "plug"');
 
 
 echo "printing results \n";
