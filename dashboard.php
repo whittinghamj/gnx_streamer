@@ -297,7 +297,7 @@ if($_SESSION['logged_in'] != true) {
 							$source['config'] 		= json_decode($source['config'], true);
 						}
 
-						$audio_devices 				= shell_exec('sudo arecord -L | grep "hw:CARD=SB" | grep -v "plug"');
+						$audio_devices 				= shell_exec('sudo arecord -L | grep "hw:CARD=D" | grep -v "plug"');
 						$audio_devices 				= explode("\n", $audio_devices);
 						$audio_devices 				= array_filter($audio_devices);
 					?>
