@@ -30,7 +30,7 @@ if($task == 'stop_start')
 		echo "====================================================================================================\n";
 		echo "\n";
 
-		echo "Output URL: " . $output_url . "" \n;
+		echo "Output URL: " . $output_url . "\n";
 
 		$pid = exec("ps aux | grep '/dev/".$data['source']."' | grep -v 'grep' | grep -v '0:00' | awk '{print $2}'");
 
