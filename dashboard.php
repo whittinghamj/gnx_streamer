@@ -370,7 +370,7 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="screen_resolution">Encoded Size</label>
+												<label class="col-md-3 control-label" for="screen_resolution">Output Video Resolution</label>
 												<div class="col-md-6">
 													<select id="screen_resolution" name="screen_resolution" class="form-control input-sm mb-md">
 														<option <?php if($source['config']['screen_resolution']=='1920x1080'){echo"selected";} ?> value="1920x1080">1920x1080</option>
@@ -407,6 +407,13 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
+												<label class="col-md-3 control-label" for="framerate_out">Output Video Framerate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="framerate_out" name="framerate_out" value="<?php echo $source['config']['framerate_out']; ?>" placeholder="29">
+												</div>
+											</div>
+
+											<div class="form-group">
 												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
 												<div class="col-md-6">
 													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
@@ -427,28 +434,21 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="audio_bitrate">Audio Bitrate (k)</label>
+												<label class="col-md-3 control-label" for="audio_bitrate">Output Audio Bitrate (k)</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="audio_bitrate" name="audio_bitrate" value="<?php echo $source['config']['audio_bitrate']; ?>" placeholder="128">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="audio_sample_rate">Audio Sample Rate </label>
+												<label class="col-md-3 control-label" for="audio_sample_rate">Output Audio Sample Rate</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="audio_sample_rate" name="audio_sample_rate" value="<?php echo $source['config']['audio_sample_rate']; ?>" placeholder="44100">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="framerate_out">Output Framerate</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control" id="framerate_out" name="framerate_out" value="<?php echo $source['config']['framerate_out']; ?>" placeholder="29">
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="bitrate">Output Bitrate (k)</label>
+												<label class="col-md-3 control-label" for="bitrate">Output Stream Bitrate (k)</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control" id="bitrate" name="bitrate" value="<?php echo $source['config']['bitrate']; ?>" placeholder="3500">
 												</div>
