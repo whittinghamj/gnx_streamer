@@ -1,7 +1,5 @@
 <?php
 
-$source['name']				= 'video0';
-$source['raw_json']			= file_get_contents("http://localhost/actions.php?a=source_check&source=".$source['name']);
+$audio_devices 			= exec('arecord -L | grep "hw:CARD=SB" | grep -v "plug"');
 
-echo '<pre>';
-print_r($source);
+print_r($audio_devices);
