@@ -20,7 +20,7 @@ if($task == 'stop_start')
 		if($data['output_type'] == 'rtmp') {
 			$output_url = $data['rtmp_server'];
 		}elseif($data['output_type'] == 'http'){
-			$output_url = 'rtmp://localhost/show/stream';
+			$output_url = 'rtmp://localhost/show/' . $data['source'];
 		}
 
 		$cmd = "ffmpeg -nostdin -loglevel fatal -y -f alsa -ac 2 -i ".$data['audio_device']." -f video4linux2 -re -framerate ".$data['framerate_in']." -i /dev/".$data['source']." -acodec aac -ab 128k -ar 44100 -f matroska -vcodec ".$data['video_codec']." -r ".$data['framerate_out']." -pix_fmt yuv420p -s ".$data['screen_resolution']." -preset ultrafast -b:v ".$data['bitrate']."k -f flv ".$output_url." ".($data['screenshot']=='enable' ? '-f image2 -vf fps=fps=90 -s 320x240 -updatefirst 1 /var/www/html/screenshots/video0.png' : '');
