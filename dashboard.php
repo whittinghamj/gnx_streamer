@@ -484,7 +484,7 @@ if($_SESSION['logged_in'] != true) {
 											<div id="http" class="form-group">
 												<label class="col-md-3 control-label" for="http_server">HTTP Server</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="http_server" name="http_server" value="http:// <?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/stream.m3u8" disabled>
+													<input type="text" class="form-control" id="http_server" name="http_server" value="http:// <?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/stream.m3u8" readonly>
 												</div>
 											</div>
 
