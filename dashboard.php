@@ -357,7 +357,7 @@ if($_SESSION['logged_in'] != true) {
 												<div class="col-md-6">
 													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
 														<?php foreach($audio_devices as $audio_device) { ?>
-															<option <?php if($audio_device=='<?php echo $source['name']; ?>'){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
+															<option <?php if($audio_device==$source['config']['audio_device']){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
 														<?php } ?>
 													</select>
 												</div>
