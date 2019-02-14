@@ -339,7 +339,7 @@ if($_SESSION['logged_in'] != true) {
 											<h2 class="panel-title">Settings (<?php echo $file_exists; ?>)</h2>
 										</header>
 										<div class="panel-body">
-											<?php if($_GET['dev'] == 'yes') { ?>
+											<?php if(isset($_GET['dev']) && $_GET['dev'] == 'yes') { ?>
 												<pre>
 													<?php print_r($source['config']); ?>
 												</pre>
