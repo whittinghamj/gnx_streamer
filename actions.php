@@ -130,7 +130,9 @@ function source_check() {
 		$data['source']['screenshot']		= 'not_set';
 		$data['source']['framerate_in']		= 'not_set';
 		$data['source']['framerate_out']	= 'not_set';
+		$data['source']['output_type']		= 'not_set';
 		$data['source']['rtmp_server']		= 'not_set';
+		$data['source']['http_server']		= 'not_set';
 		$data['source']['audio_codec']		= 'not_set';
 		$data['source']['audio_device']		= 'not_set';
 	}
