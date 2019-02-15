@@ -267,7 +267,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="50px">Resolution</th>	<!-- 4 -->
 														<th width="100px">A Codec</th>		<!-- 5 -->
 														<th width="50px">Bitrate</th>		<!-- 6 -->
-														<th>RTMP Server</th>				<!-- 7 -->
+														<th>Stream Type</th>				<!-- 7 -->
 														<th width="100px">Uptime</th>		<!-- 8 -->
 														<th width="100px">Actions</th>		<!-- 9 -->
 													</tr>
@@ -695,6 +695,13 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.bitrate = sources[i].source.bitrate + 'k';
 								}
 
+								if(sources[i].source.output_type == 'rtmp') {
+									sources[i].source.stream_url = 'RTMP: ' + sources[i].source.rtmp_server;
+								}
+								if(sources[i].source.output_type == 'http') {
+									sources[i].source.stream_url = 'HTTP: ' + sources[i].source.http_server;
+								}
+
 								if(sources[i].source.status == 'busy') {
 									// colum 1
 									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success" style="100%">Streaming</span>';
@@ -715,7 +722,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.bitrate;
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_7').innerHTML = sources[i].source.rtmp_server;
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = sources[i].source.stream_url;
 
 									// colum 8
 									document.getElementById(sources[i].source.name + '_col_8').innerHTML = sources[i].source.uptime;
@@ -742,7 +749,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_6').innerHTML = sources[i].source.bitrate;
 
 									// colum 7
-									document.getElementById(sources[i].source.name + '_col_7').innerHTML = sources[i].source.rtmp_server;
+									document.getElementById(sources[i].source.name + '_col_7').innerHTML = sources[i].source.stream_url;
 
 									// colum 8
 									document.getElementById(sources[i].source.name + '_col_8').innerHTML = sources[i].source.uptime;
