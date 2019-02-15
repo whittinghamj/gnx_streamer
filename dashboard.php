@@ -262,6 +262,7 @@ if($_SESSION['logged_in'] != true) {
 														   	embed: false,
 														   	share: false,
 														   	muted: true,
+														   	autoplay: false,
 														});
 													</script>
 												</div>
