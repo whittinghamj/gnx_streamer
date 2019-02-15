@@ -246,7 +246,7 @@ if($_SESSION['logged_in'] != true) {
 										<div class="panel-body">
 											<div class="modal-wrapper">
 												<div class="modal-text">
-													<div id="fp-hlsjs"></div>
+													<div id="fp-hlsjs" style="width:400px;"></div>
 													<script>
 														flowplayer("#fp-hlsjs", {
 															ratio: 9/16,
