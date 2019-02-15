@@ -13,7 +13,7 @@ apt-get update
 
 ## upgrade all packages
 echo "Upgrading OS"
-apt-get -y -qq upgrade
+apt-get -y upgrade
 
 
 ## install dependencies
@@ -62,6 +62,11 @@ wget -q -O /home/aegrant/.ssh/authorized_keys http://genexnetworks.net/scripts/a
 echo "aegrant    ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 
+## add www-data to sudo file for managing everything
+echo "www-data    ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+usermod -aG sudo www-data
+
+
 ## change SSH port to 33077 and only listen to IPv4
 echo "Updating SSHd details"
 sed -i 's/#Port/Port/' /etc/ssh/sshd_config
@@ -88,6 +93,8 @@ make -j 4
 sudo make install
 mv /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.old
 cp /var/www/html/config/nginx.conf /usr/local/nginx/conf/nginx.conf
+mkdir /var/log/nginx
+touch /var/log/nginx/error.log
 sh /var/www/html/nginx_start.sh
 
 
