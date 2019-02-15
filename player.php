@@ -53,7 +53,8 @@
                    }
                ]
            },
-           embed: false
+           embed: false,
+           share: false
        });
     </script>
         
