@@ -128,6 +128,14 @@ if($_SESSION['logged_in'] != true) {
 											<span>Sources</span>
 										</a>
 									</li>
+									<?php if(file_exists('addons/roku/')) { ?>
+										<li>
+											<a href="dashboard.php?c=roku_remote">
+												<i class="fa fa-addon" aria-hidden="true"></i>
+												<span>ROKU Remote</span>
+											</a>
+										</li>
+									<?php } ?>
 								</ul>
 							</nav>
 				
