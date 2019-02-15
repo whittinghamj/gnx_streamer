@@ -2,7 +2,7 @@
 
 // site vars
 $site['url']					= 'http://'.$_SERVER['SERVER_ADDR'].'/';
-$site['title']					= 'GTV Portal';
+$site['title']					= 'GTV Streamer';
 $site['copyright']				= 'Written by GENEX NETWORKS LLC T/A '.$site['title'].'. <br>Registered in Colorado, USA: 20151830790.';
 
 // logo name vars
