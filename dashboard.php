@@ -236,7 +236,7 @@ if($_SESSION['logged_in'] != true) {
 
 						<section class="panel">
 							<div class="panel-body">
-								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-default" href="#modalFull">View Stream</a>
+								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-info" href="#modalFull">View Stream</a>
 
 								<div id="modalFull" class="modal-block modal-block-full mfp-hide">
 									<section class="panel">
