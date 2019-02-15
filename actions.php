@@ -118,7 +118,9 @@ function source_check() {
 		$data['source']['screenshot']		= $config_file['screenshot'];
 		$data['source']['framerate_in']		= $config_file['framerate_in'];
 		$data['source']['framreate_out']	= $config_file['framerate_out'];
+		$data['source']['output_type']		= $config_file['output_type'];
 		$data['source']['rtmp_server']		= $config_file['rtmp_server'];
+		$data['source']['http_server']		= $config_file['http_server'];
 		$data['source']['audio_codec']		= $config_file['audio_codec'];
 		$data['source']['audio_device']		= $config_file['audio_device'];
 	}else{
