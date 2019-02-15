@@ -629,4 +629,10 @@ if($command == 'setup'){
 	keypress($ip_address, 'Select', 0);
 	usleep(2000000);
 	keypress($ip_address, 'Home', 0);
+	usleep(2000000);
+	keypress($ip_address, 'Home', 0);
+	usleep(2000000);
+	keypress($ip_address, 'Home', 0);
+	usleep(2000000);
+	keypress($ip_address, 'Home', 0);
 }
