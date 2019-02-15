@@ -53,6 +53,15 @@ if($_SESSION['logged_in'] != true) {
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
 
+		<!-- flowplayer skin -->
+		<link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">
+   
+		<!-- hls.js -->
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@0.11.0/dist/hls.light.min.js"></script>
+
+		<!-- flowplayer -->
+		<script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
+
 	</head>
 	<body>
 		<section class="body">
@@ -227,25 +236,42 @@ if($_SESSION['logged_in'] != true) {
 
 						<section class="panel">
 							<div class="panel-body">
-								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-default" href="#modalFull">Full</a>
+								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-default" href="#modalFull">View Stream</a>
 
 								<div id="modalFull" class="modal-block modal-block-full mfp-hide">
 									<section class="panel">
 										<header class="panel-heading">
-											<h2 class="panel-title">Are you sure?</h2>
+											<h2 class="panel-title">Live Stream from video0</h2>
 										</header>
 										<div class="panel-body">
 											<div class="modal-wrapper">
 												<div class="modal-text">
-													<p>Are you sure that you want to delete this image?</p>
+													<div id="fp-hlsjs"></div>
+													<script>
+														flowplayer("#fp-hlsjs", {
+															ratio: 9/16,
+														   	clip: {
+														      	autoplay: true,
+														       	title: "video0 source",
+														       	sources: [{ 
+																	type: "application/x-mpegurl",
+														            src:  "http://192.168.1.52:9000/hls/video0.m3u8",
+														            live: true          
+																}]
+														   	},
+														   	embed: false,
+														   	share: false,
+														   	muted: true,
+														});
+													</script>
 												</div>
 											</div>
 										</div>
 										<footer class="panel-footer">
 											<div class="row">
 												<div class="col-md-12 text-right">
-													<button class="btn btn-primary modal-confirm">Confirm</button>
-													<button class="btn btn-default modal-dismiss">Cancel</button>
+													<!-- <button class="btn btn-primary modal-confirm">Confirm</button> -->
+													<button class="btn btn-info modal-dismiss">Close</button>
 												</div>
 											</div>
 										</footer>
