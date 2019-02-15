@@ -131,7 +131,19 @@ if($_SESSION['logged_in'] != true) {
 									<?php if(file_exists('addons/roku/')) { ?>
 										<li>
 											<a href="dashboard.php?c=roku_remote">
-												<i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+												<i class="fa fa-link" aria-hidden="true"></i>
+												<span>ROKU Remote</span>
+											</a>
+										</li>
+										<li>
+											<a href="dashboard.php?c=roku_remote">
+												<i class="fa fa-computer" aria-hidden="true"></i>
+												<span>ROKU Remote</span>
+											</a>
+										</li>
+										<li>
+											<a href="dashboard.php?c=roku_remote">
+												<i class="fa fa-television" aria-hidden="true"></i>
 												<span>ROKU Remote</span>
 											</a>
 										</li>
