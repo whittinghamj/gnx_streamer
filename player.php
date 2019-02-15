@@ -1,31 +1,61 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<html>
 <head>
+    <meta charset="utf-8">
+    <title>BBC One SD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/functional.css">
+    <!-- CSS for this demo -->
+    
+    <!-- skin -->
+   <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">
+   
+   <!-- hls.js -->
+   <script src="https://cdn.jsdelivr.net/npm/hls.js@0.11.0/dist/hls.light.min.js"></script>
+   
+   <!-- flowplayer -->
+   <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
 
-   <!-- player skin -->
-   <link rel="stylesheet" href="skin/skin.css">
+    <style>
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -100;
+        }
 
-   <!-- site specific styling -->
-   <style>
-   body { font: 12px "Myriad Pro", "Lucida Grande", sans-serif; text-align: center; padding-top: 5%; }
-   .flowplayer { width: 80%; }
-   </style>
-
-   <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
-   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-
-   <!-- include flowplayer -->
-   <script src="flowplayer.min.js"></script>
-
+        .fullscreen-bg__video {
+            position: absolute;
+           top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-
-   <!-- the player -->
-   <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
-      <video>
-         <source type="video/webm" src="http://86.4.171.7:9000/hls/video0.m3u8">
-      </video>
-   </div>
-
+    <div id="fp-hlsjs"></div>
+    
+    <script>
+       flowplayer("#fp-hlsjs", {
+           ratio: 9/16,
+           clip: {
+               autoplay: true,
+               title: "video0 source",
+               sources: [
+                   { type: "application/x-mpegurl",
+                     src:  "http://192.168.1.52:9000/hls/video0.m3u8",
+                     live: true          
+                   }
+               ]
+           },
+           embed: false
+       });
+    </script>
+        
 </body>
+</html>
