@@ -44,16 +44,15 @@
     <div id="fp-hlsjs"></div>
     
     <script>
-       flowplayer("#fp-hlsjs", {
-           ratio: 9/16,
-           clip: {
-               autoplay: true,
-               title: "video0 source",
-               sources: [
-                   { type: "application/x-mpegurl",
-                     src:  "http://<?php echo $_SESSION['SERVER_ADDR']; ?>:9000/hls/<?php echo $source; ?>.m3u8",
-                     live: true          
-                   }
+         flowplayer("#fp-hlsjs", {
+               ratio: 9/16,
+               clip: {
+                     autoplay: true,
+                     title: "video0 source",
+                     sources: [{ type: "application/x-mpegurl",
+                           src:  "http://192.168.1.52:9000/hls/<?php echo $source; ?>.m3u8",
+                           live: true          
+                     }
                ]
            },
            embed: false,
