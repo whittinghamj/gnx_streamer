@@ -56,6 +56,7 @@
            embed: false,
            share: false,
            autoplay: false,
+           muted: true,
        });
     </script>
         

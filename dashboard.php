@@ -238,8 +238,6 @@ if($_SESSION['logged_in'] != true) {
 							<div class="panel-body">
 								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-info" href="#modalBasic">View Stream</a>
 
-								<a class="simple-ajax-modal btn btn-default" href="player.php?source=video0">Load Ajax Content</a>
-
 								<div id="modalBasic" class="modal-block mfp-hide">
 									<section class="panel">
 										<header class="panel-heading">
