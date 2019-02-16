@@ -834,7 +834,11 @@ if($_SESSION['logged_in'] != true) {
 						type: "GET",
 				        url:'actions.php?a=source_start&source=' + source,
 						success: function(sources) {
-												
+							new PNotify({
+								title: 'Success!',
+								text: source+' stream has been started.',
+								type: 'success'
+							});
 						}
 					});
 					return true;
@@ -849,17 +853,15 @@ if($_SESSION['logged_in'] != true) {
 						type: "GET",
 				        url:'actions.php?a=source_stop&source=' + source,
 						success: function(sources) {
-												
+							new PNotify({
+								title: 'Success!',
+								text: source+' stream has been stopped.',
+								type: 'success'
+							});
 						}
 					});
 					return true;
 				}
-
-				new PNotify({
-					title: 'Success!',
-					text: source+' stream has been stopped.',
-					type: 'success'
-				});
 			}
 		</script>
 
