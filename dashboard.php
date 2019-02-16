@@ -251,7 +251,8 @@ if($_SESSION['logged_in'] != true) {
 														flowplayer("#fp-hlsjs", {
 															ratio: 9/16,
 														   	clip: {
-														      	autoplay: true,
+														      	autoplay: false,
+														      	muted: true,
 														       	title: "video0 source",
 														       	sources: [{ 
 																	type: "application/x-mpegurl",
@@ -261,8 +262,6 @@ if($_SESSION['logged_in'] != true) {
 														   	},
 														   	embed: false,
 														   	share: false,
-														   	muted: false,
-														   	autoplay: false,
 														});
 													</script>
 												</div>
