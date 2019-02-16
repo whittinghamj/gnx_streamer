@@ -18,7 +18,6 @@
    <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
 
     <style>
-        /*
         .fullscreen-bg {
             position: fixed;
             top: 0;
@@ -31,12 +30,10 @@
 
         .fullscreen-bg__video {
             position: absolute;
-           top: 0;
+            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 500px;
         }
-        */
     </style>
 </head>
 
