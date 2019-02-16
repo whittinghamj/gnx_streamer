@@ -236,9 +236,50 @@ if($_SESSION['logged_in'] != true) {
 
 						<section class="panel">
 							<div class="panel-body">
+								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-info" href="#modalBasic">View Stream</a>
+
 								<a class="simple-ajax-modal btn btn-default" href="player.php?source=video0">Load Ajax Content</a>
 
-								
+								<div id="modalBasic" class="modal-block mfp-hide">
+									<section class="panel">
+										<header class="panel-heading">
+											<h2 class="panel-title">Live Stream from video0</h2>
+										</header>
+										<div class="panel-body">
+											<div class="modal-wrapper">
+												<div class="modal-text">
+													<div id="fp-hlsjs" style="width:100%;"></div>
+													<script>
+														flowplayer("#fp-hlsjs", {
+															ratio: 9/16,
+														   	clip: {
+														      	autoplay: true,
+														       	title: "video0 source",
+														       	sources: [{ 
+																	type: "application/x-mpegurl",
+														            src:  "http://192.168.1.52:9000/hls/video0.m3u8",
+														            live: true          
+																}]
+														   	},
+														   	embed: false,
+														   	share: false,
+														   	muted: false,
+														   	autoplay: false,
+														});
+													</script>
+												</div>
+											</div>
+										</div>
+										<footer class="panel-footer">
+											<div class="row">
+												<div class="col-md-12 text-right">
+													<!-- <button class="btn btn-primary modal-confirm">Confirm</button> -->
+													<button class="btn btn-info modal-dismiss">Close</button>
+												</div>
+											</div>
+										</footer>
+									</section>
+								</div>
 							</div>
 						</section>
 
