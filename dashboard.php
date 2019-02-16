@@ -62,6 +62,9 @@ if($_SESSION['logged_in'] != true) {
 		<!-- flowplayer -->
 		<script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
 
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="assets/vendor/pnotify/pnotify.custom.css" />
+
 	</head>
 	<body>
 		<section class="body">
@@ -650,6 +653,7 @@ if($_SESSION['logged_in'] != true) {
 			<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 			
 			<!-- Specific Page Vendor -->
+			<script src="assets/vendor/pnotify/pnotify.custom.js"></script>
 			
 			<!-- Theme Base, Components and Settings -->
 			<script src="assets/javascripts/theme.js"></script>
