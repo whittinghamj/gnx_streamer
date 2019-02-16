@@ -1,3 +1,4 @@
+<?php $source = $_GET['source']; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
    <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
 
     <style>
+        /*
         .fullscreen-bg {
             position: fixed;
             top: 0;
@@ -34,6 +36,7 @@
             width: 100%;
             height: 100%;
         }
+        */
     </style>
 </head>
 
@@ -48,7 +51,7 @@
                title: "video0 source",
                sources: [
                    { type: "application/x-mpegurl",
-                     src:  "http://192.168.1.52:9000/hls/video0.m3u8",
+                     src:  "http://<?php echo $_SESSION['SERVER_ADDR']; ?>:9000/hls/<?php echo $source; ?>.m3u8",
                      live: true          
                    }
                ]
