@@ -863,12 +863,6 @@ if($_SESSION['logged_in'] != true) {
 					return true;
 				}
 			}
-
-			$('.close').on('click', function() {
-			   //$('#video').stopVideo();
-			$('#video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');    
-			});
-
 		</script>
 
 		<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
