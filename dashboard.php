@@ -274,7 +274,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="row">
 												<div class="col-md-12 text-right">
 													<!-- <button class="btn btn-primary modal-confirm">Confirm</button> -->
-													<button class="btn btn-info modal-dismiss close">Close</button>
+													<button class="btn btn-info modal-dismiss">Close</button>
 												</div>
 											</div>
 										</footer>
