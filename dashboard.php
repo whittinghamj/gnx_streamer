@@ -236,7 +236,6 @@ if($_SESSION['logged_in'] != true) {
 						</header>
 
 						<!-- start: page -->
-
 						<section class="panel">
 							<div class="panel-body">
 								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-info" href="#modalBasic">View Stream</a>
@@ -282,9 +281,7 @@ if($_SESSION['logged_in'] != true) {
 								</div>
 							</div>
 						</section>
-
 						<!-- end: page -->
-
 					</section>
 				<?php } ?>
 
@@ -538,6 +535,26 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 											</div>
 
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="watermark_type">Watermark</label>
+												<div class="col-md-6">
+													<select id="watermark_type" name="watermark_type" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['watermark_type']=='disable'){echo"selected";} ?> value="disable">Disable</option>
+														<option <?php if($source['config']['watermark_type']=='image'){echo"selected";} ?> value="image">Image</option>
+														<!-- <option <?php if($source['config']['watermark_type']=='disable'){echo"selected";} ?> value="disable">Disable</option> -->
+													</select>
+												</div>
+											</div>
+
+											<?php if($source['config']['watermark_type'] == 'image') { ?>
+												<div id="http" class="form-group">
+													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
+													<div class="col-md-6">
+														<input type="text" class="form-control" id="watermark_image_url" name="watermark_image_url" value="<?php echo $source['config']['watermark_image_url']; ?>" placeholder="http://yourdomain.com/watermark.png">
+													</div>
+												</div>
+											<?php } ?>
+
 											<!-- 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="screenshot">Screenshot</label>
@@ -573,6 +590,59 @@ if($_SESSION['logged_in'] != true) {
 						<!-- end: page -->
 					</section>
 				<?php } ?>
+
+				<?php function roku_remote() { ?>
+					<section role="main" class="content-body">
+						<header class="page-header">
+							<h2>ROKU Remote</h2>
+
+							<div class="right-wrapper pull-right">
+								<ol class="breadcrumbs">
+									<li>
+										<a href="dashboard.php">
+											<i class="fa fa-home"></i>
+										</a>
+									</li>
+									<li><span>ROKU Remote</span></li>
+								</ol>
+						
+								<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+							</div>
+						</header>
+
+						<!-- start: page -->
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions"></div>
+										<h2 class="panel-title">ROKU Devices</h2>
+									</header>
+									<div class="panel-body">
+										<div class="table-responsive">
+											<table class="table table-striped mb-none">
+												<thead>
+													<tr>
+														<th width="10px">#</th>					<!-- 0 -->
+														<th width="50px">Status</th>			<!-- 1 -->
+														<th width="50px">IP Address</th>		<!-- 2 -->
+														<th width="100px">Active App</th>		<!-- 3 -->
+														<th width="50px">Channel</th>			<!-- 4 -->
+														<th width="100px">Actions</th>			<!-- 9 -->
+													</tr>
+												</thead>
+												<tbody>
+													<?php show_roku_devices(); ?>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<!-- end: page -->
+					</section>
+				<?php } ?>
 			</div>
 
 			<aside id="sidebar-right" class="sidebar-right">
@@ -583,7 +653,6 @@ if($_SESSION['logged_in'] != true) {
 						</a>
 			
 						<div class="sidebar-right-wrapper">
-			
 							<div class="sidebar-widget widget-calendar">
 								<h6>Recent Events</h6>
 								<!-- <div data-plugin-datepicker data-plugin-skin="dark" ></div> -->
