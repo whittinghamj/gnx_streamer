@@ -850,6 +850,12 @@ if($_SESSION['logged_in'] != true) {
 					});
 					return true;
 				}
+
+				new PNotify({
+					title: 'Success!',
+					text: source+' stream has been stopped.',
+					type: 'success'
+				});
 			}
 		</script>
 
