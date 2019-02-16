@@ -32,7 +32,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 500px;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -53,7 +54,8 @@
                ]
            },
            embed: false,
-           share: false
+           share: false,
+           autoplay: true,
        });
     </script>
         
