@@ -253,12 +253,11 @@ if($_SESSION['logged_in'] != true) {
 														flowplayer("#fp-hlsjs", {
 															ratio: 9/16,
 														   	clip: {
-														      	autoplay: false,
-														      	muted: true,
+														      	autoplay: true,
 														       	title: "video0 source",
 														       	sources: [{ 
 																	type: "application/x-mpegurl",
-														            src:  "http://192.168.1.52:9000/hls/video0.m3u8",
+														            src:  "http://127.0.0.1:9000/hls/video0.m3u8",
 														            live: true          
 																}]
 														   	},
