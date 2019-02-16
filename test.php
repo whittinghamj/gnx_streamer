@@ -18,7 +18,7 @@
   </script>
 </head>
 <body>
-  <button class="btn btn-success btn-lg video" data-video="https://www.youtube.com/embed/8L5PqL4ylIU" data-toggle="modal" data-target="#videoModal">Play Video 1</button>
+  <button class="btn btn-success btn-lg video" data-video="http://192.168.1.52:9000/hls/video0.m3u8" data-toggle="modal" data-target="#videoModal">Play Video 1</button>
   <button class="btn btn-default btn-lg video" data-video="https://www.youtube.com/embed/HBdcL7YsdBY" data-toggle="modal" data-target="#videoModal">Play Video 2</button>
   <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
