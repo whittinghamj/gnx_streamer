@@ -55,7 +55,7 @@
            },
            embed: false,
            share: false,
-           autoplay: true,
+           autoplay: false,
        });
     </script>
         
