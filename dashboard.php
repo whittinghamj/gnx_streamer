@@ -643,7 +643,12 @@ if($_SESSION['logged_in'] != true) {
 																				<img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Watermarks" width="447px">
 																			</a>
 																			<div class="mg-thumb-options">
-																				'.$entry.' <a href="#"><i class="fa fa-trash-o"></i> Delete</a>
+																				<span class="pull-left">
+																					'.$entry.'
+																				</span>
+																				<span class="pull-right">
+																					<a href="#"><i class="fa fa-trash-o"></i> Delete</a>
+																				</span>
 																			</div>
 																		</div>
 																	</div>
