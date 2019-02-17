@@ -25,7 +25,7 @@ if($task == 'stop_start') {
 		if($data['watermark_type'] == 'disable') {
 			$watermark = '';
 		}else{
-			$watermark = '-i '.$data['watermark_image'].' -filter_complex "overlay=10:10" ';
+			$watermark = '-i watermarks/'.$data['watermark_image'].' -filter_complex "overlay=10:10" ';
 		}
 
 		if($data['screenshot'] == 'enable') {
