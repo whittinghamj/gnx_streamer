@@ -563,7 +563,7 @@ if($_SESSION['logged_in'] != true) {
 													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
 													<div class="col-md-6">
 														
-														<select name="webmenu" id="webmenu">
+														<select name="webmenu" id="webmenu" class="selectpicker">
 															<?php
 																if($handle = opendir('watermarks/')) {
 													    			while(false !== ($entry = readdir($handle))) {
