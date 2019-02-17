@@ -635,23 +635,7 @@ if($_SESSION['logged_in'] != true) {
 															<img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
 														</a>
 														<div class="mg-thumb-options">
-															<div class="mg-zoom"><i class="fa fa-search"></i></div>
-															<div class="mg-toolbar">
-																<div class="mg-option checkbox-custom checkbox-inline">
-																	<input type="checkbox" id="file_1" value="1">
-																	<label for="file_1">SELECT</label>
-																</div>
-																<div class="mg-group pull-right">
-																	<a href="#">EDIT</a>
-																	<button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-																		<i class="fa fa-caret-up"></i>
-																	</button>
-																	<ul class="dropdown-menu mg-menu" role="menu">
-																		<li><a href="#"><i class="fa fa-download"></i> Download</a></li>
-																		<li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
-																	</ul>
-																</div>
-															</div>
+															<a href="#"><i class="fa fa-trash-o"></i> Delete</a>
 														</div>
 													</div>
 												</div>
