@@ -647,7 +647,11 @@ if($_SESSION['logged_in'] != true) {
 										<h2 class="panel-title">Add new Watermark</h2>
 									</header>
 									<div class="panel-body">
-
+										<form action="upload.php" method="post" enctype="multipart/form-data">
+										    Select image to upload:
+										    <input type="file" name="fileToUpload" id="fileToUpload">
+										    <input type="submit" value="Upload Image" name="submit">
+										</form>
 									</div>
 								</section>
 							</div>
