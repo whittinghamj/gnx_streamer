@@ -77,7 +77,7 @@ if($task == 'check_dead_hardware') {
 	$raw = substr($raw, 0, -1);
 
 	if(!empty($raw)) {
-		echo "Found dead hardware, trying to fix. \n"
+		echo "Found dead hardware, trying to fix. \n";
 
 		// echo -n "$raw" | tee /sys/bus/pci/drivers/xhci_hcd/unbind
 		// echo -n "$raw" | tee /sys/bus/pci/drivers/xhci_hcd/bind
