@@ -554,7 +554,6 @@ if($_SESSION['logged_in'] != true) {
 												</div>
 											<?php } ?>
 
-											<!-- 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="screenshot">Screenshot</label>
 												<div class="col-md-6">
@@ -575,7 +574,6 @@ if($_SESSION['logged_in'] != true) {
 													</span>
 												</div>
 											<?php } ?>
-											-->
 										</div>
 
 										<footer class="panel-footer">
