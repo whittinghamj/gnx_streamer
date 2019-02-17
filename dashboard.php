@@ -638,9 +638,9 @@ if($_SESSION['logged_in'] != true) {
 												            echo '
 																<div class="isotope-item document col-sm-4 col-md-4 col-lg-4">
 																	<div class="thumbnail">
-																		<div class="thumb-preview" style="height: 447px;">
+																		<div class="thumb-preview">
 																			<center>
-																				<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks">
+																				<img src="watermarks/'.$entry.'" class="img-responsive " alt="Watermarks">
 																			</center>
 																			<div class="mg-thumb-options">
 																				'.$entry.' <a href="actions.php?a=watermark_delete&watermark='.$entry.'"><i class="fa fa-trash-o"></i> Delete</a>
