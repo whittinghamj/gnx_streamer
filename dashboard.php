@@ -644,6 +644,20 @@ if($_SESSION['logged_in'] != true) {
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions"></div>
+										<h2 class="panel-title">Add new Watermark</h2>
+									</header>
+									<div class="panel-body">
+
+									</div>
+								</section>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions"></div>
 										<h2 class="panel-title">Watermark Images</h2>
 									</header>
 									<div class="panel-body">
