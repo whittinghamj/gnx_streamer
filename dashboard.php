@@ -773,47 +773,26 @@ if($_SESSION['logged_in'] != true) {
 						<!-- start: page -->
 						<section class="panel">
 							<div class="panel-body">
-								<a class="mb-xs mt-xs mr-xs modal-sizes btn btn-info" href="#modalBasic">View Stream</a>
+								<div id="player" class="fixed-controls"  style="width:600px; height:338px;"></div>
 
-								<div id="modalBasic" class="modal-block mfp-hide">
-									<section class="panel">
-										<header class="panel-heading">
-											<h2 class="panel-title">TEST</h2>
-										</header>
-										<div class="panel-body">
-											
-											<div id="player" class="fixed-controls"  style="width:600px; height:338px;"></div>
-
-											<script>
-												var api = flowplayer("#player", {
-												    live: true,
-												    splash: true,
-												    clip: {
-												        sources: [
-												            {
-												                type: "application/x-mpegurl",
-												                src: "http://192.168.1.50:9000/hls/video0.m3u8"
-												            }
-												        ],
-												        title: "LiveStream"
-												    },
-												    embed: {
-												        skin: "http://releases.flowplayer.org/6.0.1/skin/bauhaus.css"
-												    }
-												});
-											</script>
-
-										</div>
-										<footer class="panel-footer">
-											<div class="row">
-												<div class="col-md-12 text-right">
-													<!-- <button class="btn btn-primary modal-confirm">Confirm</button> -->
-													<button class="btn btn-info modal-dismiss">Close</button>
-												</div>
-											</div>
-										</footer>
-									</section>
-								</div>
+								<script>
+									var api = flowplayer("#player", {
+									    live: true,
+									    splash: true,
+									    clip: {
+									        sources: [
+									            {
+									                type: "application/x-mpegurl",
+									                src: "http://192.168.1.50:9000/hls/video0.m3u8"
+									            }
+									        ],
+									        title: "LiveStream"
+									    },
+									    embed: {
+									        skin: "http://releases.flowplayer.org/6.0.1/skin/bauhaus.css"
+									    }
+									});
+								</script>
 							</div>
 						</section>
 						<!-- end: page -->
