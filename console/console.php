@@ -22,7 +22,7 @@ if($task == 'stop_start') {
 			$output_url = 'rtmp://localhost/show/' . $data['source'];
 		}
 
-		if($data['watermark_type'] != 'disable') {
+		if($data['watermark_type'] == 'disable') {
 			$watermark = '';
 		}else{
 			$watermark = '-i '.$data['watermark_image_url'].' -filter_complex "overlay=10:10" ';
