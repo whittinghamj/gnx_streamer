@@ -640,7 +640,7 @@ if($_SESSION['logged_in'] != true) {
 																	<div class="thumbnail">
 																		<div class="thumb-preview">
 																			<center>
-																				<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks" height="447px" width="447px">
+																				<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks">
 																			</center>
 																			<div class="mg-thumb-options">
 																				'.$entry.' <a href="actions.php?a=watermark_delete&watermark='.$entry.'"><i class="fa fa-trash-o"></i> Delete</a>
