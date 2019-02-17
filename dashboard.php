@@ -543,15 +543,16 @@ if($_SESSION['logged_in'] != true) {
 														<!-- <option <?php if($source['config']['watermark_type']=='disable'){echo"selected";} ?> value="disable">Disable</option> -->
 													</select>
 												</div>
-												
-												<?php if($source['config']['watermark_type'] == 'image') { ?>
-													<br>
+											</div>
+
+											<?php if($source['config']['watermark_type'] == 'image') { ?>
+												<div id="http" class="form-group">
 													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
 													<div class="col-md-6">
 														<input type="text" class="form-control" id="watermark_image_url" name="watermark_image_url" value="<?php echo $source['config']['watermark_image_url']; ?>" placeholder="http://yourdomain.com/watermark.png">
 													</div>
-												<?php } ?>
-											</div>
+												</div>
+											<?php } ?>
 
 											<!-- 
 											<div class="form-group">
