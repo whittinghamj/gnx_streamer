@@ -568,7 +568,7 @@ if($_SESSION['logged_in'] != true) {
 													<div class="col-md-6">
 														<select name="webmenu" id="webmenu">
 															<?
-																if($handle = opendir('watermarks/')) {
+																if($handle = opendir('/var/www/html/watermarks/')) {
 
 													    			while(false !== ($entry = readdir($handle))) {
 
