@@ -140,6 +140,12 @@ if($_SESSION['logged_in'] != true) {
 											<span>Sources</span>
 										</a>
 									</li>
+									<li>
+										<a href="dashboard.php?c=watermarks">
+											<i class="fa fa-picture" aria-hidden="true"></i>
+											<span>Watermark Images</span>
+										</a>
+									</li>
 									<?php if(file_exists('addons/roku/') && file_exists('addons/roku/index.php')) { ?>
 										<li>
 											<a href="dashboard.php?c=roku_remote">
