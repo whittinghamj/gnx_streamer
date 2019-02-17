@@ -627,35 +627,33 @@ if($_SESSION['logged_in'] != true) {
 										<h2 class="panel-title">Watermark Images</h2>
 									</header>
 									<div class="panel-body">
-										<?php
-											if ($handle = opendir('watermarks/')) {
+										<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
+											<?php
+												if ($handle = opendir('watermarks/')) {
 
-											    while (false !== ($entry = readdir($handle))) {
+												    while (false !== ($entry = readdir($handle))) {
 
-											        if ($entry != "." && $entry != ".." && $entry != "index.php") {
+												        if ($entry != "." && $entry != ".." && $entry != "index.php") {
 
-											            echo '
-															<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
+												            echo '
 																<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
 																	<div class="thumbnail">
 																		<div class="thumb-preview">
-																			<a class="thumb-image">
-																				<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks" width="447px">
-																			</a>
+																			<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks" width="447px">
 																			<div class="mg-thumb-options">
 																				'.$entry.' <a href="#"><i class="fa fa-trash-o"></i> Delete</a>
 																			</div>
 																		</div>
 																	</div>
 																</div>
-															</div>
-											            ';
-											        }
-											    }
+												            ';
+												        }
+												    }
 
-											    closedir($handle);
-											}
-										?>
+												    closedir($handle);
+												}
+											?>
+										</div>
 									</div>
 								</section>
 							</div>
