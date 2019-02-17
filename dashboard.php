@@ -576,7 +576,8 @@ if($_SESSION['logged_in'] != true) {
 													    			while(false !== ($entry = readdir($handle))) {
 													        			if($entry != "." && $entry != ".." && $entry != "index.php") {
 													        				echo '
-																				<option value="/var/www/html/watermarks/'.$entry.'" title="/var/www/html/watermarks/'.$entry.'"></option>
+																				<option value="'.$entry.'" 
+																				style="background-image:url(/var/www/html/watermarks/'.$entry.');">'.$entry.'</option>
 																			';
 																		}
 																	}
