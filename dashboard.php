@@ -44,6 +44,8 @@ if($_SESSION['logged_in'] != true) {
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
 
+		<link rel="stylesheet" href="assets/stylesheets/bootstrap-select.css" />
+
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/skins/extension.css" />
 
