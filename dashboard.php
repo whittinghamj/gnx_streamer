@@ -639,7 +639,7 @@ if($_SESSION['logged_in'] != true) {
 																<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
 																	<div class="thumbnail">
 																		<div class="thumb-preview">
-																			<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks" width="447px">
+																			<img src="watermarks/'.$entry.'" class="img-responsive" alt="Watermarks" height="447px">
 																			<div class="mg-thumb-options">
 																				'.$entry.' <a href="#"><i class="fa fa-trash-o"></i> Delete</a>
 																			</div>
