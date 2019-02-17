@@ -631,8 +631,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
 												<div class="thumbnail">
 													<div class="thumb-preview">
-														<a class="thumb-image" href="assets/images/projects/project-1.jpg">
-															<img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
+														<a class="thumb-image" href="assets/images/projects/project-1.jpg" width="447px">
 														</a>
 														<div class="mg-thumb-options">
 															<a href="#"><i class="fa fa-trash-o"></i> Delete</a>
