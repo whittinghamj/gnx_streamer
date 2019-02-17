@@ -142,7 +142,7 @@ if($_SESSION['logged_in'] != true) {
 									</li>
 									<li>
 										<a href="dashboard.php?c=watermarks">
-											<i class="fa fa-picture-o" aria-hidden="true"></i>
+											<i class="fa fa-file-image-o" aria-hidden="true"></i>
 											<span>Watermark Images</span>
 										</a>
 									</li>
