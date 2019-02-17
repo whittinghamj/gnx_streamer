@@ -636,7 +636,7 @@ if($_SESSION['logged_in'] != true) {
 												        if ($entry != "." && $entry != ".." && $entry != "index.php") {
 
 												            echo '
-																<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
+																<div class="isotope-item document col-sm-4 col-md-4 col-lg-4">
 																	<div class="thumbnail">
 																		<div class="thumb-preview">
 																			<center>
