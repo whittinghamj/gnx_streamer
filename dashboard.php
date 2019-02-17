@@ -1028,5 +1028,15 @@ if($_SESSION['logged_in'] != true) {
 		</script>
 
 		<script src="assets/javascripts/ui-elements/examples.modals.js"></script>
+
+		<script src="assets/javascripts/bootstrap-select.js"></script>
+		<script>
+			$(document).ready(function() {
+				// Initiate with custom caret icon
+				$('select.selectpicker').selectpicker( {
+					caretIcon: 'glyphicon glyphicon-menu-down'
+				});
+			});
+		</script>
 	</body>
 </html>
