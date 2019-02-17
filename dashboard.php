@@ -557,6 +557,33 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<?php if($source['config']['watermark_type'] == 'image') { ?>
+												<style>
+													#webmenu{
+														width:340px;
+													}
+												</style>
+
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
+													<div class="col-md-6">
+														<select name="webmenu" id="webmenu">
+															<?
+																if($handle = opendir('watermarks/')) {
+
+													    			while(false !== ($entry = readdir($handle))) {
+
+													        			if($entry != "." && $entry != ".." && $entry != "index.php") {
+													        				echo '
+																				<option value="/var/www/html/watermarks/'.$entry.'" title="/var/www/html/watermarks/'.$entry.'"></option>
+																			';
+																		}
+																	}
+																}
+															?>
+														</select>
+													</div>
+												</div>
+
 												<div id="http" class="form-group">
 													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
 													<div class="col-md-6">
