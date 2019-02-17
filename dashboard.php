@@ -557,22 +557,31 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<?php if($source['config']['watermark_type'] == 'image') { ?>
-												<?php
-												if ($handle = opendir('watermarks/')) {
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
+													<div class="col-md-6">
+														<select name="webmenu" id="webmenu">
+															<?
+																if($handle = opendir('watermarks/')) {
+													    			while(false !== ($entry = readdir($handle))) {
+													        			if($entry != "." && $entry != ".." && $entry != "index.php") {
+													        				echo '
+																				<option value="'.$entry.'" data-thumbnail="images/icon-chrome.png">'.$entry.'</option>
+																			';
+																		}
+																	}
+																}
+															?>
+														</select>
+													</div>
+												</div>
 
-												    while (false !== ($entry = readdir($handle))) {
-
-												        if ($entry != "." && $entry != ".." && $entry != "index.php") {
-
-												            echo $entry .'<br>';
-
-												        }
-
-												    }
-
-												}
-
-												?>
+												<div id="http" class="form-group">
+													<label class="col-md-3 control-label" for="watermark_image_url">Watermark Image URL</label>
+													<div class="col-md-6">
+														<input type="text" class="form-control" id="watermark_image_url" name="watermark_image_url" value="<?php echo $source['config']['watermark_image_url']; ?>" placeholder="http://yourdomain.com/watermark.png">
+													</div>
+												</div>
 											<?php } ?>
 
 											<div class="form-group">
