@@ -627,20 +627,35 @@ if($_SESSION['logged_in'] != true) {
 										<h2 class="panel-title">Watermark Images</h2>
 									</header>
 									<div class="panel-body">
-										<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
-											<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
-												<div class="thumbnail">
-													<div class="thumb-preview">
-														<a class="thumb-image" href="assets/images/projects/project-1.jpg">
-															<img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Watermarks" width="447px">
-														</a>
-														<div class="mg-thumb-options">
-															<a href="#"><i class="fa fa-trash-o"></i> Delete</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+										<?php
+											if ($handle = opendir('.')) {
+
+											    while (false !== ($entry = readdir($handle))) {
+
+											        if ($entry != "." && $entry != ".." && $entry != "index.php") {
+
+											            echo '
+															<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
+																<div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
+																	<div class="thumbnail">
+																		<div class="thumb-preview">
+																			<a class="thumb-image" href="assets/images/projects/project-1.jpg">
+																				<img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Watermarks" width="447px">
+																			</a>
+																			<div class="mg-thumb-options">
+																				<a href="#"><i class="fa fa-trash-o"></i> Delete</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+											            ';
+											        }
+											    }
+
+											    closedir($handle);
+											}
+										?>
 									</div>
 								</section>
 							</div>
