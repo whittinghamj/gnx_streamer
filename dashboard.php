@@ -566,7 +566,7 @@ if($_SESSION['logged_in'] != true) {
 																if($handle = opendir('watermarks/')) {
 													    			while(false !== ($entry = readdir($handle))) {
 													        			if($entry != "." && $entry != ".." && $entry != "index.php") {
-													        				echo '<option value="'.$entry.'" data-thumbnail="images/icon-chrome.png">'.$entry.'</option>';
+													        				echo '<option value="'.$entry.'" data-thumbnail="watermarks/'.$entry.'"">'.$entry.'</option>';
 																		}
 																	}
 																}
