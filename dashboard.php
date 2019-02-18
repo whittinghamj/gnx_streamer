@@ -775,7 +775,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="50px">IP Address</th>		<!-- 2 -->
 														<th width="100px">Active App</th>		<!-- 3 -->
 														<th width="50px">Channel</th>			<!-- 4 -->
-														<th width="50px">Actions</th>			<!-- 9 -->
+														<th width="25px">Actions</th>			<!-- 9 -->
 													</tr>
 												</thead>
 												<tbody>
