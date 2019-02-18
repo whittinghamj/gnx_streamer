@@ -737,16 +737,46 @@ if($_SESSION['logged_in'] != true) {
 										<div class="panel-body">
 										    <div class="row">
 											    <div class="form-group">
-													<label class="col-md-1 control-label" for="stream">Stream</label>
+													<label class="col-md-1 control-label" for="name">Name</label>
 													<div class="col-md-5">
 														<input type="text" class="form-control" id="name" name="name" value="ROKU Streamer #1" placeholder="ROKU Streamer #1">
 													</div>
 												</div>
 
 												<div class="form-group">
-													<label class="col-md-1 control-label" for="stream">Stream</label>
+													<label class="col-md-1 control-label" for="stream">IP Address</label>
 													<div class="col-md-5">
 														<input type="text" class="form-control" id="ip_address" name="ip_address" value="" placeholder="192.168.1.10">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-md-1 control-label" for="app">App</label>
+													<div class="col-md-5">
+														<select id="app" name="app" class="form-control input-sm mb-md">
+															<option value="nowtv">NOWTV</option>
+															<option value="bbc">BBC iPlayer</option>
+															<option value="itv">ITV Hub</option>
+														</select>
+
+														<select id="channel" name="channel" class="form-control input-sm mb-md">
+															<option value="">Select One</option>
+														</select>
+
+														<script>
+															$(document).ready(function () {
+															    $("#app").change(function () {
+															        var val = $(this).val();
+															        if (val == "nowtv") {
+															            $("#channel").html("<option value='sky_one'>Sky One</option><option value='test2'>item1: test 2</option>");
+															        } else if (val == "bbc") {
+															            $("#channel").html("<option value='bbc_one'>BBC One</option><option value='bbc_two'>BBC Two</option>");
+															        } else if (val == "itv") {
+															            $("#channel").html("<option value='itv_1'>ITV 1</option><option value='itv_2'>ITV 2</option>");
+															        }
+															    });
+															});
+														</script>
 													</div>
 												</div>
 											</div>
