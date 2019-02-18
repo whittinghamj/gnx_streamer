@@ -548,8 +548,8 @@ if($_SESSION['logged_in'] != true) {
 											<div id="http" class="form-group">
 												<label class="col-md-3 control-label" for="http_server">HTTP Server</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="http_server_sd" name="http_server_sd" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>_sd.m3u8" readonly>
-													<input type="text" class="form-control" id="http_server_hd" name="http_server_hd" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>_hd.m3u8" readonly>
+													<input type="text" class="form-control" id="http_server" name="http_server" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>.m3u8" readonly>
+													<!-- <input type="text" class="form-control" id="http_server_hd" name="http_server_hd" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>_hd.m3u8" readonly> -- >
 												</div>
 											</div>
 

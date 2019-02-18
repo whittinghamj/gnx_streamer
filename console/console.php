@@ -34,6 +34,13 @@ if($task == 'stop_start') {
 			$screenshot = '';
 		}
 
+		/*
+		dual output streams
+		ffmpeg -y -f alsa -ac 2 -i hw:CARD=Device,DEV=0 -f video4linux2 -re -framerate 29 -i /dev/video0 -i watermarks/rsz_logo_1192.png -filter_complex "overlay=10:10" \
+			-acodec aac -ab 128k -ar 44100 -f matroska -vcodec libx264 -r 29 -pix_fmt yuv420p -s 1280x720 -preset ultrafast -b:v 3500k -f flv rtmp://localhost/show/video0_hd \
+			-acodec aac -ab 128k -ar 44100 -f matroska -vcodec libx264 -r 29 -pix_fmt yuv420p -s 640x480 -preset ultrafast -b:v 1500k -f flv rtmp://localhost/show/video0_sd \
+			*/
+
 		$cmd = "ffmpeg -y -f alsa -ac 2 -i ".$data['audio_device']." -f video4linux2 -re -framerate ".$data['framerate_in']." -i /dev/".$data['source']." ".$watermark." -acodec aac -ab 128k -ar 44100 -f matroska -vcodec ".$data['video_codec']." -r ".$data['framerate_out']." -pix_fmt yuv420p -s ".$data['screen_resolution']." -preset ultrafast -b:v ".$data['bitrate']."k -f flv ".$output_url." ".$screenshot;
 
 		echo "====================================================================================================\n";
