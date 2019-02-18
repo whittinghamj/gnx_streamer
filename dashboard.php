@@ -703,7 +703,7 @@ if($_SESSION['logged_in'] != true) {
 
 				<?php function roku_remote() { ?>
 					<?php 
-						$rokus = glob("/var/www/html/addons/roku/config.*.json");
+						$roku_config_files = glob("/var/www/html/addons/roku/config.*.json");
 						$count = 1;
 					?>
 
@@ -796,8 +796,9 @@ if($_SESSION['logged_in'] != true) {
 													</tr>
 												</thead>
 												<tbody>
-													<?php foreach ($rokus as $roku) { ?>
+													<?php foreach ($roku_config_files as $roku_config_file) { ?>
 														<?php 
+															$roku 		= file_get_contents('addons/roku/'.$roku_config_file);
 															$active_app = exec('php -q addons/roku/roku.php '.$roku['ip_address'].' active_app');
 															$active_app = json_decode($active_app, true);
 														?>
