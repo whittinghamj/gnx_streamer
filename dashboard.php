@@ -1291,20 +1291,6 @@ if($_SESSION['logged_in'] != true) {
 			        }
 			    });
 			});
-
-			function choose_app(this) {
-				$("#nowtv_channel").addClass('hidden');
-				$("#bbc_channel").addClass('hidden');
-				$("#itv_channel").addClass('hidden');
-
-				if(this == 'nowtv') {
-					$("#nowtv_channel").removeClass('hidden');
-				} else if(this == 'bbc') {
-					$("#bbc_channel").removeClass('hidden');
-				} else if(this == 'itv') {
-					$("#itv_channel").removeClass('hidden');
-				}
-			}
 		</script>
 	</body>
 </html>
