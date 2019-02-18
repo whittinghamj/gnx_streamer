@@ -218,6 +218,11 @@ if($_SESSION['logged_in'] != true) {
 		                case "watermarks":
 		                    watermarks();
 		                    break;
+
+		                // roku_remote
+		                case "roku_remote":
+		                    roku_remote();
+		                    break;
 							
 						// home
 						default:
@@ -715,6 +720,39 @@ if($_SESSION['logged_in'] != true) {
 						</header>
 
 						<!-- start: page -->
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<form action="actions.php?a=roku_remote_add" class="form-horizontal form-bordered" method="post">
+										<header class="panel-heading">
+											<div class="panel-actions"></div>
+											<h2 class="panel-title">Add new ROKU</h2>
+										</header>
+										<div class="panel-body">
+										    <div class="row">
+											    <div class="form-group">
+													<label class="col-md-1 control-label" for="stream">Stream</label>
+													<div class="col-md-5">
+														<input type="text" class="form-control" id="name" name="name" value="ROKU Streamer #1" placeholder="ROKU Streamer #1">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-md-1 control-label" for="stream">Stream</label>
+													<div class="col-md-5">
+														<input type="text" class="form-control" id="ip_address" name="ip_address" value="" placeholder="192.168.1.10">
+													</div>
+												</div>
+											</div>
+										</div>
+										<footer class="panel-footer">
+											<button type="submit" class="btn btn-success">Add</button>
+										</footer>
+									</form>
+								</section>
+							</div>
+						</div>
+
 						<div class="row">
 							<div class="col-lg-12">
 								<section class="panel">
