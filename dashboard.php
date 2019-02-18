@@ -771,12 +771,12 @@ if($_SESSION['logged_in'] != true) {
 											<table class="table table-striped mb-none">
 												<thead>
 													<tr>
-														<th width="10px">#</th>					<!-- 0 -->
-														<th width="100px">Name</th>				<!-- 1 -->
-														<th width="50px">IP Address</th>		<!-- 2 -->
-														<th width="100px">Active App</th>		<!-- 3 -->
-														<th width="100px">Channel</th>			<!-- 4 -->
-														<th width="25px">Actions</th>			<!-- 9 -->
+														<th width="10px">#</th>							<!-- 0 -->
+														<th width="100px">Name</th>						<!-- 1 -->
+														<th width="50px">IP Address</th>				<!-- 2 -->
+														<th width="100px">Active App</th>				<!-- 3 -->
+														<th width="100px">Desired Channel</th>			<!-- 4 -->
+														<th width="50px">Actions</th>					<!-- 9 -->
 													</tr>
 												</thead>
 												<tbody>
@@ -787,16 +787,17 @@ if($_SESSION['logged_in'] != true) {
 															$active_app = json_decode($active_app, true);
 														?>
 														<tr>
-															<td valign="center" id="'.$source['source']['name'].'_col_0"><?php echo $count; ?></td>
+															<td valign="center"><?php echo $count; ?></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
-															<td><?php echo $active_app['app']; ?></td>
+															<td><?php echo $active_app['app']; ?>s</td>
 															<td><?php echo strtoupper(str_replace('_', ' ', $roku['app'])); ?>: <?php echo ucwords(str_replace('_', ' ', $roku['channel'])); ?></td>
 															<td>
-																<a title="Edit" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
+																<a title="Restart ROKU" class="btn btn-success btn-flat btn-xs"><i class="fa fa-refresh"></i></button>
+																<a title="Edit ROKU" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
 															</td>
 														</tr>
-														<?php $count + $count + 1; ?>
+														<?php $count++; ?>
 													<?php } ?>
 												</tbody>
 											</table>
