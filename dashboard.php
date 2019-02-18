@@ -810,7 +810,6 @@ if($_SESSION['logged_in'] != true) {
 															<td><?php echo $active_app['app']; ?></td>
 															<td><?php echo strtoupper(str_replace('_', ' ', $roku['app'])); ?>: <?php echo ucwords(str_replace('_', ' ', $roku['channel'])); ?></td>
 															<td>
-																<?php print_r($roku); ?>
 																<a title="Restart ROKU" class="btn btn-success btn-flat btn-xs"><i class="fa fa-refresh"></i></button>
 																<a title="Edit ROKU" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
 															</td>
