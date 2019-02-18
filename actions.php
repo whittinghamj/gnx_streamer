@@ -282,6 +282,8 @@ function roku_remote_add() {
 	echo '<pre>';
 	print_r($_POST);
 
+	echo $json;
+
 	file_put_contents('/var/www/html/addons/roku/config.'.$POST['ip_address'].'.json', $json);
 
 	die(); 
