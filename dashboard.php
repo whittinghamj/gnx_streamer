@@ -779,7 +779,7 @@ if($_SESSION['logged_in'] != true) {
 													</tr>
 												</thead>
 												<tbody>
-													<?php foreach ($rokus as roku) { ?>
+													<?php foreach ($rokus as $roku) { ?>
 														<?php $count = 1; ?>
 														<tr id="'.$source['source']['name'].'_col">
 															<td valign="center" id="'.$source['source']['name'].'_col_0"><?php echo $count; ?></td>
