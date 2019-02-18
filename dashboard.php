@@ -781,12 +781,16 @@ if($_SESSION['logged_in'] != true) {
 												</thead>
 												<tbody>
 													<?php foreach ($rokus as $roku) { ?>
-														<?php $count = 1; ?>
+														<?php 
+															$count = 1;
+															$active_app = exec('php -q addons/roku/roku.php '.$roku['ip_address'].' active_app');
+															$active_app = json_decode($active_app, true);
+														?>
 														<tr>
 															<td valign="center" id="'.$source['source']['name'].'_col_0"><?php echo $count; ?></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
-															<td><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td><?php echo $active_app['app']; ?></td>
 															<td><?php echo strtoupper(str_replace('_', ' ', $roku['app'])); ?>: <?php echo ucwords(str_replace('_', ' ', $roku['channel'])); ?></td>
 															<td>
 																<a title="Edit" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
