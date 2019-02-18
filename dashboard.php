@@ -790,7 +790,7 @@ if($_SESSION['logged_in'] != true) {
 															<td valign="center">blah</td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
-															<td><?php echo $active_app['app']; ?>s</td>
+															<td><?php echo $active_app['app']; ?></td>
 															<td><?php echo strtoupper(str_replace('_', ' ', $roku['app'])); ?>: <?php echo ucwords(str_replace('_', ' ', $roku['channel'])); ?></td>
 															<td>
 																<a title="Restart ROKU" class="btn btn-success btn-flat btn-xs"><i class="fa fa-refresh"></i></button>
