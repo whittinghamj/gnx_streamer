@@ -801,7 +801,8 @@ if($_SESSION['logged_in'] != true) {
 													<?php } ?>
 												</tbody>
 											</table>
-											TEST: <?php echo array_search("192.168.1.180",array_keys($rokus)); ?>
+											<hr>
+											TEST: <?php echo '<pre>'; print_r($rokus); ?>
 										</div>
 									</div>
 								</section>
