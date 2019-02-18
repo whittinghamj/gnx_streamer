@@ -787,7 +787,7 @@ if($_SESSION['logged_in'] != true) {
 															$active_app = json_decode($active_app, true);
 														?>
 														<tr>
-															<td valign="center">blah</td>
+															<td valign="center"><?php echo $count; ?></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
 															<td><?php echo $active_app['app']; ?></td>
@@ -801,6 +801,7 @@ if($_SESSION['logged_in'] != true) {
 													<?php } ?>
 												</tbody>
 											</table>
+											TEST: <?php echo array_search("192.168.1.180",array_keys($rokus)); ?>
 										</div>
 									</div>
 								</section>
