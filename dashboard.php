@@ -833,7 +833,7 @@ if($_SESSION['logged_in'] != true) {
 				<?php } ?>
 
 				<?php function roku_remote() { ?>
-					<?php $roku['ip_address'] 	= get('ip_address'); ?>
+					<?php $roku['ip_address'] 	= get('ip'); ?>
 					<?php 
 						$roku['config'] 		= @file_get_contents('addons/roku/config.'.$roku['ip_address'].'.json');
 						$roku['config'] 		= json_decode($roku['config'], true);
