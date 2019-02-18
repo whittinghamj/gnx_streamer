@@ -279,14 +279,8 @@ function watermark_upload() {
 function roku_remote_add() {
 	$json = json_encode($_POST);
 
-	echo '<pre>';
-	print_r($_POST);
+	file_put_contents('/var/www/html/addons/roku/config.'.$_POST['ip_address'].'.json', $json);
 
-	echo $json;
-
-	file_put_contents('/var/www/html/addons/roku/config.'.$POST['ip_address'].'.json', $json);
-
-	die(); 
 	go($_SERVER['HTTP_REFERER']);
 }
 
