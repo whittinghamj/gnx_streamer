@@ -908,9 +908,9 @@ if($_SESSION['logged_in'] != true) {
 												<div class="col-md-6">
 													<select id="app" name="app" class="form-control input-sm mb-md">
 														<option value="">Select One</option>
-														<option <?php if($roku['config']['app']=='nowtv'){echo "selected"; } ?> value="nowtv">NOWTV</option>
-														<option <?php if($roku['config']['app']=='bbc'){echo "selected"; } ?> value="bbc">BBC iPlayer</option>
-														<option <?php if($roku['config']['app']=='itv'){echo "selected"; } ?> value="itv">ITV Hub</option>
+														<option value="nowtv">NOWTV</option>
+														<option value="bbc">BBC iPlayer</option>
+														<option value="itv">ITV Hub</option>
 													</select>
 
 													<select id="channel" name="channel" class="form-control input-sm mb-md">
