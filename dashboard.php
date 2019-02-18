@@ -936,6 +936,18 @@ if($_SESSION['logged_in'] != true) {
 															<option value='sky_cinema_select'>Sky Cinema Select</option>
 														</select>
 													</span>
+
+													<span id="bbc_channel" class="hidden">
+														<select id="channel" name="channel" class="form-control input-sm mb-md">
+															<option value='sky_one'>Sky One</option>
+														</select>
+													</span>
+
+													<span id="itv_channel" class="hidden">
+														<select id="channel" name="channel" class="form-control input-sm mb-md">
+															<option value='sky_witness'>Sky Witness</option>
+														</select>
+													</span>
 												</div>
 											</div>
 										</div>
