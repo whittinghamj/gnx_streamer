@@ -763,21 +763,6 @@ if($_SESSION['logged_in'] != true) {
 														<select id="channel" name="channel" class="form-control input-sm mb-md">
 															<option value="">Select One</option>
 														</select>
-
-														<script>
-															$(document).ready(function () {
-															    $("#app").change(function () {
-															        var val = $(this).val();
-															        if (val == "nowtv") {
-															            $("#channel").html("<option value='sky_one'>Sky One</option><option value='test2'>item1: test 2</option>");
-															        } else if (val == "bbc") {
-															            $("#channel").html("<option value='bbc_one'>BBC One</option><option value='bbc_two'>BBC Two</option>");
-															        } else if (val == "itv") {
-															            $("#channel").html("<option value='itv_1'>ITV 1</option><option value='itv_2'>ITV 2</option>");
-															        }
-															    });
-															});
-														</script>
 													</div>
 												</div>
 											</div>
@@ -1193,6 +1178,19 @@ if($_SESSION['logged_in'] != true) {
 				$('select.selectpicker').selectpicker( {
 					caretIcon: 'glyphicon glyphicon-menu-down'
 				});
+			});
+
+			$(document).ready(function () {
+			    $("#app").change(function () {
+			        var val = $(this).val();
+			        if (val == "nowtv") {
+			            $("#channel").html("<option value='sky_one'>Sky One</option><option value='test2'>item1: test 2</option>");
+			        } else if (val == "bbc") {
+			            $("#channel").html("<option value='bbc_one'>BBC One</option><option value='bbc_two'>BBC Two</option>");
+			        } else if (val == "itv") {
+			            $("#channel").html("<option value='itv_1'>ITV 1</option><option value='itv_2'>ITV 2</option>");
+			        }
+			    });
 			});
 		</script>
 	</body>
