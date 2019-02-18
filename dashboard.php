@@ -775,21 +775,23 @@ if($_SESSION['logged_in'] != true) {
 														<th width="50px">IP Address</th>		<!-- 2 -->
 														<th width="100px">Active App</th>		<!-- 3 -->
 														<th width="50px">Channel</th>			<!-- 4 -->
-														<th width="100px">Actions</th>			<!-- 9 -->
+														<th width="50px">Actions</th>			<!-- 9 -->
 													</tr>
 												</thead>
 												<tbody>
 													<?php foreach ($rokus as $roku) { ?>
 														<?php $count = 1; ?>
-														<tr id="'.$source['source']['name'].'_col">
+														<tr>
 															<td valign="center" id="'.$source['source']['name'].'_col_0"><?php echo $count; ?></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
-															<td id="'.$source['source']['name'].'_col_3"><img src="assets/images/loading.gif" alt="" height="100%"></td>
-															<td id="'.$source['source']['name'].'_col_4"><img src="assets/images/loading.gif" alt="" height="100%"></td>
-															<td id="'.$source['source']['name'].'_col_5"><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td>
+																<a title="Edit" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
+															</td>
 														</tr>
-														<?php $count++; ?>
+														<?php $count + $count + 1; ?>
 													<?php } ?>
 												</tbody>
 											</table>
