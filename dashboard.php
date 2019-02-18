@@ -799,7 +799,7 @@ if($_SESSION['logged_in'] != true) {
 													<?php foreach ($roku_config_files as $roku_config_file) { ?>
 														<?php 
 															$roku 		= file_get_contents($roku_config_file);
-															$roku 		= json_decode($roku_config_file, true);
+															$roku 		= json_decode($roku, true);
 															$active_app = exec('php -q addons/roku/roku.php '.$roku['ip_address'].' active_app');
 															$active_app = json_decode($active_app, true);
 														?>
