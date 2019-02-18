@@ -219,6 +219,11 @@ if($_SESSION['logged_in'] != true) {
 		                    watermarks();
 		                    break;
 
+		                // roku_remotes
+		                case "roku_remotes":
+		                    roku_remotes();
+		                    break;
+
 		                // roku_remote
 		                case "roku_remote":
 		                    roku_remote();
@@ -820,6 +825,255 @@ if($_SESSION['logged_in'] != true) {
 											</table>
 										</div>
 									</div>
+								</section>
+							</div>
+						</div>
+						<!-- end: page -->
+					</section>
+				<?php } ?>
+
+				<?php function roku_remote() { ?>
+					<?php $roku['ip_address'] 	= get('ip_address'); ?>
+					<?php 
+						$roku['config'] 		= @file_get_contents('addons/roku/config.'.$roku['ip_address'].'.json');
+						$roku['config'] 		= json_decode($roku['config'], true);
+					?>
+
+					<section role="main" class="content-body">
+						<header class="page-header">
+							<h2>ROKU Remote > <?php echo $roku['config']['name']; ?></h2>
+
+							<div class="right-wrapper pull-right">
+								<ol class="breadcrumbs">
+									<li>
+										<a href="dashboard.php">
+											<i class="fa fa-home"></i>
+										</a>
+									</li>
+									<li>
+										<a href="dashboard.php?c=roku_remotes">
+											<span>ROKU Remotes</span>
+										</a>
+									</li>
+									<li>
+										<a href="dashboard.php?c=source&source=<?php echo $source['name']; ?>">
+											<span>NAME: <?php echo $source['name']; ?></span>
+										</a>
+									</li>
+								</ol>
+						
+								<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+							</div>
+						</header>
+						<!-- start: page -->
+						<div class="row">
+							<div class="col-lg-12">
+								<section class="panel">
+									<form action="actions.php?a=source_update" class="form-horizontal form-bordered" method="post">
+										<input type="hidden" name="source" value="<?php echo $source['name']; ?>">
+										<header class="panel-heading">
+											<div class="panel-actions"></div>
+											<h2 class="panel-title">Settings (<?php echo $file_exists; ?>)</h2>
+										</header>
+										<div class="panel-body">
+											<?php if(isset($_GET['dev']) && $_GET['dev'] == 'yes') { ?>
+												<pre>
+													<?php print_r($source['config']); ?>
+												</pre>
+											<?php } ?>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="stream">Stream</label>
+												<div class="col-md-6">
+													<select id="stream" name="stream" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['stream']=='enable'){echo"selected";} ?> value="enable">Enable</option>
+														<option <?php if($source['config']['stream']=='disable'){echo"selected";} ?> value="disable">Disable</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="name">Video Source Name</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="name" name="name" disabled value="<?php echo $source['name']; ?>">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="framerate_in">Input Framerate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="framerate_in" name="framerate_in" value="<?php echo $source['config']['framerate_in']; ?>" placeholder="29">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="screen_resolution">Output Video Resolution</label>
+												<div class="col-md-6">
+													<select id="screen_resolution" name="screen_resolution" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['screen_resolution']=='1920x1080'){echo"selected";} ?> value="1920x1080">1920x1080</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1680x1056'){echo"selected";} ?> value="1680x1056">1680x1056</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1280x720'){echo"selected";} ?> value="1280x720">1280x720</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1024x576'){echo"selected";} ?> value="1024x576">1024x576</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='850x480'){echo"selected";} ?> value="850x480">850x480</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='720x576'){echo"selected";} ?> value="720x576">720x576</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='720x540'){echo"selected";} ?> value="720x540">720x540</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='720x480'){echo"selected";} ?> value="720x480">720x480</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='720x404'){echo"selected";} ?> value="720x404">720x404</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='704x576'){echo"selected";} ?> value="704x576">704x576</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='640x480'){echo"selected";} ?> value="640x480">640x480</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='640x360'){echo"selected";} ?> value="640x360">640x360</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='320x240'){echo"selected";} ?> value="320x240">320x240</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1600x1200'){echo"selected";} ?> value="1600x1200">1600x1200</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1280x960'){echo"selected";} ?> value="1280x960">1280x960</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1152x864'){echo"selected";} ?> value="1152x864">1152x864</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='1024x768'){echo"selected";} ?> value="1024x768">1024x768</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='800x600'){echo"selected";} ?> value="800x600">800x600</option>
+					                                    <option <?php if($source['config']['screen_resolution']=='768x576'){echo"selected";} ?> value="768x576">768x576</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="video_codec">Output Video Codec</label>
+												<div class="col-md-6">
+													<select id="video_codec" name="video_codec" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['video_codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
+														<option <?php if($source['config']['video_codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="framerate_out">Output Video Framerate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="framerate_out" name="framerate_out" value="<?php echo $source['config']['framerate_out']; ?>" placeholder="29">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
+												<div class="col-md-6">
+													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
+														<?php foreach($audio_devices as $audio_device) { ?>
+															<option <?php if($audio_device==$source['config']['audio_device']){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
+														<?php } ?>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_codec">Output Audio Codec</label>
+												<div class="col-md-6">
+													<select id="audio_codec" name="audio_codec" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['audio_codec']=='aac'){echo"selected";} ?> value="aac">AAC</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_bitrate">Output Audio Bitrate (k)</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="audio_bitrate" name="audio_bitrate" value="<?php echo $source['config']['audio_bitrate']; ?>" placeholder="128">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="audio_sample_rate">Output Audio Sample Rate</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="audio_sample_rate" name="audio_sample_rate" value="<?php echo $source['config']['audio_sample_rate']; ?>" placeholder="44100">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="bitrate">Output Stream Bitrate (k)</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="bitrate" name="bitrate" value="<?php echo $source['config']['bitrate']; ?>" placeholder="3500">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="output_type">Output Type</label>
+												<div class="col-md-6">
+													<select id="output_type" name="output_type" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['output_type']=='rtmp'){echo"selected";} ?> value="rtmp">RTMP Push</option>
+														<option <?php if($source['config']['output_type']=='http'){echo"selected";} ?> value="http">HTTP Stream</option>
+													</select>
+												</div>
+											</div>
+
+											<div id="rtmp" class="form-group">
+												<label class="col-md-3 control-label" for="rtmp_server">RTMP Server</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="rtmp_server" name="rtmp_server" value="<?php echo $source['config']['rtmp_server']; ?>" placeholder="rtmp://server.com/channel/key">
+												</div>
+											</div>
+
+											<div id="http" class="form-group">
+												<label class="col-md-3 control-label" for="http_server">HTTP Server</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="http_server" name="http_server" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>.m3u8" readonly>
+													<!-- <input type="text" class="form-control" id="http_server_hd" name="http_server_hd" value="http://<?php echo $_SERVER['SERVER_ADDR']; ?>:9000/hls/<?php echo $source['name']; ?>_hd.m3u8" readonly> -->
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="watermark_type">Watermark</label>
+												<div class="col-md-6">
+													<select id="watermark_type" name="watermark_type" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['watermark_type']=='disable'){echo"selected";} ?> value="disable">Disable</option>
+														<option <?php if($source['config']['watermark_type']=='image'){echo"selected";} ?> value="image">Image</option>
+														<!-- <option <?php if($source['config']['watermark_type']=='disable'){echo"selected";} ?> value="disable">Disable</option> -->
+													</select>
+												</div>
+											</div>
+
+											<?php if($source['config']['watermark_type'] == 'image') { ?>
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="watermark_image">Watermark Image</label>
+													<div class="col-md-6">
+														
+														<select id="watermark_image" name="watermark_image" class="selectpicker">
+															<?php
+																if($handle = opendir('watermarks/')) {
+													    			while(false !== ($entry = readdir($handle))) {
+													        			if($entry != "." && $entry != ".." && $entry != "index.php") {
+													        				echo '<option value="'.$entry.'" data-thumbnail="watermarks/'.$entry.'"">'.$entry.'</option>';
+																		}
+																	}
+																}
+															?>
+														</select>
+													</div>
+												</div>
+											<?php } ?>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="screenshot">Screenshot</label>
+												<div class="col-md-6">
+													<select id="screenshot" name="screenshot" class="form-control input-sm mb-md">
+														<option <?php if($source['config']['screenshot']=='enable'){echo"selected";} ?> value="enable">Enable</option>
+														<option <?php if($source['config']['screenshot']=='disable'){echo"selected";} ?> value="disable">Disable</option>
+													</select>
+												</div>
+											</div>
+
+											<?php if($source['config']['screenshot'] == 'enable') { ?>
+												<div class="col-md-4">
+												</div>
+
+												<div class="form-group col-md-4">
+													<span class="border border-primary rounded">
+														<img src="screenshots/video0.png" alt="" height="240" width="320">
+													</span>
+												</div>
+											<?php } ?>
+										</div>
+
+										<footer class="panel-footer">
+											<a href="dashboard.php?c=sources" class="btn btn-default">Back</a>
+											<button type="submit" class="btn btn-success">Submit</button>
+										</footer>
+									</form>
 								</section>
 							</div>
 						</div>
