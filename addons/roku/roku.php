@@ -50,7 +50,7 @@ if($command == 'active_app'){
 	echo $json;
 }
 
-if($command == 'nowtv_channel'){
+if($command == 'nowtv'){
 	# entertainment pass
 	if($channel =="sky_one"){
 	   	$channel_name='Sky One';
@@ -207,7 +207,7 @@ if($command == 'nowtv_channel'){
 	exec("curl --silent --output /dev/null -d '' http://".$ip_address.":8060/launch/20242?contentID=".$contentID);
 }
 
-if($command == 'bbc_channel'){
+if($command == 'bbc'){
 	if($channel =="bbc_one"){
 	   	$channel_name='BBC One';
 
@@ -402,7 +402,7 @@ if($command == 'bbc_channel'){
 	}
 }
 
-if($command == 'itv_channel'){
+if($command == 'itv'){
 	if($channel =="itv_one"){
 	   	$channel_name='ITV 1';
 
