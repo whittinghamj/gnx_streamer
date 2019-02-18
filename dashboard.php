@@ -701,6 +701,11 @@ if($_SESSION['logged_in'] != true) {
 				<?php } ?>
 
 				<?php function roku_remote() { ?>
+					<?php 
+						$config_file 		= file_get_contents('addons/roku/config.json');
+						$rokus 				= json_decode($config_file, true);
+					?>
+
 					<section role="main" class="content-body">
 						<header class="page-header">
 							<h2>ROKU Remote</h2>
@@ -766,7 +771,7 @@ if($_SESSION['logged_in'] != true) {
 												<thead>
 													<tr>
 														<th width="10px">#</th>					<!-- 0 -->
-														<th width="50px">Status</th>			<!-- 1 -->
+														<th width="100px">Name</th>				<!-- 1 -->
 														<th width="50px">IP Address</th>		<!-- 2 -->
 														<th width="100px">Active App</th>		<!-- 3 -->
 														<th width="50px">Channel</th>			<!-- 4 -->
@@ -774,7 +779,18 @@ if($_SESSION['logged_in'] != true) {
 													</tr>
 												</thead>
 												<tbody>
-													<?php show_roku_devices(); ?>
+													<?php foreach ($rokus as roku) { ?>
+														<?php $count = 1; ?>
+														<tr id="'.$source['source']['name'].'_col">
+															<td valign="center" id="'.$source['source']['name'].'_col_0"><?php echo $count; ?></td>
+															<td><?php echo $roku['name']; ?></td>
+															<td><?php echo $roku['ip_address']; ?></td>
+															<td id="'.$source['source']['name'].'_col_3"><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td id="'.$source['source']['name'].'_col_4"><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td id="'.$source['source']['name'].'_col_5"><img src="assets/images/loading.gif" alt="" height="100%"></td>
+														</tr>
+														<?php $count++; ?>
+													<?php } ?>
 												</tbody>
 											</table>
 										</div>
