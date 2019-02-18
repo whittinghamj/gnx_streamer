@@ -774,7 +774,7 @@ if($_SESSION['logged_in'] != true) {
 														<th width="100px">Name</th>				<!-- 1 -->
 														<th width="50px">IP Address</th>		<!-- 2 -->
 														<th width="100px">Active App</th>		<!-- 3 -->
-														<th width="50px">Channel</th>			<!-- 4 -->
+														<th width="100px">Channel</th>			<!-- 4 -->
 														<th width="25px">Actions</th>			<!-- 9 -->
 													</tr>
 												</thead>
@@ -786,7 +786,7 @@ if($_SESSION['logged_in'] != true) {
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
 															<td><img src="assets/images/loading.gif" alt="" height="100%"></td>
-															<td><img src="assets/images/loading.gif" alt="" height="100%"></td>
+															<td><?php echo ucwords(str_replace('_', ' ', $roku['channel'])); ?></td>
 															<td>
 																<a title="Edit" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=roku_remote&ip=<?php echo $roku['ip_address']; ?>"><i class="fa fa-gears"></i></a>
 															</td>
