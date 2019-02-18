@@ -897,7 +897,14 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="app">App / Channel</label>
+												<label class="col-md-3 control-label" for="existing_app">Current App / Channel</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" id="existing_app" name="existing_app" value="<?php echo strtoupper(str_replace('_', ' ', $roku['config']['app'])).': '.ucwords(str_replace('_', ' ', $roku['config']['channel'])); ?>" readonly>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="app">Set New App / Channel</label>
 												<div class="col-md-6">
 													<select id="app" name="app" class="form-control input-sm mb-md">
 														<option value="">Select One</option>
@@ -1281,7 +1288,7 @@ if($_SESSION['logged_in'] != true) {
 			    $("#app").change(function () {
 			        var val = $(this).val();
 			        if (val == "nowtv") {
-			            $("#channel").html("<option value='sky_one'>Sky One</option><option value='sky_witness'>Sky Witness</option><option value='sky_atlantic'>Sky Atlantic</option><option value='gold'>GOLD</option><option value='comedy_central'>Comedy Central</option><option value='syfy'>SyFy</option><option value='sky_arts'>Sky Arts</option><option value='discovery_channel'>Discovery Channel</option><option value='fox'>FOX</option><option value='mtv'>MTV UK</option><option value='wild'>WILD</option><option value='cartoon_network'>Cartoon Network UK</option><option value='boomerang'>Boomerang</option><option value='nickelodean'>Nickelodean</option><option value='nick_toons'>Nick Toons</option><option value='nick_jr'>Nick Jr</option><option value='cartoonito'>Cartoonito</option><option value='sky_cinema_premiere'>Sky Cinema Premiere</option><option value='sky_cinema_megahits'>Sky Cinema Megahits / Hits</option><option value='sky_cinema_greats'>Sky Cinema Greats</option><option value='sky_cinema_disney'>Sky Cinema Disney</option><option value='sky_cinema_family'>Sky Cinema Family</option><option value='sky_cinema_action'>Sky Cinema Action</option><option value='sky_cinema_comedy' <?php if($roku['config']['channel']=='sky_cinema_comedy'){echo'selected';} ?>>Sky Cinema Comedy</option><option value='sky_cinema_thriller'>Sky Cinema Thriller</option><option value='sky_cinema_drama'>Sky Cinema Drama</option><option value='sky_cinema_scifi'>Sky Cinema SciFi</option><option value='sky_cinema_select'>Sky Cinema Select</option>");
+			            $("#channel").html("<option value='sky_one'>Sky One</option><option value='sky_witness'>Sky Witness</option><option value='sky_atlantic'>Sky Atlantic</option><option value='gold'>GOLD</option><option value='comedy_central'>Comedy Central</option><option value='syfy'>SyFy</option><option value='sky_arts'>Sky Arts</option><option value='discovery_channel'>Discovery Channel</option><option value='fox'>FOX</option><option value='mtv'>MTV UK</option><option value='wild'>WILD</option><option value='cartoon_network'>Cartoon Network UK</option><option value='boomerang'>Boomerang</option><option value='nickelodean'>Nickelodean</option><option value='nick_toons'>Nick Toons</option><option value='nick_jr'>Nick Jr</option><option value='cartoonito'>Cartoonito</option><option value='sky_cinema_premiere'>Sky Cinema Premiere</option><option value='sky_cinema_megahits'>Sky Cinema Megahits / Hits</option><option value='sky_cinema_greats'>Sky Cinema Greats</option><option value='sky_cinema_disney'>Sky Cinema Disney</option><option value='sky_cinema_family'>Sky Cinema Family</option><option value='sky_cinema_action'>Sky Cinema Action</option><option value='sky_cinema_comedy'>Sky Cinema Comedy</option><option value='sky_cinema_thriller'>Sky Cinema Thriller</option><option value='sky_cinema_drama'>Sky Cinema Drama</option><option value='sky_cinema_scifi'>Sky Cinema SciFi</option><option value='sky_cinema_select'>Sky Cinema Select</option>");
 			        } else if (val == "bbc") {
 			            $("#channel").html("<option value='bbc_one'>BBC One</option><option value='bbc_two'>BBC Two</option><option value='bbc_four'>BBC Four</option><option value='bbc_news'>BBC News</option><option value='bbc_parliament'>BBC Parliament</option><option value='bbc_alba'>BBC Alba</option><option value='bbc_s4c'>BBC S4c</option><option value='bbc_cbeebies'>BBC CBeebies</option><option value='bbc_cbbc'>BBC CBBC</option>");
 			        } else if (val == "itv") {
