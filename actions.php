@@ -277,12 +277,11 @@ function watermark_upload() {
 }
 
 function roku_remote_add() {
-	$existing_config 				= @file_get_contents('/var/www/html/addons/roku/config.json');
-	$existing_config				= json_decode($existing_config, true);
+	$json = json_encode($_POST);
 
-	$roku_name						= $_POST['name'];
-	$roku_ip						= $_POST['ip_address'];
+	file_put_contents('addons/roku/config.'.$POST['ip_address'].'.json', $json);
 
+	go($_SERVER['HTTP_REFERER']);
 }
 
 function roku_remote_config() {
