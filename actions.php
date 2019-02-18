@@ -39,6 +39,10 @@ switch ($a)
 	case "watermark_upload":
 		watermark_upload();
 		break;
+
+	case "roku_remote_add":
+		roku_remote_add();
+		break;
 			
 // default
 				
@@ -266,4 +270,11 @@ function watermark_upload() {
 	}
 
 	go($_SERVER['HTTP_REFERER']);
+}
+
+function roku_remote_add() {
+	$existing_config 				= file_get_contents('/var/www/html/addons/roku/config.json');
+	$existing_config				= json_decode($existing_config, true);
+
+	$json = json_encode($_POST);
 }
