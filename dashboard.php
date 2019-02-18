@@ -867,6 +867,9 @@ if($_SESSION['logged_in'] != true) {
 						</header>
 						<!-- start: page -->
 						<div class="row">
+							<pre>
+								<?php print_r($roku); ?>
+							</pre>
 							<div class="col-lg-12">
 								<section class="panel">
 									<form action="actions.php?a=source_update" class="form-horizontal form-bordered" method="post">
