@@ -754,6 +754,7 @@ if($_SESSION['logged_in'] != true) {
 													<label class="col-md-1 control-label" for="app">App</label>
 													<div class="col-md-5">
 														<select id="app" name="app" class="form-control input-sm mb-md">
+															<option value="">Select One</option>
 															<option value="nowtv">NOWTV</option>
 															<option value="bbc">BBC iPlayer</option>
 															<option value="itv">ITV Hub</option>
