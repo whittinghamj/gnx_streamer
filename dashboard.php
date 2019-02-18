@@ -150,9 +150,9 @@ if($_SESSION['logged_in'] != true) {
 									</li>
 									<?php if(file_exists('addons/roku/') && file_exists('addons/roku/index.php')) { ?>
 										<li>
-											<a href="dashboard.php?c=roku_remote">
+											<a href="dashboard.php?c=roku_remotes">
 												<i class="fa fa-link" aria-hidden="true"></i>
-												<span>ROKU Remote</span>
+												<span>ROKU Remotes</span>
 											</a>
 										</li>
 									<?php } ?>
@@ -701,7 +701,7 @@ if($_SESSION['logged_in'] != true) {
 					</section>
 				<?php } ?>
 
-				<?php function roku_remote() { ?>
+				<?php function roku_remotes() { ?>
 					<?php 
 						$roku_config_files = glob("/var/www/html/addons/roku/config.*.json");
 						$count = 1;
