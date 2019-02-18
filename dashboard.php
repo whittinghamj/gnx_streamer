@@ -897,8 +897,8 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-1 control-label" for="app">App / Channel</label>
-												<div class="col-md-5">
+												<label class="col-md-3 control-label" for="app">App / Channel</label>
+												<div class="col-md-6">
 													<select id="app" name="app" class="form-control input-sm mb-md">
 														<option value="">Select One</option>
 														<option <?php if($roku['config']['app']=='nowtv'){echo "selected"; } ?> value="nowtv">NOWTV</option>
