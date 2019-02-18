@@ -1103,7 +1103,7 @@ if($_SESSION['logged_in'] != true) {
 							}						
 						}
 					});
-				}, 2000);
+				}, 10000);
 			<?php } ?>
 
 			function source_start(source) {
