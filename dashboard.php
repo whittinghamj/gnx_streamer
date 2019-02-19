@@ -1199,8 +1199,6 @@ if($_SESSION['logged_in'] != true) {
 							// var x = sources[0].source.name;
 							// console.log('Source Name: ' + x);
 
-							var server_ip = '<?php echo $_SERVER['SERVER_ADDR']; ?>;';
-
 							for (i in sources)
 							{
 								// set some static values
@@ -1244,7 +1242,7 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.stream_url = 'RTMP: ' + sources[i].source.rtmp_server;
 								}
 								if(sources[i].source.output_type == 'http') {
-									sources[i].source.stream_url = '<strong>HTTP Low Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_low.m3u8 <br><strong>HTTP Medium Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_med.m3u8 <br><strong>HTTP High Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_hi.m3u8';
+									sources[i].source.stream_url = 'HTTP' + sources[i].source.http_server;
 								}
 
 								if(sources[i].source.status == 'busy') {
