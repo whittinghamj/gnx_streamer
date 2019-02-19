@@ -1037,7 +1037,7 @@ if($_SESSION['logged_in'] != true) {
 						<!-- start: page -->
 						<section class="panel">
 							<div class="panel-body">
-								<?php echo file_get_contents("http://192.168.1.52/phpsysinfo/index.php?disp=bootstrap"); ?>
+								<div id="php_sys_info"></div>  
 							</div>
 						</section>
 						<!-- end: page -->
@@ -1370,6 +1370,10 @@ if($_SESSION['logged_in'] != true) {
 			        }
 			    });
 			});
+
+			<?php if($_GET['c'] == 'system_stats') { ?>
+				$('#php_sys_info').load('http://192.168.1.52/phpsysinfo/index.php?disp=bootstrap');
+			<?php } ?>
 		</script>
 	</body>
 </html>
