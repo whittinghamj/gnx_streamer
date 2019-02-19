@@ -18,7 +18,7 @@ apt-get -y upgrade
 
 ## install dependencies
 echo "Installing core packages"
-apt-get install -y vnstat ffmpeg alsa-utils build-essential libpcre3 libpcre3-dev libssl-dev ntp python perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python3 bc htop nload nmap sudo zlib1g-dev gcc make git autoconf autogen automake pkg-config locate curl dnsutils sshpass fping jq shellinabox apache2 apache2-doc apache2-utils libapache2-mod-php php7.2 php7.2-common php7.2-gd php7.2-mysql php7.2-imap phpmyadmin php7.2-cli php7.2-cgi libapache2-mod-fcgid apache2-suexec-pristine php-pear mcrypt  imagemagick libruby libapache2-mod-python php7.2-curl php7.2-intl php7.2-pspell php7.2-recode php7.2-sqlite3 php7.2-tidy php7.2-xmlrpc php7.2-xsl memcached php-memcache php-imagick php-gettext php7.2-zip php7.2-mbstring php-soap php7.2-soap 
+apt-get install -y phpsysinfo vnstat ffmpeg alsa-utils build-essential libpcre3 libpcre3-dev libssl-dev ntp python perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python3 bc htop nload nmap sudo zlib1g-dev gcc make git autoconf autogen automake pkg-config locate curl dnsutils sshpass fping jq shellinabox apache2 apache2-doc apache2-utils libapache2-mod-php php7.2 php7.2-common php7.2-gd php7.2-mysql php7.2-imap phpmyadmin php7.2-cli php7.2-cgi libapache2-mod-fcgid apache2-suexec-pristine php-pear mcrypt  imagemagick libruby libapache2-mod-python php7.2-curl php7.2-intl php7.2-pspell php7.2-recode php7.2-sqlite3 php7.2-tidy php7.2-xmlrpc php7.2-xsl memcached php-memcache php-imagick php-gettext php7.2-zip php7.2-mbstring php-soap php7.2-soap 
 updatedb >/dev/null 2>&1
 
 
@@ -81,6 +81,8 @@ a2enmod dav_fs dav auth_digest headers
 service apache2 restart
 chmod 777 /var/www/html/config
 chmod 777 /var/www/html/screenshots
+cd /var/www/html
+sudo ln -s /usr/share/phpsysinfo phpsysinfo
 
 
 ## install / configure nginx
