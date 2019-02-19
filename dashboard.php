@@ -808,10 +808,16 @@ if($_SESSION['logged_in'] != true) {
 															$roku 		= json_decode($roku, true);
 															$active_app = exec('php -q addons/roku/roku.php '.$roku['ip_address'].' active_app');
 															$active_app = json_decode($active_app, true);
+
+															if(empty($active_app)) {
+																$status = '<span class="label label-danger" style="width: 100%;">Offline</span>';
+															}else{
+																$status = '<span class="label label-success" style="width: 100%;">Online</span>';
+															}
 														?>
 														<tr>
 															<td valign="center"><?php echo $count; ?></td>
-															<td><span class="label label-success" style="width: 100%;">Online</span></td>
+															<td><?php echo $status; ?></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
 															<td><?php echo $active_app['app']; ?></td>
