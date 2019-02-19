@@ -5,6 +5,33 @@ include('/var/www/html/inc/functions.php');
 
 $task = $argv[1];
 
+if($task == 'cron') {
+	
+	// roku remote cron
+	console_output("ROKU Remotes Addon");
+	$roku_config_files = glob("/var/www/html/addons/roku/config.*.json");
+
+	if(!is_array($roku_config_files)) {
+		console_output(" - No ROKU device config files found.");
+	}else{
+		foreach($roku_config_files as $roku_config_file) {
+			$roku 		= file_get_contents($roku_config_file);
+			$roku 		= json_decode($roku, true);
+			$active_app = exec('php -q addons/roku/roku.php '.$roku['ip_address'].' active_app');
+			$active_app = json_decode($active_app, true);
+
+			if(empty($active_app)) {
+				console_output(" - ROKU device appears to be offline, skipping.");
+			}else{
+				console_output(" - Setting ROKU App / Channel.");
+				exec("sudo -php addons/roku/php.php ".$roku['ip_address']." ".$roku['app']." ".$roku['channel']);
+			}
+		}
+	}
+
+	console_output("Finished.");
+}
+
 if($task == 'stop_start') {
 	console_output("Stop / Start Streams.");
 	
