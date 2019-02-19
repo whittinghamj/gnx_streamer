@@ -427,7 +427,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="stream">Stream</label>
 												<div class="col-md-6">
-													<select id="stream" name="stream" class="form-control input-sm mb-md">
+													<select id="stream" name="stream" class="form-control">
 														<option <?php if($source['config']['stream']=='enable'){echo"selected";} ?> value="enable">Enable</option>
 														<option <?php if($source['config']['stream']=='disable'){echo"selected";} ?> value="disable">Disable</option>
 													</select>
@@ -451,7 +451,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="screen_resolution">Output Video Resolution</label>
 												<div class="col-md-6">
-													<select id="screen_resolution" name="screen_resolution" class="form-control input-sm mb-md">
+													<select id="screen_resolution" name="screen_resolution" class="form-control">
 														<option <?php if($source['config']['screen_resolution']=='1920x1080'){echo"selected";} ?> value="1920x1080">1920x1080</option>
 					                                    <option <?php if($source['config']['screen_resolution']=='1680x1056'){echo"selected";} ?> value="1680x1056">1680x1056</option>
 					                                    <option <?php if($source['config']['screen_resolution']=='1280x720'){echo"selected";} ?> value="1280x720">1280x720</option>
@@ -478,7 +478,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="video_codec">Output Video Codec</label>
 												<div class="col-md-6">
-													<select id="video_codec" name="video_codec" class="form-control input-sm mb-md">
+													<select id="video_codec" name="video_codec" class="form-control">
 														<option <?php if($source['config']['video_codec']=='libx264'){echo"selected";} ?> value="libx264">H.264</option>
 														<option <?php if($source['config']['video_codec']=='libx265'){echo"selected";} ?> value="libx265">H.265</option>
 													</select>
@@ -495,7 +495,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="audio_device">Audio Source Name</label>
 												<div class="col-md-6">
-													<select id="audio_device" name="audio_device" class="form-control input-sm mb-md">
+													<select id="audio_device" name="audio_device" class="form-control">
 														<?php foreach($audio_devices as $audio_device) { ?>
 															<option <?php if($audio_device==$source['config']['audio_device']){echo"selected";} ?> value="<?php echo $audio_device; ?>"><?php echo $audio_device; ?></option>
 														<?php } ?>
@@ -506,7 +506,7 @@ if($_SESSION['logged_in'] != true) {
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="audio_codec">Output Audio Codec</label>
 												<div class="col-md-6">
-													<select id="audio_codec" name="audio_codec" class="form-control input-sm mb-md">
+													<select id="audio_codec" name="audio_codec" class="form-control">
 														<option <?php if($source['config']['audio_codec']=='aac'){echo"selected";} ?> value="aac">AAC</option>
 													</select>
 												</div>
