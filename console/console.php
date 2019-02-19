@@ -24,7 +24,7 @@ if($task == 'cron') {
 				console_output(" - ROKU device appears to be offline, skipping.");
 			}else{
 				console_output(" - Setting ROKU App / Channel.");
-				console_output(" - sudo php -q /var/www/html/addons/roku/roku.php ".$roku['ip_address']." ".$roku['app']." ".$roku['channel']);
+				// console_output(" - sudo php -q /var/www/html/addons/roku/roku.php ".$roku['ip_address']." ".$roku['app']." ".$roku['channel']);
 				exec("sudo php -q /var/www/html/addons/roku/roku.php ".$roku['ip_address']." ".$roku['app']." ".$roku['channel']);
 			}
 		}
