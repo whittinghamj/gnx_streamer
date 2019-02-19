@@ -732,7 +732,7 @@ if($_SESSION['logged_in'] != true) {
 
 						<!-- start: page -->
 						<div class="row">
-							<div class="col-lg-12">
+							<div class="col-lg-6">
 								<section class="panel">
 									<form action="actions.php?a=roku_remote_add" class="form-horizontal form-bordered" method="post">
 										<header class="panel-heading">
@@ -741,33 +741,37 @@ if($_SESSION['logged_in'] != true) {
 										</header>
 										<div class="panel-body">
 										    <div class="row">
-											    <div class="form-group">
-													<label class="col-md-1 control-label" for="name">Name</label>
-													<div class="col-md-5">
-														<input type="text" class="form-control" id="name" name="name" value="ROKU Streamer #1" placeholder="ROKU Streamer #1">
+										    	<div class="col-lg-6">
+												    <div class="form-group">
+														<label class="col-md-1 control-label" for="name">Name</label>
+														<div class="col-md-5">
+															<input type="text" class="form-control" id="name" name="name" value="ROKU Streamer #1" placeholder="ROKU Streamer #1">
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label class="col-md-1 control-label" for="stream">IP Address</label>
+														<div class="col-md-5">
+															<input type="text" class="form-control" id="ip_address" name="ip_address" value="" placeholder="192.168.1.10">
+														</div>
 													</div>
 												</div>
 
-												<div class="form-group">
-													<label class="col-md-1 control-label" for="stream">IP Address</label>
-													<div class="col-md-5">
-														<input type="text" class="form-control" id="ip_address" name="ip_address" value="" placeholder="192.168.1.10">
-													</div>
-												</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<label class="col-md-1 control-label" for="app">App / Channel</label>
+														<div class="col-md-5">
+															<select id="app" name="app" class="form-control input-sm mb-md">
+																<option value="">Select One</option>
+																<option value="nowtv">NOWTV</option>
+																<option value="bbc">BBC iPlayer</option>
+																<option value="itv">ITV Hub</option>
+															</select>
 
-												<div class="form-group">
-													<label class="col-md-1 control-label" for="app">App / Channel</label>
-													<div class="col-md-5">
-														<select id="app" name="app" class="form-control input-sm mb-md">
-															<option value="">Select One</option>
-															<option value="nowtv">NOWTV</option>
-															<option value="bbc">BBC iPlayer</option>
-															<option value="itv">ITV Hub</option>
-														</select>
-
-														<select id="channel" name="channel" class="form-control input-sm mb-md">
-															<option value="">Select One</option>
-														</select>
+															<select id="channel" name="channel" class="form-control input-sm mb-md">
+																<option value="">Select One</option>
+															</select>
+														</div>
 													</div>
 												</div>
 											</div>
