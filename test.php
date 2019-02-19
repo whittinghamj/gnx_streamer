@@ -1,5 +1,5 @@
 <?php
 
-$speedtest = exec('/root/speedtest-cli --simple');
+$speedtest = shell_exec('/root/speedtest-cli --simple');
 
 print_r($speedtest);
