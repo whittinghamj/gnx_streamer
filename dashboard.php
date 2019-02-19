@@ -870,7 +870,7 @@ if($_SESSION['logged_in'] != true) {
 							<div class="col-lg-12">
 								<section class="panel">
 									<form action="actions.php?a=roku_remote_update" class="form-horizontal form-bordered" method="post">
-										<input type="hidden" name="ip_address" value="<?php echo $roku['ip_address']; ?>">
+										<input type="hidden" name="existing_ip_address" value="<?php echo $roku['ip_address']; ?>">
 										<header class="panel-heading">
 											<div class="panel-actions"></div>
 											<h2 class="panel-title">Settings</h2>

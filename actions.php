@@ -44,6 +44,10 @@ switch ($a)
 		roku_remote_add();
 		break;
 
+	case "roku_remote_update":
+		roku_remote_update();
+		break;
+
 	case "roku_remote_config":
 		roku_remote_config();
 		break;
@@ -277,6 +281,21 @@ function watermark_upload() {
 }
 
 function roku_remote_add() {
+	$json = json_encode($_POST);
+
+	file_put_contents('/var/www/html/addons/roku/config.'.$_POST['ip_address'].'.json', $json);
+
+	go($_SERVER['HTTP_REFERER']);
+}
+
+function roku_remote_update() {
+	$existing_ip 		= $_POST['existing_ip_address'];
+	$ip_address 		= $_POST['ip_address'];
+
+	if($ip_address != $existing_ip) {
+		exec('sudo rm -rf addons/roku/config.'.$existing_ip.'.json');
+	}
+
 	$json = json_encode($_POST);
 
 	file_put_contents('/var/www/html/addons/roku/config.'.$_POST['ip_address'].'.json', $json);
