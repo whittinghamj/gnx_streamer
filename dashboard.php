@@ -158,7 +158,7 @@ if($_SESSION['logged_in'] != true) {
 									<?php } ?>
 									<li>
 										<a href="dashboard.php?c=system_stats">
-											<i class="fa fa-line-chart" aria-hidden="true"></i>
+											<i class="fa fa-graph" aria-hidden="true"></i>
 											<span>System Stats</span>
 										</a>
 									</li>
