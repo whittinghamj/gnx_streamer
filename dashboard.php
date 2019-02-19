@@ -1244,7 +1244,7 @@ if($_SESSION['logged_in'] != true) {
 									sources[i].source.stream_url = 'RTMP: ' + sources[i].source.rtmp_server;
 								}
 								if(sources[i].source.output_type == 'http') {
-									sources[i].source.stream_url = 'HTTP Low Bandwidth: http://'+server_ip+':9000/hls/'+sources[i].source.name+'_low.m3u8 <br>HTTP Medium Bandwidth: http://'+server_ip+':9000/hls/'+sources[i].source.name+'_med.m3u8 <br>HTTP High Bandwidth: http://'+server_ip+':9000/hls/'+sources[i].source.name+'_hi.m3u8';
+									sources[i].source.stream_url = '<strong>HTTP Low Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_low.m3u8 <br><strong>HTTP Medium Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_med.m3u8 <br><strong>HTTP High Bandwidth:</strong> http://'+server_ip+':9000/hls/'+sources[i].source.name+'_hi.m3u8';
 								}
 
 								if(sources[i].source.status == 'busy') {
