@@ -899,9 +899,9 @@ if($_SESSION['logged_in'] != true) {
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="existing_app">Current App / Channel</label>
+												<label class="col-md-3 control-label" for="existing_app_view">Current App / Channel</label>
 												<div class="col-md-6">
-													<input type="text" class="form-control" id="existing_app" name="existing_app" value="<?php echo strtoupper(str_replace('_', ' ', $roku['config']['app'])).': '.ucwords(str_replace('_', ' ', $roku['config']['channel'])); ?>" readonly>
+													<input type="text" class="form-control" id="existing_app_view" name="existing_app_view" value="<?php echo strtoupper(str_replace('_', ' ', $roku['config']['app'])).': '.ucwords(str_replace('_', ' ', $roku['config']['channel'])); ?>" readonly>
 												</div>
 											</div>
 
