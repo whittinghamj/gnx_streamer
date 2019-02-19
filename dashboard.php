@@ -759,7 +759,7 @@ if($_SESSION['logged_in'] != true) {
 
 												<div class="col-lg-6">
 													<div class="form-group">
-														<label class="col-md-2 control-label" for="app">App / Channel</label>
+														<label class="col-md-2 control-label" for="app">App</label>
 														<div class="col-md-4">
 															<select id="app" name="app" class="form-control input-sm mb-md">
 																<option value="">Select One</option>
@@ -767,7 +767,12 @@ if($_SESSION['logged_in'] != true) {
 																<option value="bbc">BBC iPlayer</option>
 																<option value="itv">ITV Hub</option>
 															</select>
+														</div>
+													</div>
 
+													<div class="form-group">
+														<label class="col-md-2 control-label" for="channel">Channel</label>
+														<div class="col-md-4">
 															<select id="channel" name="channel" class="form-control input-sm mb-md">
 																<option value="">Select One</option>
 															</select>
