@@ -923,7 +923,7 @@ if($_SESSION['logged_in'] != true) {
 										</div>
 
 										<footer class="panel-footer">
-											<a href="dashboard.php?c=sources" class="btn btn-default">Back</a>
+											<a href="dashboard.php?c=roku_remotes" class="btn btn-default">Back</a>
 											<button type="submit" class="btn btn-success">Submit</button>
 										</footer>
 									</form>
