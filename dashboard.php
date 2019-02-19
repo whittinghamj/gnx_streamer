@@ -761,7 +761,7 @@ if($_SESSION['logged_in'] != true) {
 													<div class="form-group">
 														<label class="col-md-2 control-label" for="app">App</label>
 														<div class="col-md-4">
-															<select id="app" name="app" class="form-control input-sm mb-md">
+															<select id="app" name="app" class="form-control">
 																<option value="">Select One</option>
 																<option value="nowtv">NOWTV</option>
 																<option value="bbc">BBC iPlayer</option>
@@ -773,7 +773,7 @@ if($_SESSION['logged_in'] != true) {
 													<div class="form-group">
 														<label class="col-md-2 control-label" for="channel">Channel</label>
 														<div class="col-md-4">
-															<select id="channel" name="channel" class="form-control input-sm mb-md">
+															<select id="channel" name="channel" class="form-control">
 																<option value="">Select One</option>
 															</select>
 														</div>
