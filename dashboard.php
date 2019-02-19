@@ -156,7 +156,7 @@ if($_SESSION['logged_in'] != true) {
 											</a>
 										</li>
 									<?php } ?>
-									<a class="simple-ajax-modal btn btn-default" href="http://localhost/phpsysinfo">Load AJAX</a>
+									<a class="simple-ajax-modal btn btn-default" href="http://192.168.1.52/phpsysinfo/index.php?disp=bootstrap">Load AJAX</a>
 									<li>
 										<a href="dashboard.php?c=system_stats">
 											<i class="fa fa-graph" aria-hidden="true"></i>
