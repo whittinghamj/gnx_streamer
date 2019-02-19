@@ -317,7 +317,7 @@ function roku_remote_update() {
 
 	file_put_contents('/var/www/html/addons/roku/config.'.$data['ip_address'].'.json', $json);
 
-	status_message('success', 'ROKU Remote has been updated.')
+	status_message('success', 'ROKU Remote has been updated.');
 
 	if($ip_address != $existing_ip) {
 		go('dashboard.php?c=roku_remote&ip='.$data['ip_address']);
