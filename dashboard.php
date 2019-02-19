@@ -1077,6 +1077,17 @@ if($_SESSION['logged_in'] != true) {
 		</section>
 
 		<script>
+
+			<?php if(!empty($_SESSION['alert']['status'])){ ?>
+				new PNotify({
+					title: 'Success!',
+					text: '<?php echo $_SESSION['alert']['message']; ?>',
+					type: '<?php echo $_SESSION['alert']['status']; ?>'
+				});
+		        <?php unset($_SESSION['alert']); ?>
+		    <?php } ?>
+
+
 			window.setInterval(function() {
 				// update_system_stats();
 				// show_source_list();
