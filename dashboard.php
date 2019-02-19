@@ -811,7 +811,7 @@ if($_SESSION['logged_in'] != true) {
 														?>
 														<tr>
 															<td valign="center"><?php echo $count; ?></td>
-															<td><span class="label label-success" style="100%">Online</span></td>
+															<td><span class="label label-success" style="width: 100%;">Online</span></td>
 															<td><?php echo $roku['name']; ?></td>
 															<td><?php echo $roku['ip_address']; ?></td>
 															<td><?php echo $active_app['app']; ?></td>
@@ -1190,7 +1190,7 @@ if($_SESSION['logged_in'] != true) {
 
 								if(sources[i].source.status == 'busy') {
 									// colum 1
-									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success" style="100%">Streaming</span>';
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-success" style="width: 100%;">Streaming</span>';
 
 									// colum 2
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
@@ -1217,7 +1217,7 @@ if($_SESSION['logged_in'] != true) {
 									document.getElementById(sources[i].source.name + '_col_9').innerHTML = '<button onclick="source_stop(\''+sources[i].source.name+'\')" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-pause"></i></button> <button onclick="source_restart(\''+sources[i].source.name+'\')" class="btn btn-success btn-flat btn-xs"><i class="fa fa-refresh"></i></button> <a title="Edit" class="btn btn-info btn-flat btn-xs" href="dashboard.php?c=source&source=' + sources[i].source.name + '"><i class="fa fa-gears"></i></a>';
 								} else {
 									// colum 1
-									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger" style="100%">Not Streaming</span>';
+									document.getElementById(sources[i].source.name + '_col_1').innerHTML = '<span class="label label-danger" style="width: 100%;">Not Streaming</span>';
 
 									// colum 2
 									document.getElementById(sources[i].source.name + '_col_2').innerHTML = sources[i].source.name;
