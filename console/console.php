@@ -136,7 +136,7 @@ if($task == 'speedtest') {
 	$upload = explode(": ", $speedtest_bits[2]);
 	$data['upload'] = $upload[1];
 
-	$json = json_decode($data);
+	$json = json_encode($data);
 
 	file_put_contents('/var/www/html/config/speedtest.json', $json);
 }
