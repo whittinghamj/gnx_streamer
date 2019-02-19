@@ -302,10 +302,10 @@ function roku_remote_update() {
 	if(!empty($_POST['app'])) {
 		$data['app'] = $_POST['app'];
 	}else{
-		$data['app'] = $_POST['existing_app']
+		$data['app'] = $_POST['existing_app'];
 	}
 
-	if(!empty($_POST['channel'])) {
+ 	if(!empty($_POST['channel'])) {
 		$data['channel'] = $_POST['channel'];
 	}else{
 		$data['channel'] = $_POST['existing_channel']
