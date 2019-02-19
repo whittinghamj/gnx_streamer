@@ -871,6 +871,8 @@ if($_SESSION['logged_in'] != true) {
 								<section class="panel">
 									<form action="actions.php?a=roku_remote_update" class="form-horizontal form-bordered" method="post">
 										<input type="hidden" name="existing_ip_address" value="<?php echo $roku['ip_address']; ?>">
+										<input type="hidden" name="existing_app" value="<?php echo $roku['config']['app']; ?>">
+										<input type="hidden" name="existing_channel" value="<?php echo $roku['config']['channel']; ?>">
 										<header class="panel-heading">
 											<div class="panel-actions"></div>
 											<h2 class="panel-title">Settings</h2>
@@ -907,14 +909,14 @@ if($_SESSION['logged_in'] != true) {
 												<label class="col-md-3 control-label" for="app">Set New App / Channel</label>
 												<div class="col-md-6">
 													<select id="app" name="app" class="form-control input-sm mb-md">
-														<option value="">Select One</option>
+														<option value="">Select one or leave blank for no change</option>
 														<option value="nowtv">NOWTV</option>
 														<option value="bbc">BBC iPlayer</option>
 														<option value="itv">ITV Hub</option>
 													</select>
 
 													<select id="channel" name="channel" class="form-control input-sm mb-md">
-														<option value="">Select One</option>
+														<option value="">Select one or leave blank for no change</option>
 													</select>
 												</div>
 											</div>

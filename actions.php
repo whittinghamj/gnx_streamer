@@ -294,11 +294,28 @@ function roku_remote_update() {
 
 	if($ip_address != $existing_ip) {
 		exec('sudo rm -rf addons/roku/config.'.$existing_ip.'.json');
+		$data['ip_address']	= $ip_address;
+	}else{
+		$data['ip_address']	= $existing_ip;
 	}
 
-	$json = json_encode($_POST);
+	if(!empty($_POST['app'])) {
+		$data['app'] = $_POST['app'];
+	}else{
+		$data['app'] = $_POST['existing_app']
+	}
 
-	file_put_contents('/var/www/html/addons/roku/config.'.$_POST['ip_address'].'.json', $json);
+	if(!empty($_POST['channel'])) {
+		$data['channel'] = $_POST['channel'];
+	}else{
+		$data['channel'] = $_POST['existing_channel']
+	}
+
+	$data['name'] = $_POST['name'];
+
+	$json = json_encode($data);
+
+	file_put_contents('/var/www/html/addons/roku/config.'.$data['ip_address'].'.json', $json);
 
 	go($_SERVER['HTTP_REFERER']);
 }
