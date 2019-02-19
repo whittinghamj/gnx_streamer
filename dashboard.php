@@ -744,14 +744,14 @@ if($_SESSION['logged_in'] != true) {
 										    	<div class="col-lg-6">
 												    <div class="form-group">
 														<label class="col-md-2 control-label" for="name">Name</label>
-														<div class="col-md-4">
+														<div class="col-md-10">
 															<input type="text" class="form-control" id="name" name="name" value="ROKU Streamer #1" placeholder="ROKU Streamer #1">
 														</div>
 													</div>
 
 													<div class="form-group">
 														<label class="col-md-2 control-label" for="stream">IP Address</label>
-														<div class="col-md-4">
+														<div class="col-md-10">
 															<input type="text" class="form-control" id="ip_address" name="ip_address" value="" placeholder="192.168.1.10">
 														</div>
 													</div>
@@ -760,7 +760,7 @@ if($_SESSION['logged_in'] != true) {
 												<div class="col-lg-6">
 													<div class="form-group">
 														<label class="col-md-2 control-label" for="app">App</label>
-														<div class="col-md-4">
+														<div class="col-md-10">
 															<select id="app" name="app" class="form-control">
 																<option value="">Select One</option>
 																<option value="nowtv">NOWTV</option>
@@ -772,7 +772,7 @@ if($_SESSION['logged_in'] != true) {
 
 													<div class="form-group">
 														<label class="col-md-2 control-label" for="channel">Channel</label>
-														<div class="col-md-4">
+														<div class="col-md-10">
 															<select id="channel" name="channel" class="form-control">
 																<option value="">Select One</option>
 															</select>
