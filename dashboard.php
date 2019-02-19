@@ -1037,7 +1037,7 @@ if($_SESSION['logged_in'] != true) {
 						<!-- start: page -->
 						<section class="panel">
 							<div class="panel-body">
-								<iframe src="http://192.168.1.52/phpsysinfo/index.php?disp=bootstrap" border="0" width="100%" height="100%"></iframe>
+								<iframe src="http://192.168.1.52/phpsysinfo/index.php?disp=bootstrap" border="0" width="100%" height="600px"></iframe>
 							</div>
 						</section>
 						<!-- end: page -->
