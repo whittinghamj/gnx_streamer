@@ -63,7 +63,7 @@ function home(){
 	die('access denied to function name ' . $_GET['a']);
 }
 
-function test(){
+function test() {
 	echo exec('whoami');
 	echo "<hr>";
 	echo '<h3>$_SESSION</h3>';
@@ -220,7 +220,7 @@ function source_update() {
 
 	file_put_contents('config/'.$_POST['source'].'.json', $json);
 
-	status_message('success', 'Configuration saved..');
+	status_message('success', 'Configuration saved.');
 
 	if($_POST['stream'] == 'enable') {
 		file_get_contents('http://localhost/actions.php?a=source_stop&source='.$_POST['source']);
@@ -277,6 +277,8 @@ function watermark_upload() {
 	    }
 	}
 
+	status_message('success', 'Watermark has been uploaded.');
+
 	go($_SERVER['HTTP_REFERER']);
 }
 
@@ -284,6 +286,8 @@ function roku_remote_add() {
 	$json = json_encode($_POST);
 
 	file_put_contents('/var/www/html/addons/roku/config.'.$_POST['ip_address'].'.json', $json);
+
+	status_message('success', 'ROKU Remote has been added.');
 
 	go($_SERVER['HTTP_REFERER']);
 }
