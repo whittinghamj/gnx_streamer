@@ -793,7 +793,7 @@ if($_SESSION['logged_in'] != true) {
 												<thead>
 													<tr>
 														<th width="10px">#</th>							<!-- 0 -->
-														<th width="100px">Status</th>						<!-- 1 -->
+														<th width="50px">Status</th>						<!-- 1 -->
 														<th width="100px">Name</th>						<!-- 2 -->
 														<th width="50px">IP Address</th>				<!-- 3 -->
 														<th width="100px">Active App</th>				<!-- 4 -->
