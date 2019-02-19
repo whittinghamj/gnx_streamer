@@ -1,5 +1,7 @@
 <?php
 
-$speedtest = shell_exec('/root/speedtest-cli --simple');
+$raw = shell_exec('/root/speedtest-cli --simple');
 
-print_r($speedtest);
+$speedtest_bits = explode("\n", $raw);
+
+print_r($speedtest_bits);
