@@ -15,4 +15,8 @@ $data['download'] = $download[1];
 $upload = explode(": ", $speedtest_bits[2]);
 $data['upload'] = $upload[1];
 
-print_r($data);
+$json = json_decode($data);
+
+file_put_contents('/var/www/html/config/speedtest.json', $json);
+
+?>
